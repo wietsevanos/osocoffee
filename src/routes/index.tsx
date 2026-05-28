@@ -1,21 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/oso-logo.png";
-import heroCoffee from "@/assets/hero-coffee.jpg";
-import interior from "@/assets/interior-alcove.jpg";
-import bites from "@/assets/bites.jpg";
-import texturePlaster from "@/assets/texture-plaster.jpg";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
+import photoTable from "@/assets/photo-table.jpg";
+import photoShelf from "@/assets/photo-shelf.jpg";
+import photoCakes from "@/assets/photo-cakes.jpg";
+import photoDoor from "@/assets/photo-door.jpg";
+import photoChair from "@/assets/photo-chair.jpg";
+import photoProduce from "@/assets/photo-produce.jpg";
+import photoDrinks from "@/assets/photo-drinks.jpg";
+import photoCups from "@/assets/photo-cups.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OSO Coffee — Bar, coffee, bites & pastries · Haarlem" },
+      { title: "OSO Coffee, Bar, coffee, bites & pastries · Haarlem" },
       { name: "description", content: "OSO Coffee is a new neighborhood coffee bar in Haarlem. Bar, coffee, bites & pastries. Opening soon at Ramplaan 44." },
-      { property: "og:title", content: "OSO Coffee — Opening soon in Haarlem" },
+      { property: "og:title", content: "OSO Coffee, Opening soon in Haarlem" },
       { property: "og:description", content: "A cozy, finca-inspired coffee bar. Bar, coffee, bites & pastries." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -100,24 +100,9 @@ function Index() {
           scrolled ? "py-3 backdrop-blur-md bg-cream/75 border-b border-espresso/10" : "py-6"
         }`}
       >
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-3">
-            <img src={logo} alt="OSO Coffee" className="h-9 w-9 md:h-10 md:w-10 rounded-full" />
-            <span className="font-serif text-xl tracking-tight">oso<span className="text-clay">.</span></span>
-          </a>
-          <nav className="hidden md:flex items-center gap-9 text-sm text-espresso-deep/80">
-            {NAV.map((n) => (
-              <a key={n.href} href={n.href} className="relative hover:text-espresso transition-colors group">
-                {n.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-espresso transition-all duration-500 group-hover:w-full" />
-              </a>
-            ))}
-          </nav>
-          <a
-            href="#visit"
-            className="inline-flex items-center gap-2 rounded-full border border-espresso/30 px-4 py-2 text-xs uppercase tracking-[0.18em] hover:bg-espresso hover:text-cream transition-colors"
-          >
-            Visit
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center">
+          <a href="#top" className="flex items-center" aria-label="OSO Coffee">
+            <img src={logo} alt="OSO Coffee" className="h-10 md:h-12 w-auto" />
           </a>
         </div>
       </header>
@@ -140,7 +125,7 @@ function Index() {
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
             <p className="md:col-span-5 text-base md:text-lg leading-relaxed text-espresso-deep/75 max-w-md animate-rise" style={{ animationDelay: "120ms" }}>
-              OSO — Spanish for <em>bear</em> — is a new neighborhood coffee bar opening at Ramplaan 44.
+              OSO, Spanish for <em>bear</em>, is a new neighborhood coffee bar opening at Ramplaan 44.
               Bar, coffee, bites &amp; pastries, served in a warm, finca-inspired space.
             </p>
             <div className="md:col-span-4 md:col-start-9 flex flex-col gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
@@ -157,7 +142,7 @@ function Index() {
                 href="#careers"
                 className="text-sm text-espresso-deep/70 hover:text-espresso transition-colors pl-6"
               >
-                We&rsquo;re hiring — join the team →
+                We&rsquo;re hiring, join the team →
               </a>
             </div>
           </div>
@@ -167,8 +152,8 @@ function Index() {
             <div className="grid grid-cols-12 gap-4 md:gap-6">
               <div className="col-span-12 md:col-span-8 relative overflow-hidden rounded-sm">
                 <img
-                  src={heroCoffee}
-                  alt="A handmade ceramic cup of coffee on linen, lit by warm afternoon sun"
+                  src={photoTable}
+                  alt="OSO menu, terracotta dishes, candle and a glass of red wine on an oak table"
                   className="w-full h-[55vh] md:h-[78vh] object-cover"
                   width={1600}
                   height={1920}
@@ -177,8 +162,8 @@ function Index() {
               <div className="col-span-12 md:col-span-4 flex flex-col gap-4 md:gap-6">
                 <div className="relative overflow-hidden rounded-sm flex-1 min-h-[28vh]">
                   <img
-                    src={texturePlaster}
-                    alt="Warm plaster wall with arched alcove"
+                    src={photoShelf}
+                    alt="Soft sconce light on a plaster wall above an oak shelf with stacked glassware"
                     className="w-full h-full object-cover"
                     loading="lazy"
                     width={1200}
@@ -226,7 +211,7 @@ function Index() {
       <section id="about" className="py-24 md:py-40">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16">
           <Reveal className="md:col-span-4">
-            <span className="text-eyebrow text-clay">01 — About</span>
+            <span className="text-eyebrow text-clay">01, About</span>
             <p className="mt-6 font-serif text-2xl leading-snug text-espresso-deep">
               OSO means <em>bear</em> in Spanish. A symbol of warmth, of comfort, of the kind of slow afternoons we&rsquo;re built around.
             </p>
@@ -235,13 +220,13 @@ function Index() {
             <h2 className="text-display text-[clamp(2.4rem,6.5vw,5.5rem)] text-espresso-deep">
               A neighborhood
               <br />
-              bar &mdash; designed
+              bar, designed
               <br />
               <span className="italic text-espresso">to feel like home.</span>
             </h2>
             <div className="mt-10 grid sm:grid-cols-2 gap-8 max-w-2xl text-espresso-deep/75">
               <p>
-                The space draws from Spanish fincas — warm plaster, arched alcoves, oak benches and soft
+                The space draws from Spanish fincas, warm plaster, arched alcoves, oak benches and soft
                 linen. A contemporary read of an old, familiar feeling.
               </p>
               <p>
@@ -259,8 +244,8 @@ function Index() {
           <Reveal className="md:col-span-6">
             <div className="overflow-hidden rounded-sm">
               <img
-                src={bites}
-                alt="Almond cake, croissant and espresso on warm ceramic plates"
+                src={photoCakes}
+                alt="Almond cake and slices of banana bread on terracotta plates"
                 className="w-full h-[70vh] object-cover"
                 loading="lazy"
                 width={1200}
@@ -269,7 +254,7 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={120} className="md:col-span-6">
-            <span className="text-eyebrow text-clay">02 — Coffee &amp; bites</span>
+            <span className="text-eyebrow text-clay">02, Coffee &amp; bites</span>
             <h2 className="mt-6 text-display text-[clamp(2.2rem,5.5vw,4.5rem)] text-espresso-deep">
               Quiet menu.
               <br />
@@ -279,10 +264,10 @@ function Index() {
               {[
                 ["Espresso", "Single origin · seasonal", "3.20"],
                 ["Flat white", "Whole milk · oat on request", "4.20"],
-                ["Cortado", "Half &amp; half", "3.80"],
+                ["Iced matcha", "Ceremonial grade, oat milk", "4.80"],
                 ["Almond cake", "Baked in house, daily", "4.50"],
-                ["Sourdough toast", "Tomato, olive oil, sea salt", "6.00"],
-                ["Natural wine", "From 16:00, Wed – Sun", "—"],
+                ["Albóndigas", "Slow tomato, basil, parmesan", "9.50"],
+                ["Natural wine", "From 16:00, Wed to Sun", "—"],
               ].map(([name, desc, price]) => (
                 <li key={name} className="flex items-baseline justify-between gap-6 py-5">
                   <div>
@@ -298,12 +283,70 @@ function Index() {
         </div>
       </section>
 
+      {/* PRODUCE STRIP */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+          <Reveal className="md:col-span-7 order-2 md:order-1">
+            <div className="overflow-hidden rounded-sm">
+              <img
+                src={photoProduce}
+                alt="Heirloom tomatoes, padrón peppers, avocados and rhubarb on an oak counter"
+                className="w-full h-[55vh] md:h-[70vh] object-cover"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={120} className="md:col-span-4 md:col-start-9 order-1 md:order-2">
+            <span className="text-eyebrow text-clay">Produce</span>
+            <p className="mt-6 font-serif text-2xl md:text-3xl leading-snug text-espresso-deep">
+              Sourced weekly, cooked slowly, served warm.
+            </p>
+            <p className="mt-5 text-espresso-deep/70">
+              Seasonal vegetables, soft cheeses and good bread. A short menu that changes when the market does.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* VIDEO */}
+      <section className="py-20 md:py-28 bg-sand/40">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <div className="grid md:grid-cols-12 gap-10 items-end mb-10 md:mb-14">
+            <Reveal className="md:col-span-7">
+              <span className="text-eyebrow text-clay">In motion</span>
+              <h2 className="mt-6 text-display text-[clamp(2.2rem,6vw,5rem)] text-espresso-deep">
+                A quiet
+                <br />
+                <span className="italic text-espresso">afternoon at OSO.</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={120} className="md:col-span-4 md:col-start-9">
+              <p className="text-espresso-deep/75">
+                Light, plaster, terracotta and the soft rhythm of the bar. A short film from the space.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal>
+            <div className="overflow-hidden rounded-sm">
+              <video
+                src="/oso-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-[60vh] md:h-[85vh] object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* SPACE / INTERIOR */}
       <section id="space" className="py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid md:grid-cols-12 gap-10 items-end mb-12 md:mb-20">
             <Reveal className="md:col-span-7">
-              <span className="text-eyebrow text-clay">03 — The space</span>
+              <span className="text-eyebrow text-clay">03, The space</span>
               <h2 className="mt-6 text-display text-[clamp(2.4rem,7vw,6rem)] text-espresso-deep">
                 Alcoves, arches,
                 <br />
@@ -313,7 +356,7 @@ function Index() {
             <Reveal delay={120} className="md:col-span-4 md:col-start-9">
               <p className="text-espresso-deep/75">
                 Inspired by the rhythm of a Spanish finca, the interior layers warm textures and quiet
-                corners — a room that invites you to linger.
+                corners, a room that invites you to linger.
               </p>
             </Reveal>
           </div>
@@ -321,8 +364,8 @@ function Index() {
           <Reveal>
             <div className="overflow-hidden rounded-sm">
               <img
-                src={interior}
-                alt="Warm arched alcove with oak bench and linen cushions"
+                src={photoChair}
+                alt="Handwoven rush chair stacked on an oak table in a plaster-walled room"
                 className="w-full h-[60vh] md:h-[85vh] object-cover"
                 loading="lazy"
                 width={1920}
@@ -332,7 +375,7 @@ function Index() {
           </Reveal>
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-            {[g1, g2, g3, g4].map((src, i) => (
+            {[photoDoor, photoDrinks, photoCups, photoShelf].map((src, i) => (
               <Reveal key={src} delay={i * 80}>
                 <div className="overflow-hidden rounded-sm aspect-[4/5] group">
                   <img
@@ -389,7 +432,7 @@ function Index() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-14 md:mb-20">
             <Reveal className="md:col-span-7">
-              <span className="text-eyebrow text-clay">04 — Careers</span>
+              <span className="text-eyebrow text-clay">04, Careers</span>
               <h2 className="mt-6 text-display text-[clamp(2.4rem,7vw,6rem)] text-espresso-deep">
                 We&rsquo;re building
                 <br />
@@ -399,7 +442,7 @@ function Index() {
             <Reveal delay={100} className="md:col-span-4 md:col-start-9">
               <p className="text-espresso-deep/75">
                 OSO is hiring warm, considered people who care about craft and hospitality. Open roles
-                below — we&rsquo;d love to hear from you.
+                below, we&rsquo;d love to hear from you.
               </p>
             </Reveal>
           </div>
@@ -446,11 +489,11 @@ function Index() {
         </div>
       </section>
 
-      {/* VISIT — HOURS + LOCATION */}
+      {/* VISIT, HOURS + LOCATION */}
       <section id="visit" className="bg-cream-deep py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16">
           <Reveal className="md:col-span-5">
-            <span className="text-eyebrow text-clay">05 — Visit</span>
+            <span className="text-eyebrow text-clay">05, Visit</span>
             <h2 className="mt-6 text-display text-[clamp(2.4rem,6vw,5rem)] text-espresso-deep">
               Ramplaan 44.
               <br />
@@ -498,12 +541,14 @@ function Index() {
       {/* FOOTER */}
       <footer className="bg-espresso-deep text-cream pt-20 md:pt-28 pb-10">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="overflow-hidden">
-            <h2 className="font-serif italic text-[clamp(4rem,20vw,18rem)] leading-[0.85] text-cream tracking-tighter">
-              oso.
-            </h2>
+          <div className="flex justify-center">
+            <img
+              src={logo}
+              alt="OSO Coffee"
+              className="h-20 md:h-28 w-auto brightness-0 invert opacity-90"
+            />
           </div>
-          <div className="mt-12 grid md:grid-cols-3 gap-10 border-t border-cream/15 pt-10">
+          <div className="mt-16 grid md:grid-cols-3 gap-10 border-t border-cream/15 pt-10">
             <div>
               <span className="text-eyebrow text-cream/60">Find us</span>
               <p className="mt-4 font-serif text-xl">Ramplaan 44</p>
