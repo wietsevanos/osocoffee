@@ -13,9 +13,9 @@ import photoCups from "@/assets/photo-cups.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OSO Coffee — Bar, coffee, bites & pastries · Haarlem" },
+      { title: "OSO Coffee, Bar, coffee, bites & pastries · Haarlem" },
       { name: "description", content: "OSO Coffee is a new neighborhood coffee bar in Haarlem. Bar, coffee, bites & pastries. Opening soon at Ramplaan 44." },
-      { property: "og:title", content: "OSO Coffee — Opening soon in Haarlem" },
+      { property: "og:title", content: "OSO Coffee, Opening soon in Haarlem" },
       { property: "og:description", content: "A cozy, finca-inspired coffee bar. Bar, coffee, bites & pastries." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
