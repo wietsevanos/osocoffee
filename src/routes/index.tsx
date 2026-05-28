@@ -100,24 +100,9 @@ function Index() {
           scrolled ? "py-3 backdrop-blur-md bg-cream/75 border-b border-espresso/10" : "py-6"
         }`}
       >
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-3">
-            <img src={logo} alt="OSO Coffee" className="h-9 w-9 md:h-10 md:w-10 rounded-full" />
-            <span className="font-serif text-xl tracking-tight">oso<span className="text-clay">.</span></span>
-          </a>
-          <nav className="hidden md:flex items-center gap-9 text-sm text-espresso-deep/80">
-            {NAV.map((n) => (
-              <a key={n.href} href={n.href} className="relative hover:text-espresso transition-colors group">
-                {n.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-espresso transition-all duration-500 group-hover:w-full" />
-              </a>
-            ))}
-          </nav>
-          <a
-            href="#visit"
-            className="inline-flex items-center gap-2 rounded-full border border-espresso/30 px-4 py-2 text-xs uppercase tracking-[0.18em] hover:bg-espresso hover:text-cream transition-colors"
-          >
-            Visit
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center">
+          <a href="#top" className="flex items-center" aria-label="OSO Coffee">
+            <img src={logo} alt="OSO Coffee" className="h-10 md:h-12 w-auto" />
           </a>
         </div>
       </header>
@@ -140,7 +125,7 @@ function Index() {
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
             <p className="md:col-span-5 text-base md:text-lg leading-relaxed text-espresso-deep/75 max-w-md animate-rise" style={{ animationDelay: "120ms" }}>
-              OSO — Spanish for <em>bear</em> — is a new neighborhood coffee bar opening at Ramplaan 44.
+              OSO, Spanish for <em>bear</em>, is a new neighborhood coffee bar opening at Ramplaan 44.
               Bar, coffee, bites &amp; pastries, served in a warm, finca-inspired space.
             </p>
             <div className="md:col-span-4 md:col-start-9 flex flex-col gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
@@ -157,7 +142,7 @@ function Index() {
                 href="#careers"
                 className="text-sm text-espresso-deep/70 hover:text-espresso transition-colors pl-6"
               >
-                We&rsquo;re hiring — join the team →
+                We&rsquo;re hiring, join the team →
               </a>
             </div>
           </div>
@@ -167,8 +152,8 @@ function Index() {
             <div className="grid grid-cols-12 gap-4 md:gap-6">
               <div className="col-span-12 md:col-span-8 relative overflow-hidden rounded-sm">
                 <img
-                  src={heroCoffee}
-                  alt="A handmade ceramic cup of coffee on linen, lit by warm afternoon sun"
+                  src={photoTable}
+                  alt="OSO menu, terracotta dishes, candle and a glass of red wine on an oak table"
                   className="w-full h-[55vh] md:h-[78vh] object-cover"
                   width={1600}
                   height={1920}
@@ -177,8 +162,8 @@ function Index() {
               <div className="col-span-12 md:col-span-4 flex flex-col gap-4 md:gap-6">
                 <div className="relative overflow-hidden rounded-sm flex-1 min-h-[28vh]">
                   <img
-                    src={texturePlaster}
-                    alt="Warm plaster wall with arched alcove"
+                    src={photoShelf}
+                    alt="Soft sconce light on a plaster wall above an oak shelf with stacked glassware"
                     className="w-full h-full object-cover"
                     loading="lazy"
                     width={1200}
