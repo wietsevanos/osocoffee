@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/oso-logo.png";
-import heroCoffee from "@/assets/hero-coffee.jpg";
-import interior from "@/assets/interior-alcove.jpg";
-import bites from "@/assets/bites.jpg";
-import texturePlaster from "@/assets/texture-plaster.jpg";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
+import photoTable from "@/assets/photo-table.jpg";
+import photoShelf from "@/assets/photo-shelf.jpg";
+import photoCakes from "@/assets/photo-cakes.jpg";
+import photoDoor from "@/assets/photo-door.jpg";
+import photoChair from "@/assets/photo-chair.jpg";
+import photoProduce from "@/assets/photo-produce.jpg";
+import photoDrinks from "@/assets/photo-drinks.jpg";
+import photoCups from "@/assets/photo-cups.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
