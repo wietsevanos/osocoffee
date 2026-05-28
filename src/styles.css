@@ -5,17 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * OSO Coffee — design system.
+ * Warm, editorial, finca-inspired. Espresso brown + cream.
  */
 
 @theme inline {
@@ -59,42 +50,61 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-sand: var(--sand);
+  --color-clay: var(--clay);
+  --color-espresso: var(--espresso);
+  --color-espresso-deep: var(--espresso-deep);
+  --color-ink: var(--ink);
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 0.5rem;
+
+  /* Brand palette */
+  --cream: oklch(0.962 0.018 92);          /* #f3f1e2 */
+  --cream-deep: oklch(0.935 0.022 88);     /* deeper cream */
+  --sand: oklch(0.88 0.035 75);            /* warm sand */
+  --clay: oklch(0.74 0.07 55);             /* soft clay */
+  --espresso: oklch(0.43 0.08 50);         /* #6e3f23 */
+  --espresso-deep: oklch(0.32 0.06 45);    /* deeper espresso */
+  --ink: oklch(0.22 0.02 50);              /* charcoal */
+
+  --background: var(--cream);
+  --foreground: var(--espresso-deep);
+  --card: oklch(0.978 0.012 90);
+  --card-foreground: var(--espresso-deep);
+  --popover: var(--cream);
+  --popover-foreground: var(--espresso-deep);
+  --primary: var(--espresso);
+  --primary-foreground: var(--cream);
+  --secondary: var(--sand);
+  --secondary-foreground: var(--espresso-deep);
+  --muted: oklch(0.93 0.02 85);
+  --muted-foreground: oklch(0.5 0.04 55);
+  --accent: var(--clay);
+  --accent-foreground: var(--cream);
+  --destructive: oklch(0.55 0.18 30);
+  --destructive-foreground: var(--cream);
+  --border: oklch(0.88 0.022 80);
+  --input: oklch(0.88 0.022 80);
+  --ring: var(--espresso);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --sidebar: var(--cream);
+  --sidebar-foreground: var(--espresso-deep);
+  --sidebar-primary: var(--espresso);
+  --sidebar-primary-foreground: var(--cream);
+  --sidebar-accent: var(--sand);
+  --sidebar-accent-foreground: var(--espresso-deep);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 .dark {
@@ -140,5 +150,52 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
   }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-family: var(--font-serif);
+    font-weight: 350;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+  }
+  .text-eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+  .bg-cream { background-color: var(--cream); }
+  .bg-cream-deep { background-color: var(--cream-deep); }
+  .bg-sand { background-color: var(--sand); }
+  .bg-espresso { background-color: var(--espresso); }
+  .bg-espresso-deep { background-color: var(--espresso-deep); }
+  .text-cream { color: var(--cream); }
+  .text-espresso { color: var(--espresso); }
+  .text-espresso-deep { color: var(--espresso-deep); }
+  .text-clay { color: var(--clay); }
+  .border-espresso { border-color: var(--espresso); }
+
+  @keyframes oso-rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-rise { animation: oso-rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+  @keyframes oso-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: oso-marquee 38s linear infinite; }
 }
