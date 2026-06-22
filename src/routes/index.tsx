@@ -644,7 +644,7 @@ function Index() {
             </div>
             <div>
               <span className="text-eyebrow text-cream/60">Contact</span>
-              <p className="mt-4 font-serif text-xl">hello@osocoffee.nl</p>
+              <a href="mailto:osohaarlem@outlook.com" className="mt-4 font-serif text-xl block hover:text-clay transition-colors">osohaarlem@outlook.com</a>
               <p className="text-cream/70">Press &amp; partnerships welcome</p>
             </div>
             <div>
