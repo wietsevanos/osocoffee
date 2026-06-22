@@ -9,6 +9,7 @@ import photoChair from "@/assets/photo-chair.jpg";
 import photoProduce from "@/assets/photo-produce.jpg";
 import photoDrinks from "@/assets/photo-drinks.jpg";
 import photoCups from "@/assets/photo-cups.jpg";
+import elCamionAudio from "@/assets/el-camion.mp3.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
