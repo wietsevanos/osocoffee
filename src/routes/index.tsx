@@ -502,6 +502,61 @@ function Index() {
         </div>
       </section>
 
+      {/* INSTAGRAM */}
+      <section id="instagram" className="py-24 md:py-36 bg-cream">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <Reveal>
+            <span className="text-eyebrow text-clay">Instagram</span>
+          </Reveal>
+          <div className="mt-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <Reveal>
+              <h2 className="font-serif text-[clamp(2.4rem,7vw,6rem)] leading-[0.95] text-espresso-deep">
+                <span className="italic">@</span>osocoffee.haarlem
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <a
+                href="https://www.instagram.com/osocoffee.haarlem/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-espresso-deep/80 hover:text-espresso transition-colors underline-offset-4 hover:underline"
+              >
+                Volg ons op Instagram →
+              </a>
+            </Reveal>
+          </div>
+
+          <Reveal delay={150} className="mt-14 md:mt-20">
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-5">
+              {[
+                { src: photoCups, alt: "OSO Coffee, freshly poured cups on the bar" },
+                { src: photoCakes, alt: "Seasonal pastries and cakes at OSO Coffee" },
+                { src: photoDrinks, alt: "Signature drinks at OSO Coffee" },
+                { src: photoTable, alt: "Candlelit oak table at OSO Coffee" },
+                { src: photoProduce, alt: "Fresh produce used in the OSO kitchen" },
+                { src: photoDoor, alt: "Entrance of OSO Coffee at Ramplaan 44" },
+              ].map((p, i) => (
+                <a
+                  key={i}
+                  href="https://www.instagram.com/osocoffee.haarlem/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative block overflow-hidden rounded-md aspect-square"
+                >
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
+                  />
+                  <span className="absolute inset-0 bg-espresso/0 group-hover:bg-espresso/25 transition-colors duration-500" />
+                </a>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* VISIT, HOURS + LOCATION */}
       <section id="visit" className="bg-cream-deep py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16">
