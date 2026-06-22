@@ -14,8 +14,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "OSO Coffee, Bar, coffee, bites & pastries · Haarlem" },
-      { name: "description", content: "OSO Coffee is a new neighborhood coffee bar in Haarlem. Bar, coffee, bites & pastries. Opening soon at Ramplaan 44." },
-      { property: "og:title", content: "OSO Coffee, Opening soon in Haarlem" },
+      { name: "description", content: "OSO Coffee is a neighborhood coffee bar in Haarlem. Bar, coffee, bites & pastries at Ramplaan 44." },
+      { property: "og:title", content: "OSO Coffee, Haarlem" },
       { property: "og:description", content: "A cozy, finca-inspired coffee bar. Bar, coffee, bites & pastries." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -126,7 +126,7 @@ function Index() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="flex items-center gap-3 text-eyebrow text-espresso/70 animate-rise">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-clay animate-pulse" />
-            Opening soon · Haarlem
+            Now open · Haarlem
           </div>
 
           <h1 className="text-display mt-8 text-[clamp(3.2rem,11vw,11rem)] text-espresso-deep animate-rise">
@@ -139,7 +139,7 @@ function Index() {
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
             <p className="md:col-span-5 text-base md:text-lg leading-relaxed text-espresso-deep/75 max-w-md animate-rise" style={{ animationDelay: "120ms" }}>
-              OSO, Spanish for <em>bear</em>, is a new neighborhood coffee bar opening at Ramplaan 44.
+              OSO, Spanish for <em>bear</em>, is a neighborhood coffee bar at Ramplaan 44.
               Bar, coffee, bites &amp; pastries, served in a warm, finca-inspired space.
             </p>
             <div className="md:col-span-4 md:col-start-9 flex flex-col gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
@@ -206,7 +206,7 @@ function Index() {
         <div className="flex w-max animate-marquee whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex items-center gap-12 pr-12 font-serif text-3xl md:text-5xl text-espresso/80">
-              <span>Opening soon</span>
+              <span>Now open</span>
               <span className="text-clay">✦</span>
               <span className="italic">Bar · coffee · bites</span>
               <span className="text-clay">✦</span>
