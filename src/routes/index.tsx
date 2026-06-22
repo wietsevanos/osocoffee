@@ -502,6 +502,38 @@ function Index() {
         </div>
       </section>
 
+      {/* STORY / QUOTE */}
+      <section className="py-24 md:py-36 bg-sand/40">
+        <div className="mx-auto max-w-[1100px] px-6 md:px-10">
+          <Reveal>
+            <span className="text-eyebrow text-clay">In their words</span>
+          </Reveal>
+          <Reveal delay={80}>
+            <blockquote className="mt-8 font-serif text-[clamp(1.6rem,3.2vw,2.6rem)] leading-[1.25] text-espresso-deep">
+              <span className="italic text-clay">&ldquo;</span>
+              Born from a love for Spanish fincas and coffee, OSO opened its
+              doors earlier this year. Beau used to live on Ibiza, and back in
+              Haarlem she missed the people, the Spanish mentality, the vibe.
+              She&rsquo;s bringing all of that home, with great coffee,
+              pastries and a lunch menu, the homemade tostadas are so good.
+              Soon Spanish wines and bites will join the menu.
+              <br />
+              <span className="italic">
+                A must visit, and a perfect place to chill before or after a
+                walk in Elswout.
+              </span>
+              <span className="italic text-clay">&rdquo;</span>
+            </blockquote>
+          </Reveal>
+          <Reveal delay={160}>
+            <div className="mt-10 flex items-center gap-3 text-eyebrow text-espresso/60">
+              <span className="inline-block h-px w-10 bg-espresso/40" />
+              A neighborhood note
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* INSTAGRAM */}
       <section id="instagram" className="py-24 md:py-36 bg-cream">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
