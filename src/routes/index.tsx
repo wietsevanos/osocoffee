@@ -92,8 +92,74 @@ function Index() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Ambient background music: La Bolsa, Gabriel Rios.
+  // Browsers block autoplay with sound, so we try once on mount, and
+  // also start on the first user gesture if that attempt is denied.
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [playing, setPlaying] = useState(false);
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+    el.volume = 0.35;
+    const tryPlay = () => {
+      el.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    };
+    tryPlay();
+    const onGesture = () => {
+      if (el.paused) tryPlay();
+      window.removeEventListener("pointerdown", onGesture);
+      window.removeEventListener("keydown", onGesture);
+      window.removeEventListener("scroll", onGesture);
+    };
+    window.addEventListener("pointerdown", onGesture, { once: true });
+    window.addEventListener("keydown", onGesture, { once: true });
+    window.addEventListener("scroll", onGesture, { once: true, passive: true });
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
+    el.addEventListener("play", onPlay);
+    el.addEventListener("pause", onPause);
+    return () => {
+      el.removeEventListener("play", onPlay);
+      el.removeEventListener("pause", onPause);
+      window.removeEventListener("pointerdown", onGesture);
+      window.removeEventListener("keydown", onGesture);
+      window.removeEventListener("scroll", onGesture);
+    };
+  }, []);
+  const toggleAudio = () => {
+    const el = audioRef.current;
+    if (!el) return;
+    if (el.paused) el.play().catch(() => {});
+    else el.pause();
+  };
+
   return (
     <main className="min-h-screen bg-cream text-espresso-deep selection:bg-espresso selection:text-cream">
+      {/* Ambient audio */}
+      <audio
+        ref={audioRef}
+        src="/audio/la-bolsa.mp3"
+        loop
+        preload="auto"
+        playsInline
+      />
+
+      {/* Sticky audio toggle */}
+      <button
+        type="button"
+        onClick={toggleAudio}
+        aria-label={playing ? "Pause background music" : "Play background music"}
+        aria-pressed={playing}
+        className="fixed bottom-5 left-5 z-[60] group inline-flex items-center gap-2 rounded-full border border-espresso/20 bg-cream/85 backdrop-blur-md pl-3 pr-4 py-2 text-[11px] uppercase tracking-[0.18em] text-espresso-deep/80 shadow-[0_10px_30px_-15px_rgba(110,63,35,0.35)] hover:bg-cream transition-all"
+      >
+        <span className="relative inline-flex items-end gap-[2px] h-3 w-4" aria-hidden>
+          <span className={`w-[2px] bg-espresso ${playing ? "animate-eq1" : "h-[3px]"}`} />
+          <span className={`w-[2px] bg-espresso ${playing ? "animate-eq2" : "h-[6px]"}`} />
+          <span className={`w-[2px] bg-espresso ${playing ? "animate-eq3" : "h-[4px]"}`} />
+        </span>
+        <span className="hidden sm:inline">{playing ? "Sound on" : "Sound off"}</span>
+      </button>
+
       {/* NAV */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
