@@ -138,7 +138,7 @@ function Index() {
       {/* Ambient audio */}
       <audio
         ref={audioRef}
-        src="/audio/la-bolsa.mp3"
+        src={elCamionAudio.url}
         loop
         preload="auto"
         playsInline
