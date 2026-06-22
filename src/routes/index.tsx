@@ -14,8 +14,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "OSO Coffee, Bar, coffee, bites & pastries · Haarlem" },
-      { name: "description", content: "OSO Coffee is a new neighborhood coffee bar in Haarlem. Bar, coffee, bites & pastries. Opening soon at Ramplaan 44." },
-      { property: "og:title", content: "OSO Coffee, Opening soon in Haarlem" },
+      { name: "description", content: "OSO Coffee is a neighborhood coffee bar in Haarlem. Bar, coffee, bites & pastries at Ramplaan 44." },
+      { property: "og:title", content: "OSO Coffee, Haarlem" },
       { property: "og:description", content: "A cozy, finca-inspired coffee bar. Bar, coffee, bites & pastries." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -126,7 +126,7 @@ function Index() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="flex items-center gap-3 text-eyebrow text-espresso/70 animate-rise">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-clay animate-pulse" />
-            Opening soon · Haarlem
+            Now open · Haarlem
           </div>
 
           <h1 className="text-display mt-8 text-[clamp(3.2rem,11vw,11rem)] text-espresso-deep animate-rise">
@@ -139,7 +139,7 @@ function Index() {
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
             <p className="md:col-span-5 text-base md:text-lg leading-relaxed text-espresso-deep/75 max-w-md animate-rise" style={{ animationDelay: "120ms" }}>
-              OSO, Spanish for <em>bear</em>, is a new neighborhood coffee bar opening at Ramplaan 44.
+              OSO, Spanish for <em>bear</em>, is a neighborhood coffee bar at Ramplaan 44.
               Bar, coffee, bites &amp; pastries, served in a warm, finca-inspired space.
             </p>
             <div className="md:col-span-4 md:col-start-9 flex flex-col gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
@@ -206,7 +206,7 @@ function Index() {
         <div className="flex w-max animate-marquee whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex items-center gap-12 pr-12 font-serif text-3xl md:text-5xl text-espresso/80">
-              <span>Opening soon</span>
+              <span>Now open</span>
               <span className="text-clay">✦</span>
               <span className="italic">Bar · coffee · bites</span>
               <span className="text-clay">✦</span>
@@ -407,19 +407,18 @@ function Index() {
         </div>
       </section>
 
-      {/* OPENING SOON */}
+      {/* VISIT US */}
       <section className="relative bg-espresso text-cream py-28 md:py-40 overflow-hidden">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 text-center">
           <Reveal>
-            <span className="text-eyebrow text-cream/70">A new chapter</span>
+            <span className="text-eyebrow text-cream/70">Now open</span>
             <h2 className="mt-8 text-display text-[clamp(3rem,12vw,11rem)] text-cream">
-              Opening
+              Come
               <br />
-              <span className="italic">soon.</span>
+              <span className="italic">say hello.</span>
             </h2>
             <p className="mt-10 mx-auto max-w-xl text-cream/75">
-              We&rsquo;re finishing the last details. Follow along, or stop by Ramplaan 44 to say hello
-              once the doors are open.
+              The doors are open. Stop by Ramplaan 44 for a coffee, a bite, or a quiet moment in the bar.
             </p>
             <div className="mt-12 flex flex-wrap justify-center gap-3">
               <a
@@ -583,7 +582,7 @@ function Index() {
           </div>
           <div className="mt-16 flex flex-wrap items-center justify-between gap-4 text-xs text-cream/50">
             <p>© {new Date().getFullYear()} OSO Coffee. All rights reserved.</p>
-            <p>Opening soon · Haarlem</p>
+            <p>Ramplaan 44 · Haarlem</p>
           </div>
         </div>
       </footer>
