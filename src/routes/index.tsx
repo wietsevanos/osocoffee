@@ -447,55 +447,75 @@ function Index() {
             <Reveal className="md:col-span-7">
               <span className="text-eyebrow text-clay">04, Careers</span>
               <h2 className="mt-6 text-display text-[clamp(2.4rem,7vw,6rem)] text-espresso-deep">
-                We&rsquo;re building
+                We are
                 <br />
-                <span className="italic text-espresso">a team.</span>
+                <span className="italic text-espresso">looking.</span>
               </h2>
             </Reveal>
             <Reveal delay={100} className="md:col-span-4 md:col-start-9">
               <p className="text-espresso-deep/75">
-                OSO is hiring warm, considered people who care about craft and hospitality. Open roles
-                below, we&rsquo;d love to hear from you.
+                OSO is becoming a place for good coffee, easy conversation and a relaxed atmosphere.
+                To shape that feeling, we are looking for an enthusiastic barista to strengthen the team.
               </p>
             </Reveal>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            {[
-              { role: "Head Barista", type: "Full-time", note: "Lead the bar, dial in our blends, mentor the team." },
-              { role: "Barista", type: "Full / part-time", note: "Open mornings, considered pours, friendly to regulars." },
-              { role: "Pastry & Kitchen", type: "Full-time", note: "Bake daily, develop the seasonal bites menu with us." },
-            ].map((r, i) => (
-              <Reveal key={r.role} delay={i * 100}>
+          <div className="grid md:grid-cols-12 gap-4 md:gap-6">
+            <Reveal className="md:col-span-7">
+              <div className="relative h-full rounded-sm border border-espresso/15 bg-cream-deep p-8 md:p-12">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-eyebrow text-espresso/60">Open role</span>
+                  <span className="text-eyebrow text-clay">Now hiring</span>
+                </div>
+                <h3 className="mt-10 font-serif text-4xl md:text-6xl text-espresso-deep leading-[1.02]">
+                  Part-time Barista
+                  <span className="block italic text-espresso/80 text-2xl md:text-3xl mt-2">2 to 3 days per week</span>
+                </h3>
+                <div className="mt-8 space-y-5 text-espresso-deep/80 max-w-xl">
+                  <p>
+                    You serve coffee with care, welcome our guests with a smile and contribute to a clean,
+                    warm and easygoing workplace.
+                  </p>
+                  <p>
+                    Experience behind the bar is a plus, but absolutely not a must. We will teach you our
+                    craft, our blends and the rhythm of the room.
+                  </p>
+                </div>
                 <a
-                  href="mailto:hello@osocoffee.nl?subject=Application%20-%20OSO%20Coffee"
-                  className="group relative block h-full rounded-sm border border-espresso/15 bg-cream-deep p-7 md:p-9 transition-all duration-500 hover:border-espresso hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(110,63,35,0.35)]"
+                  href="mailto:osohaarlem@outlook.com?subject=Application%20-%20Part-time%20Barista"
+                  className="mt-10 inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-6 py-3 text-sm hover:bg-espresso-deep transition-colors"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="text-eyebrow text-espresso/60">{r.type}</span>
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-espresso/30 text-espresso transition-all group-hover:bg-espresso group-hover:text-cream group-hover:rotate-[-45deg]">
-                      →
-                    </span>
-                  </div>
-                  <h3 className="mt-10 font-serif text-3xl md:text-4xl text-espresso-deep leading-tight">
-                    {r.role}
-                  </h3>
-                  <p className="mt-4 text-sm text-espresso-deep/70 max-w-xs">{r.note}</p>
+                  Mail us, osohaarlem@outlook.com →
                 </a>
-              </Reveal>
-            ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={120} className="md:col-span-5">
+              <div className="h-full rounded-sm bg-espresso text-cream p-8 md:p-10 flex flex-col">
+                <span className="text-eyebrow text-cream/60">What we offer</span>
+                <ul className="mt-8 space-y-5 font-serif text-xl md:text-2xl leading-snug">
+                  <li className="flex gap-4"><span className="text-clay">01</span> A warm, finca-inspired space to call your second home.</li>
+                  <li className="flex gap-4"><span className="text-clay">02</span> Fair pay, flexible hours, regular team tastings.</li>
+                  <li className="flex gap-4"><span className="text-clay">03</span> Specialty coffee training, from grind to pour.</li>
+                  <li className="flex gap-4"><span className="text-clay">04</span> A small, considered team that cares deeply.</li>
+                </ul>
+                <div className="mt-auto pt-10 text-sm text-cream/70">
+                  Open conversation, Wednesday to Sunday at Ramplaan 44.
+                </div>
+              </div>
+            </Reveal>
           </div>
 
           <Reveal>
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-sm bg-sand/50 p-6 md:p-8">
               <p className="font-serif text-xl md:text-2xl text-espresso-deep">
-                Don&rsquo;t see your role? We&rsquo;re still listening.
+                Not a barista, but you love OSO? Still write to us.
               </p>
               <a
-                href="mailto:hello@osocoffee.nl"
+                href="mailto:osohaarlem@outlook.com"
                 className="inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-5 py-3 text-sm hover:bg-espresso-deep transition-colors"
               >
-                hello@osocoffee.nl →
+                osohaarlem@outlook.com →
               </a>
             </div>
           </Reveal>
