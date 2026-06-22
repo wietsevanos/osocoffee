@@ -102,12 +102,13 @@ function Index() {
     const el = audioRef.current;
     if (!el) return;
     el.volume = 0.35;
-    const tryPlay = () => {
-      el.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
-    };
-    tryPlay();
+    // Start muted so browsers allow autoplay, then unmute on first gesture.
+    el.muted = true;
+    el.play().catch(() => {});
     const onGesture = () => {
-      if (el.paused) tryPlay();
+      el.muted = false;
+      if (el.paused) el.play().catch(() => {});
+      setPlaying(!el.paused && !el.muted);
       window.removeEventListener("pointerdown", onGesture);
       window.removeEventListener("keydown", onGesture);
       window.removeEventListener("scroll", onGesture);
@@ -115,7 +116,7 @@ function Index() {
     window.addEventListener("pointerdown", onGesture, { once: true });
     window.addEventListener("keydown", onGesture, { once: true });
     window.addEventListener("scroll", onGesture, { once: true, passive: true });
-    const onPlay = () => setPlaying(true);
+    const onPlay = () => setPlaying(!el.muted);
     const onPause = () => setPlaying(false);
     el.addEventListener("play", onPlay);
     el.addEventListener("pause", onPause);
@@ -130,8 +131,13 @@ function Index() {
   const toggleAudio = () => {
     const el = audioRef.current;
     if (!el) return;
-    if (el.paused) el.play().catch(() => {});
-    else el.pause();
+    if (el.paused || el.muted) {
+      el.muted = false;
+      el.play().then(() => setPlaying(true)).catch(() => {});
+    } else {
+      el.pause();
+      setPlaying(false);
+    }
   };
 
   return (
