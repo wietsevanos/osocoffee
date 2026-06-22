@@ -407,19 +407,18 @@ function Index() {
         </div>
       </section>
 
-      {/* OPENING SOON */}
+      {/* VISIT US */}
       <section className="relative bg-espresso text-cream py-28 md:py-40 overflow-hidden">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 text-center">
           <Reveal>
-            <span className="text-eyebrow text-cream/70">A new chapter</span>
+            <span className="text-eyebrow text-cream/70">Now open</span>
             <h2 className="mt-8 text-display text-[clamp(3rem,12vw,11rem)] text-cream">
-              Opening
+              Come
               <br />
-              <span className="italic">soon.</span>
+              <span className="italic">say hello.</span>
             </h2>
             <p className="mt-10 mx-auto max-w-xl text-cream/75">
-              We&rsquo;re finishing the last details. Follow along, or stop by Ramplaan 44 to say hello
-              once the doors are open.
+              The doors are open. Stop by Ramplaan 44 for a coffee, a bite, or a quiet moment in the bar.
             </p>
             <div className="mt-12 flex flex-wrap justify-center gap-3">
               <a
@@ -583,7 +582,7 @@ function Index() {
           </div>
           <div className="mt-16 flex flex-wrap items-center justify-between gap-4 text-xs text-cream/50">
             <p>© {new Date().getFullYear()} OSO Coffee. All rights reserved.</p>
-            <p>Opening soon · Haarlem</p>
+            <p>Ramplaan 44 · Haarlem</p>
           </div>
         </div>
       </footer>
