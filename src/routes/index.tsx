@@ -9,7 +9,7 @@ import photoChair from "@/assets/photo-chair.jpg";
 import photoProduce from "@/assets/photo-produce.jpg";
 import photoDrinks from "@/assets/photo-drinks.jpg";
 import photoCups from "@/assets/photo-cups.jpg";
-import laBolsaAudio from "@/assets/la-bolsa.mp3.asset.json";
+import nyc1940Audio from "@/assets/nyc-1940.mp3.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -139,7 +139,7 @@ function Index() {
       {/* Ambient audio */}
       <audio
         ref={audioRef}
-        src={laBolsaAudio.url}
+        src={nyc1940Audio.url}
         loop
         preload="auto"
         playsInline
