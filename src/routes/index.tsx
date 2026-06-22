@@ -468,7 +468,7 @@ function Index() {
             ].map((r, i) => (
               <Reveal key={r.role} delay={i * 100}>
                 <a
-                  href="mailto:hello@osocoffee.nl?subject=Application%20-%20OSO%20Coffee"
+                  href="mailto:osohaarlem@outlook.com?subject=Application%20-%20OSO%20Coffee"
                   className="group relative block h-full rounded-sm border border-espresso/15 bg-cream-deep p-7 md:p-9 transition-all duration-500 hover:border-espresso hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(110,63,35,0.35)]"
                 >
                   <div className="flex items-start justify-between gap-4">
@@ -492,10 +492,10 @@ function Index() {
                 Don&rsquo;t see your role? We&rsquo;re still listening.
               </p>
               <a
-                href="mailto:hello@osocoffee.nl"
+                href="mailto:osohaarlem@outlook.com"
                 className="inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-5 py-3 text-sm hover:bg-espresso-deep transition-colors"
               >
-                hello@osocoffee.nl →
+                osohaarlem@outlook.com →
               </a>
             </div>
           </Reveal>
@@ -624,7 +624,7 @@ function Index() {
             </div>
             <div>
               <span className="text-eyebrow text-cream/60">Contact</span>
-              <p className="mt-4 font-serif text-xl">hello@osocoffee.nl</p>
+              <p className="mt-4 font-serif text-xl">osohaarlem@outlook.com</p>
               <p className="text-cream/70">Press &amp; partnerships welcome</p>
             </div>
             <div>
