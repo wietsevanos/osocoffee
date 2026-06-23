@@ -384,7 +384,7 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={120} className="md:col-span-4 md:col-start-9 order-1 md:order-2">
-            <span className="text-eyebrow text-clay">Produce</span>
+            <span className="text-eyebrow text-clay">03, Produce</span>
             <p className="mt-6 font-serif text-2xl md:text-3xl leading-snug text-espresso-deep">
               Sourced weekly, cooked slowly, served warm.
             </p>
@@ -400,7 +400,7 @@ function Index() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid md:grid-cols-12 gap-10 items-end mb-10 md:mb-14">
             <Reveal className="md:col-span-7">
-              <span className="text-eyebrow text-clay">In motion</span>
+              <span className="text-eyebrow text-clay">04, In motion</span>
               <h2 className="mt-6 text-display text-[clamp(2.2rem,6vw,5rem)] text-espresso-deep">
                 A quiet
                 <br />
@@ -433,7 +433,7 @@ function Index() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid md:grid-cols-12 gap-10 items-end mb-12 md:mb-20">
             <Reveal className="md:col-span-7">
-              <span className="text-eyebrow text-clay">03, The space</span>
+              <span className="text-eyebrow text-clay">05, The space</span>
               <h2 className="mt-6 text-display text-[clamp(2.4rem,7vw,6rem)] text-espresso-deep">
                 Alcoves, arches,
                 <br />
@@ -484,7 +484,7 @@ function Index() {
       <section className="relative bg-espresso text-cream py-28 md:py-40 overflow-hidden">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 text-center">
           <Reveal>
-            <span className="text-eyebrow text-cream/70">Now open</span>
+            <span className="text-eyebrow text-cream/70">06, Say hello</span>
             <h2 className="mt-8 text-display text-[clamp(3rem,12vw,11rem)] text-cream">
               Come
               <br />
@@ -518,7 +518,7 @@ function Index() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-14 md:mb-20">
             <Reveal className="md:col-span-7">
-              <span className="text-eyebrow text-clay">04, Careers</span>
+              <span className="text-eyebrow text-clay">07, Careers</span>
               <h2 className="mt-6 text-display text-[clamp(2.4rem,7vw,6rem)] text-espresso-deep">
                 We&rsquo;re building
                 <br />
@@ -591,7 +591,7 @@ function Index() {
               <Reveal>
                 <div className="flex items-center gap-3 text-eyebrow text-clay">
                   <span className="inline-block h-px w-8 bg-clay/60" />
-                  In their words
+                  08, In their words
                 </div>
               </Reveal>
               <Reveal delay={120}>
@@ -652,7 +652,7 @@ function Index() {
       <section id="instagram" className="py-24 md:py-36 bg-cream">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <Reveal>
-            <span className="text-eyebrow text-clay">Instagram</span>
+            <span className="text-eyebrow text-clay">09, Instagram</span>
           </Reveal>
           <div className="mt-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <Reveal>
@@ -707,7 +707,7 @@ function Index() {
       <section id="visit" className="bg-cream-deep py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16">
           <Reveal className="md:col-span-5">
-            <span className="text-eyebrow text-clay">05, Visit</span>
+            <span className="text-eyebrow text-clay">10, Visit</span>
             <h2 className="mt-6 text-display text-[clamp(2.4rem,6vw,5rem)] text-espresso-deep">
               Ramplaan 44.
               <br />
