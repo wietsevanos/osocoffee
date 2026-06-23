@@ -617,7 +617,7 @@ function Index() {
                   <p className="mt-8">
                     Beau used to live on Ibiza, and back in Haarlem she missed
                     the people, the Spanish mentality, the vibe. She&rsquo;s
-                    bringing all of that home &mdash; with great coffee,
+                    bringing all of that home, with great coffee,
                     pastries and a lunch menu.{" "}
                     <span className="italic text-clay">
                       The homemade tostadas are so good.
@@ -629,7 +629,7 @@ function Index() {
                   </p>
 
                   <p className="mt-10 text-[clamp(1.25rem,2.1vw,1.65rem)] italic text-espresso/80 leading-[1.45]">
-                    A must visit &mdash; and a perfect place to chill before or
+                    A must visit, and a perfect place to chill before or
                     after a walk in Elswout.
                   </p>
                 </blockquote>
