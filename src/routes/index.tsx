@@ -657,7 +657,7 @@ function Index() {
           <div className="mt-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <Reveal>
               <h2 className="font-serif text-[clamp(2.4rem,7vw,6rem)] leading-[0.95] text-espresso-deep">
-                <span className="italic">@</span>osocoffee.haarlem
+                <span className="italic">@</span>&nbsp;osocoffee.haarlem
               </h2>
             </Reveal>
             <Reveal delay={100}>
