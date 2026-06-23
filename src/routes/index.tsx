@@ -576,34 +576,75 @@ function Index() {
       </section>
 
       {/* STORY / QUOTE */}
-      <section className="py-24 md:py-36 bg-sand/40">
-        <div className="mx-auto max-w-[1100px] px-6 md:px-10">
-          <Reveal>
-            <span className="text-eyebrow text-clay">In their words</span>
-          </Reveal>
-          <Reveal delay={80}>
-            <blockquote className="mt-8 font-serif text-[clamp(1.6rem,3.2vw,2.6rem)] leading-[1.25] text-espresso-deep">
-              <span className="italic text-clay">&ldquo;</span>
-              Born from a love for Spanish fincas and coffee, OSO opened its
-              doors earlier this year. Beau used to live on Ibiza, and back in
-              Haarlem she missed the people, the Spanish mentality, the vibe.
-              She&rsquo;s bringing all of that home, with great coffee,
-              pastries and a lunch menu, the homemade tostadas are so good.
-              Soon Spanish wines and bites will join the menu.
-              <br />
-              <span className="italic">
-                A must visit, and a perfect place to chill before or after a
-                walk in Elswout.
-              </span>
-              <span className="italic text-clay">&rdquo;</span>
-            </blockquote>
-          </Reveal>
-          <Reveal delay={160}>
-            <div className="mt-10 flex items-center gap-3 text-eyebrow text-espresso/60">
-              <span className="inline-block h-px w-10 bg-espresso/40" />
-              A neighborhood note
+      <section className="py-28 md:py-44 bg-sand/40 relative overflow-hidden">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-10 -left-6 md:top-10 md:left-10 font-serif text-[18rem] md:text-[26rem] leading-none text-espresso/[0.06] select-none"
+        >
+          &ldquo;
+        </div>
+
+        <div className="relative mx-auto max-w-[1200px] px-6 md:px-12">
+          <div className="grid grid-cols-12 gap-y-10 md:gap-x-12">
+            {/* Left rail */}
+            <div className="col-span-12 md:col-span-3">
+              <Reveal>
+                <div className="flex items-center gap-3 text-eyebrow text-clay">
+                  <span className="inline-block h-px w-8 bg-clay/60" />
+                  In their words
+                </div>
+              </Reveal>
+              <Reveal delay={120}>
+                <p className="mt-6 font-serif italic text-espresso/70 text-lg leading-snug hidden md:block">
+                  A neighborhood
+                  <br />
+                  note from a
+                  <br />
+                  recent visit.
+                </p>
+              </Reveal>
             </div>
-          </Reveal>
+
+            {/* Quote */}
+            <div className="col-span-12 md:col-span-9">
+              <Reveal delay={80}>
+                <blockquote className="font-serif text-[clamp(1.5rem,2.9vw,2.35rem)] leading-[1.35] text-espresso-deep">
+                  <p>
+                    Born from a love for Spanish fincas and coffee, OSO opened
+                    its doors earlier this year.
+                  </p>
+
+                  <p className="mt-8">
+                    Beau used to live on Ibiza, and back in Haarlem she missed
+                    the people, the Spanish mentality, the vibe. She&rsquo;s
+                    bringing all of that home &mdash; with great coffee,
+                    pastries and a lunch menu.{" "}
+                    <span className="italic text-clay">
+                      The homemade tostadas are so good.
+                    </span>
+                  </p>
+
+                  <p className="mt-8">
+                    Soon, Spanish wines and bites will join the menu.
+                  </p>
+
+                  <p className="mt-10 text-[clamp(1.25rem,2.1vw,1.65rem)] italic text-espresso/80 leading-[1.45]">
+                    A must visit &mdash; and a perfect place to chill before or
+                    after a walk in Elswout.
+                  </p>
+                </blockquote>
+              </Reveal>
+
+              <Reveal delay={200}>
+                <div className="mt-12 flex items-center gap-4">
+                  <span className="inline-block h-px w-12 bg-espresso/40" />
+                  <span className="text-eyebrow text-espresso/60">
+                    Overheard in Haarlem
+                  </span>
+                </div>
+              </Reveal>
+            </div>
+          </div>
         </div>
       </section>
 
