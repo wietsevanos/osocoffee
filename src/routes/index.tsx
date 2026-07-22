@@ -1,15 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/oso-logo.png";
+import bear from "@/assets/oso-bear.png";
 import photoTable from "@/assets/photo-table.jpg";
-import photoShelf from "@/assets/photo-shelf.jpg";
-import photoCakes from "@/assets/photo-cakes.jpg";
-import photoDoor from "@/assets/photo-door.jpg";
-import photoChair from "@/assets/photo-chair.jpg";
+import photoShelfAsset from "@/assets/photo-shelf-new.png.asset.json";
+import photoCakesAsset from "@/assets/photo-cakes-new.png.asset.json";
+import photoDoorAsset from "@/assets/photo-door-new.png.asset.json";
+import photoChairAsset from "@/assets/photo-chair-new.png.asset.json";
 import photoProduce from "@/assets/photo-produce.jpg";
 import photoDrinks from "@/assets/photo-drinks.jpg";
 import photoCups from "@/assets/photo-cups.jpg";
 import nyc1940Audio from "@/assets/nyc-1940.mp3.asset.json";
+
+const photoShelf = photoShelfAsset.url;
+const photoCakes = photoCakesAsset.url;
+const photoDoor = photoDoorAsset.url;
+const photoChair = photoChairAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
