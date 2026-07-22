@@ -5,9 +5,33 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * OSO Coffee — design system.
- * Warm, editorial, finca-inspired. Espresso brown + cream.
+ * OSO Coffee — design system (v2).
+ * Warm, editorial, finca-inspired.
+ * Palette: cream #F1F1E1, espresso #6F3F1F, ink #181613, blue #1A3F90, yellow #E9D94A.
+ * Type: Hanken Grotesk (display + body), Horus (script accents).
  */
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("/__l5e/assets-v1/00a4cc88-9cf4-471a-a3b6-8d09778c8eec/HankenGrotesk.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("/__l5e/assets-v1/5cf33cc2-f2ac-4d78-95b0-6e34376a546c/HankenGrotesk-Italic.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Horus";
+  src: url("/__l5e/assets-v1/a68940b9-4943-4312-977c-6b62664c2720/Horus.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -57,40 +81,45 @@
   --color-espresso: var(--espresso);
   --color-espresso-deep: var(--espresso-deep);
   --color-ink: var(--ink);
-  --font-serif: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-blue: var(--blue);
+  --color-yellow: var(--yellow);
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Horus", "Hanken Grotesk", cursive;
 }
 
 :root {
   --radius: 0.5rem;
 
-  /* Brand palette */
-  --cream: oklch(0.962 0.018 92);          /* #f3f1e2 */
-  --cream-deep: oklch(0.935 0.022 88);     /* deeper cream */
-  --sand: oklch(0.88 0.035 75);            /* warm sand */
-  --clay: oklch(0.74 0.07 55);             /* soft clay */
-  --espresso: oklch(0.43 0.08 50);         /* #6e3f23 */
-  --espresso-deep: oklch(0.32 0.06 45);    /* deeper espresso */
-  --ink: oklch(0.22 0.02 50);              /* charcoal */
+  /* Brand palette — hex-locked */
+  --cream: #F1F1E1;
+  --cream-deep: #E7E5D2;
+  --sand: #DED9BE;
+  --clay: #B98056;
+  --espresso: #6F3F1F;
+  --espresso-deep: #4A2812;
+  --ink: #181613;
+  --blue: #1A3F90;
+  --yellow: #E9D94A;
 
   --background: var(--cream);
-  --foreground: var(--espresso-deep);
-  --card: oklch(0.978 0.012 90);
-  --card-foreground: var(--espresso-deep);
+  --foreground: var(--ink);
+  --card: #F7F5E8;
+  --card-foreground: var(--ink);
   --popover: var(--cream);
-  --popover-foreground: var(--espresso-deep);
+  --popover-foreground: var(--ink);
   --primary: var(--espresso);
   --primary-foreground: var(--cream);
   --secondary: var(--sand);
-  --secondary-foreground: var(--espresso-deep);
-  --muted: oklch(0.93 0.02 85);
-  --muted-foreground: oklch(0.5 0.04 55);
-  --accent: var(--clay);
+  --secondary-foreground: var(--ink);
+  --muted: #E7E5D2;
+  --muted-foreground: #6B655A;
+  --accent: var(--blue);
   --accent-foreground: var(--cream);
-  --destructive: oklch(0.55 0.18 30);
+  --destructive: #B04528;
   --destructive-foreground: var(--cream);
-  --border: oklch(0.88 0.022 80);
-  --input: oklch(0.88 0.022 80);
+  --border: #D9D4BE;
+  --input: #D9D4BE;
   --ring: var(--espresso);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -151,28 +180,32 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
+    font-feature-settings: "ss01";
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, .font-serif {
-    font-family: var(--font-serif);
-    font-optical-sizing: auto;
-    letter-spacing: -0.02em;
+  h1, h2, h3, h4 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.03em;
   }
 }
 
 @layer utilities {
   .text-display {
-    font-family: var(--font-serif);
-    font-weight: 350;
-    line-height: 0.92;
-    letter-spacing: -0.035em;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+  }
+  .font-script {
+    font-family: var(--font-script);
+    font-weight: 400;
+    letter-spacing: 0;
   }
   .text-eyebrow {
     font-family: var(--font-sans);
     text-transform: uppercase;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
     font-size: 0.72rem;
     font-weight: 500;
   }
@@ -181,11 +214,19 @@
   .bg-sand { background-color: var(--sand); }
   .bg-espresso { background-color: var(--espresso); }
   .bg-espresso-deep { background-color: var(--espresso-deep); }
+  .bg-ink { background-color: var(--ink); }
+  .bg-blue { background-color: var(--blue); }
+  .bg-yellow { background-color: var(--yellow); }
   .text-cream { color: var(--cream); }
   .text-espresso { color: var(--espresso); }
   .text-espresso-deep { color: var(--espresso-deep); }
+  .text-ink { color: var(--ink); }
   .text-clay { color: var(--clay); }
+  .text-blue { color: var(--blue); }
+  .text-yellow { color: var(--yellow); }
   .border-espresso { border-color: var(--espresso); }
+  .border-ink { border-color: var(--ink); }
+  .border-blue { border-color: var(--blue); }
 
   @keyframes oso-rise {
     from { opacity: 0; transform: translateY(24px); }
