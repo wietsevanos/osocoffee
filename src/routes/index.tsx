@@ -513,15 +513,21 @@ function Index() {
               <br />
               <span className="italic">say hello.</span>
             </h2>
+            <img
+              src={bear}
+              alt=""
+              aria-hidden
+              className="mx-auto mt-8 h-16 md:h-20 w-auto opacity-90 -rotate-6"
+            />
             <p className="mt-10 mx-auto max-w-xl text-cream/75">
               The doors are open. Stop by Ramplaan 44 for a coffee, a bite, or a quiet moment in the bar.
             </p>
             <div className="mt-12 flex flex-wrap justify-center gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/osocoffee.haarlem/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center rounded-full bg-cream text-espresso px-6 py-3 text-sm hover:bg-cream-deep transition-colors"
+                className="inline-flex items-center rounded-full bg-butter text-espresso-deep px-6 py-3 text-sm font-medium hover:brightness-95 transition-all"
               >
                 Follow on Instagram
               </a>
