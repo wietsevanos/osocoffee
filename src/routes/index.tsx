@@ -1,15 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/oso-logo.png";
+import bear from "@/assets/oso-bear.png";
 import photoTable from "@/assets/photo-table.jpg";
-import photoShelf from "@/assets/photo-shelf.jpg";
-import photoCakes from "@/assets/photo-cakes.jpg";
-import photoDoor from "@/assets/photo-door.jpg";
-import photoChair from "@/assets/photo-chair.jpg";
+import photoShelfAsset from "@/assets/photo-shelf-new.png.asset.json";
+import photoCakesAsset from "@/assets/photo-cakes-new.png.asset.json";
+import photoDoorAsset from "@/assets/photo-door-new.png.asset.json";
+import photoChairAsset from "@/assets/photo-chair-new.png.asset.json";
 import photoProduce from "@/assets/photo-produce.jpg";
 import photoDrinks from "@/assets/photo-drinks.jpg";
 import photoCups from "@/assets/photo-cups.jpg";
 import nyc1940Audio from "@/assets/nyc-1940.mp3.asset.json";
+
+const photoShelf = photoShelfAsset.url;
+const photoCakes = photoCakesAsset.url;
+const photoDoor = photoDoorAsset.url;
+const photoChair = photoChairAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -181,13 +187,13 @@ function Index() {
             {NAV.map((n) => (
               <a key={n.href} href={n.href} className="relative hover:text-espresso transition-colors group">
                 {n.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-espresso transition-all duration-500 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-funky transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
           </nav>
           <a
             href="#visit"
-            className="inline-flex items-center gap-2 rounded-full border border-espresso/30 px-4 py-2 text-xs uppercase tracking-[0.18em] hover:bg-espresso hover:text-cream transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-funky text-cream px-4 py-2 text-xs uppercase tracking-[0.18em] hover:bg-espresso hover:text-cream transition-colors"
           >
             Visit
           </a>
@@ -198,16 +204,22 @@ function Index() {
       <section id="top" className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="flex items-center gap-3 text-eyebrow text-espresso/70 animate-rise">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-clay animate-pulse" />
+            <span className="inline-block h-2 w-2 rounded-full bg-butter animate-pulse ring-2 ring-butter/40" />
             Now open · Haarlem
           </div>
 
-          <h1 className="text-display mt-8 text-[clamp(3.2rem,11vw,11rem)] text-espresso-deep animate-rise">
+          <h1 className="text-display mt-8 text-[clamp(3.2rem,11vw,11rem)] text-espresso-deep animate-rise relative">
             A cozy
             <br />
             corner for
             <br />
             <span className="italic text-espresso">slow mornings.</span>
+            <img
+              src={bear}
+              alt=""
+              aria-hidden
+              className="hidden md:block absolute -top-6 right-0 h-24 lg:h-32 w-auto rotate-[8deg] select-none pointer-events-none"
+            />
           </h1>
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
@@ -218,10 +230,10 @@ function Index() {
             <div className="md:col-span-4 md:col-start-9 flex flex-col gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
               <a
                 href="#about"
-                className="group inline-flex items-center justify-between rounded-full bg-espresso text-cream pl-6 pr-2 py-2 text-sm tracking-wide hover:bg-espresso-deep transition-colors"
+                className="group inline-flex items-center justify-between rounded-full bg-funky text-cream pl-6 pr-2 py-2 text-sm tracking-wide hover:bg-espresso transition-colors"
               >
                 Discover OSO
-                <span className="ml-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-espresso transition-transform group-hover:translate-x-1">
+                <span className="ml-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-butter text-espresso-deep transition-transform group-hover:translate-x-1">
                   →
                 </span>
               </a>
@@ -275,20 +287,20 @@ function Index() {
       </section>
 
       {/* MARQUEE */}
-      <section aria-hidden className="border-y border-espresso/15 py-6 overflow-hidden bg-cream-deep">
+      <section aria-hidden className="border-y border-espresso/15 py-6 overflow-hidden bg-funky text-cream">
         <div className="flex w-max animate-marquee whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex items-center gap-12 pr-12 font-serif text-3xl md:text-5xl text-espresso/80">
+            <div key={i} className="flex items-center gap-12 pr-12 font-serif text-3xl md:text-5xl">
               <span>Now open</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
               <span className="italic">Bar · coffee · bites</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
               <span>Haarlem</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
               <span className="italic">We&rsquo;re hiring</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
               <span>Ramplaan 44</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
             </div>
           ))}
         </div>
@@ -349,23 +361,34 @@ function Index() {
             </h2>
             <ul className="mt-10 divide-y divide-espresso/15">
               {[
-                ["Espresso", "Single origin · seasonal", "3.20"],
-                ["Flat white", "Whole milk · oat on request", "4.20"],
-                ["Iced matcha", "Ceremonial grade, oat milk", "4.80"],
-                ["Almond cake", "Baked in house, daily", "4.50"],
-                ["Albóndigas", "Slow tomato, basil, parmesan", "9.50"],
-                ["Natural wine", "From 16:00, Wed to Sun", "—"],
-              ].map(([name, desc, price]) => (
-                <li key={name} className="flex items-baseline justify-between gap-6 py-5">
+                { name: "Espresso", desc: "Single origin, seasonal", price: "3.20" },
+                { name: "Flat white", desc: "Whole milk, oat on request", price: "4.20" },
+                { name: "Iced matcha", desc: "Ceremonial grade, oat milk", price: "4.80" },
+                { name: "Almond cake", desc: "Baked in house, daily", price: "4.50" },
+                { name: "Banana bread", desc: "Warm slice, brown butter", price: "4.20" },
+                { name: "Cinnamon bun", desc: "Cardamom sugar, glossy top", price: "4.50" },
+                { name: "Lunch", desc: "Tostadas, salads, bocadillos", price: "", soon: true },
+                { name: "Natural wine", desc: "Small Spanish producers", price: "", soon: true },
+                { name: "Tapas", desc: "Albóndigas, patatas, olives", price: "", soon: true },
+                { name: "Drinks", desc: "Vermouth, spritz, aperitivos", price: "", soon: true },
+              ].map((item) => (
+                <li key={item.name} className="flex items-baseline justify-between gap-6 py-5">
                   <div>
-                    <p className="font-serif text-xl text-espresso-deep">{name}</p>
-                    <p className="text-sm text-espresso-deep/60 mt-1" dangerouslySetInnerHTML={{ __html: desc }} />
+                    <p className="font-serif text-xl text-espresso-deep flex items-center gap-3 flex-wrap">
+                      {item.name}
+                      {item.soon && <span className="coming-soon-chip">Coming soon</span>}
+                    </p>
+                    <p className="text-sm text-espresso-deep/60 mt-1">{item.desc}</p>
                   </div>
-                  <span className="font-serif text-lg text-espresso tabular-nums">{price}</span>
+                  {item.price && (
+                    <span className="font-serif text-lg text-espresso tabular-nums">{item.price}</span>
+                  )}
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-xs text-espresso-deep/60">Full menu revealed at opening.</p>
+            <p className="mt-8 text-xs text-espresso-deep/60">
+              Today, coffee &amp; pastries. Lunch, wine, tapas &amp; drinks arriving soon.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -490,15 +513,21 @@ function Index() {
               <br />
               <span className="italic">say hello.</span>
             </h2>
+            <img
+              src={bear}
+              alt=""
+              aria-hidden
+              className="mx-auto mt-8 h-16 md:h-20 w-auto opacity-90 -rotate-6"
+            />
             <p className="mt-10 mx-auto max-w-xl text-cream/75">
               The doors are open. Stop by Ramplaan 44 for a coffee, a bite, or a quiet moment in the bar.
             </p>
             <div className="mt-12 flex flex-wrap justify-center gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/osocoffee.haarlem/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center rounded-full bg-cream text-espresso px-6 py-3 text-sm hover:bg-cream-deep transition-colors"
+                className="inline-flex items-center rounded-full bg-butter text-espresso-deep px-6 py-3 text-sm font-medium hover:brightness-95 transition-all"
               >
                 Follow on Instagram
               </a>
@@ -566,7 +595,7 @@ function Index() {
               </p>
               <a
                 href="mailto:osohaarlem@outlook.com"
-                className="inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-5 py-3 text-sm hover:bg-espresso-deep transition-colors"
+                className="inline-flex items-center gap-3 rounded-full bg-funky text-cream px-5 py-3 text-sm hover:bg-espresso transition-colors"
               >
                 osohaarlem@outlook.com →
               </a>
@@ -755,11 +784,17 @@ function Index() {
       {/* FOOTER */}
       <footer className="bg-espresso-deep text-cream pt-20 md:pt-28 pb-10">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="flex">
+          <div className="flex items-center gap-4">
             <img
               src={logo}
               alt="OSO Coffee"
               className="h-16 md:h-24 w-auto brightness-0 invert opacity-90"
+            />
+            <img
+              src={bear}
+              alt=""
+              aria-hidden
+              className="h-12 md:h-16 w-auto opacity-90"
             />
           </div>
           <div className="mt-16 grid md:grid-cols-3 gap-10 border-t border-cream/15 pt-10">
@@ -776,8 +811,8 @@ function Index() {
             <div>
               <span className="text-eyebrow text-cream/60">Follow</span>
               <div className="mt-4 flex flex-col gap-1">
-                <a href="https://instagram.com" className="hover:text-clay transition-colors">Instagram →</a>
-                <a href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem" className="hover:text-clay transition-colors">Google Maps →</a>
+                <a href="https://www.instagram.com/osocoffee.haarlem/" className="hover:text-butter transition-colors">Instagram →</a>
+                <a href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem" className="hover:text-butter transition-colors">Google Maps →</a>
               </div>
             </div>
           </div>
