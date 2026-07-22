@@ -595,7 +595,7 @@ function Index() {
               </p>
               <a
                 href="mailto:osohaarlem@outlook.com"
-                className="inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-5 py-3 text-sm hover:bg-espresso-deep transition-colors"
+                className="inline-flex items-center gap-3 rounded-full bg-funky text-cream px-5 py-3 text-sm hover:bg-espresso transition-colors"
               >
                 osohaarlem@outlook.com →
               </a>
@@ -784,11 +784,17 @@ function Index() {
       {/* FOOTER */}
       <footer className="bg-espresso-deep text-cream pt-20 md:pt-28 pb-10">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="flex">
+          <div className="flex items-center gap-4">
             <img
               src={logo}
               alt="OSO Coffee"
               className="h-16 md:h-24 w-auto brightness-0 invert opacity-90"
+            />
+            <img
+              src={bear}
+              alt=""
+              aria-hidden
+              className="h-12 md:h-16 w-auto opacity-90"
             />
           </div>
           <div className="mt-16 grid md:grid-cols-3 gap-10 border-t border-cream/15 pt-10">
@@ -805,8 +811,8 @@ function Index() {
             <div>
               <span className="text-eyebrow text-cream/60">Follow</span>
               <div className="mt-4 flex flex-col gap-1">
-                <a href="https://instagram.com" className="hover:text-clay transition-colors">Instagram →</a>
-                <a href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem" className="hover:text-clay transition-colors">Google Maps →</a>
+                <a href="https://www.instagram.com/osocoffee.haarlem/" className="hover:text-butter transition-colors">Instagram →</a>
+                <a href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem" className="hover:text-butter transition-colors">Google Maps →</a>
               </div>
             </div>
           </div>
