@@ -361,23 +361,34 @@ function Index() {
             </h2>
             <ul className="mt-10 divide-y divide-espresso/15">
               {[
-                ["Espresso", "Single origin · seasonal", "3.20"],
-                ["Flat white", "Whole milk · oat on request", "4.20"],
-                ["Iced matcha", "Ceremonial grade, oat milk", "4.80"],
-                ["Almond cake", "Baked in house, daily", "4.50"],
-                ["Albóndigas", "Slow tomato, basil, parmesan", "9.50"],
-                ["Natural wine", "From 16:00, Wed to Sun", "—"],
-              ].map(([name, desc, price]) => (
-                <li key={name} className="flex items-baseline justify-between gap-6 py-5">
+                { name: "Espresso", desc: "Single origin, seasonal", price: "3.20" },
+                { name: "Flat white", desc: "Whole milk, oat on request", price: "4.20" },
+                { name: "Iced matcha", desc: "Ceremonial grade, oat milk", price: "4.80" },
+                { name: "Almond cake", desc: "Baked in house, daily", price: "4.50" },
+                { name: "Banana bread", desc: "Warm slice, brown butter", price: "4.20" },
+                { name: "Cinnamon bun", desc: "Cardamom sugar, glossy top", price: "4.50" },
+                { name: "Lunch", desc: "Tostadas, salads, bocadillos", price: "", soon: true },
+                { name: "Natural wine", desc: "Small Spanish producers", price: "", soon: true },
+                { name: "Tapas", desc: "Albóndigas, patatas, olives", price: "", soon: true },
+                { name: "Drinks", desc: "Vermouth, spritz, aperitivos", price: "", soon: true },
+              ].map((item) => (
+                <li key={item.name} className="flex items-baseline justify-between gap-6 py-5">
                   <div>
-                    <p className="font-serif text-xl text-espresso-deep">{name}</p>
-                    <p className="text-sm text-espresso-deep/60 mt-1" dangerouslySetInnerHTML={{ __html: desc }} />
+                    <p className="font-serif text-xl text-espresso-deep flex items-center gap-3 flex-wrap">
+                      {item.name}
+                      {item.soon && <span className="coming-soon-chip">Coming soon</span>}
+                    </p>
+                    <p className="text-sm text-espresso-deep/60 mt-1">{item.desc}</p>
                   </div>
-                  <span className="font-serif text-lg text-espresso tabular-nums">{price}</span>
+                  {item.price && (
+                    <span className="font-serif text-lg text-espresso tabular-nums">{item.price}</span>
+                  )}
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-xs text-espresso-deep/60">Full menu revealed at opening.</p>
+            <p className="mt-8 text-xs text-espresso-deep/60">
+              Today, coffee &amp; pastries. Lunch, wine, tapas &amp; drinks arriving soon.
+            </p>
           </Reveal>
         </div>
       </section>
