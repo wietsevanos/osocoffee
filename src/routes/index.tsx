@@ -187,13 +187,13 @@ function Index() {
             {NAV.map((n) => (
               <a key={n.href} href={n.href} className="relative hover:text-espresso transition-colors group">
                 {n.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-espresso transition-all duration-500 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-funky transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
           </nav>
           <a
             href="#visit"
-            className="inline-flex items-center gap-2 rounded-full border border-espresso/30 px-4 py-2 text-xs uppercase tracking-[0.18em] hover:bg-espresso hover:text-cream transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-funky text-cream px-4 py-2 text-xs uppercase tracking-[0.18em] hover:bg-espresso hover:text-cream transition-colors"
           >
             Visit
           </a>
@@ -204,16 +204,22 @@ function Index() {
       <section id="top" className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="flex items-center gap-3 text-eyebrow text-espresso/70 animate-rise">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-clay animate-pulse" />
+            <span className="inline-block h-2 w-2 rounded-full bg-butter animate-pulse ring-2 ring-butter/40" />
             Now open · Haarlem
           </div>
 
-          <h1 className="text-display mt-8 text-[clamp(3.2rem,11vw,11rem)] text-espresso-deep animate-rise">
+          <h1 className="text-display mt-8 text-[clamp(3.2rem,11vw,11rem)] text-espresso-deep animate-rise relative">
             A cozy
             <br />
             corner for
             <br />
             <span className="italic text-espresso">slow mornings.</span>
+            <img
+              src={bear}
+              alt=""
+              aria-hidden
+              className="hidden md:block absolute -top-6 right-0 h-24 lg:h-32 w-auto rotate-[8deg] select-none pointer-events-none"
+            />
           </h1>
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
@@ -224,10 +230,10 @@ function Index() {
             <div className="md:col-span-4 md:col-start-9 flex flex-col gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
               <a
                 href="#about"
-                className="group inline-flex items-center justify-between rounded-full bg-espresso text-cream pl-6 pr-2 py-2 text-sm tracking-wide hover:bg-espresso-deep transition-colors"
+                className="group inline-flex items-center justify-between rounded-full bg-funky text-cream pl-6 pr-2 py-2 text-sm tracking-wide hover:bg-espresso transition-colors"
               >
                 Discover OSO
-                <span className="ml-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-espresso transition-transform group-hover:translate-x-1">
+                <span className="ml-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-butter text-espresso-deep transition-transform group-hover:translate-x-1">
                   →
                 </span>
               </a>
@@ -281,20 +287,20 @@ function Index() {
       </section>
 
       {/* MARQUEE */}
-      <section aria-hidden className="border-y border-espresso/15 py-6 overflow-hidden bg-cream-deep">
+      <section aria-hidden className="border-y border-espresso/15 py-6 overflow-hidden bg-funky text-cream">
         <div className="flex w-max animate-marquee whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex items-center gap-12 pr-12 font-serif text-3xl md:text-5xl text-espresso/80">
+            <div key={i} className="flex items-center gap-12 pr-12 font-serif text-3xl md:text-5xl">
               <span>Now open</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
               <span className="italic">Bar · coffee · bites</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
               <span>Haarlem</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
               <span className="italic">We&rsquo;re hiring</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
               <span>Ramplaan 44</span>
-              <span className="text-clay">✦</span>
+              <span className="text-butter">✦</span>
             </div>
           ))}
         </div>
