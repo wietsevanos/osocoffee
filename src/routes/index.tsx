@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/oso-logo.png";
 import bearBrown from "@/assets/bear-brown.png.asset.json";
 import bearYellow from "@/assets/bear-yellow.svg.asset.json";
+import bearBlue from "@/assets/bear-blue-outlined.png.asset.json";
 import nyc1940Audio from "@/assets/nyc-1940.mp3.asset.json";
 
 // Real photography — imported as CDN pointers.
@@ -92,6 +93,24 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
     >
       {children}
     </div>
+  );
+}
+
+function ArrowIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.25}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M5 12h14" />
+      <path d="M13 5l7 7-7 7" />
+    </svg>
   );
 }
 
@@ -222,18 +241,25 @@ function Index() {
             Now open, Haarlem
           </div>
 
-          <h1 className="text-display mt-8 text-[clamp(3.2rem,11vw,11rem)] text-ink animate-rise">
-            A cozy
-            <br />
-            corner for
-            <br />
-            <span className="font-script text-espresso italic-safe">slow mornings.</span>
-          </h1>
+          <div className="mt-8 grid md:grid-cols-12 gap-6 md:gap-10 items-end animate-rise">
+            <h1 className="md:col-span-9 text-display text-[clamp(3rem,10vw,10rem)] text-ink">
+              Coffee,
+              <br />
+              slow mornings.
+            </h1>
+            <div className="md:col-span-3 hidden md:flex justify-end pb-2">
+              <img
+                src={bearBlue.url}
+                alt=""
+                aria-hidden
+                className="w-28 lg:w-36 h-auto opacity-90"
+              />
+            </div>
+          </div>
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
             <p className="md:col-span-5 text-base md:text-lg leading-relaxed text-ink/75 max-w-md animate-rise" style={{ animationDelay: "120ms" }}>
-              OSO, Spanish for <em>bear</em>, is a neighborhood coffee bar at Ramplaan 44.
-              Born from a love for Spanish fincas, we serve considered coffee and honest pastries in a warm, quiet space.
+              A neighborhood coffee bar in Haarlem, born from a love for Spanish fincas.
             </p>
             <div className="md:col-span-4 md:col-start-9 flex flex-col gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
               <a
@@ -242,14 +268,15 @@ function Index() {
               >
                 Discover OSO
                 <span className="ml-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-espresso transition-transform group-hover:translate-x-1">
-                  →
+                  <ArrowIcon className="h-4 w-4" />
                 </span>
               </a>
               <a
                 href="#careers"
-                className="text-sm text-ink/70 hover:text-espresso transition-colors pl-6"
+                className="text-sm text-ink/70 hover:text-espresso transition-colors pl-6 inline-flex items-center gap-2"
               >
-                We&rsquo;re hiring, join the team →
+                We&rsquo;re hiring, join the team
+                <ArrowIcon className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>
@@ -697,8 +724,8 @@ function Index() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <span className="text-eyebrow text-espresso/60">{r.type}</span>
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-espresso/30 text-espresso transition-all group-hover:bg-espresso group-hover:text-cream group-hover:rotate-[-45deg]">
-                      →
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-espresso text-cream transition-all duration-500 group-hover:bg-blue group-hover:-rotate-45">
+                      <ArrowIcon className="h-4 w-4" />
                     </span>
                   </div>
                   <h3 className="mt-10 text-3xl md:text-4xl text-ink leading-tight font-light">
@@ -717,9 +744,10 @@ function Index() {
               </p>
               <a
                 href="mailto:osohaarlem@outlook.com"
-                className="inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-5 py-3 text-sm hover:bg-espresso-deep transition-colors"
+                className="group inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-5 py-3 text-sm hover:bg-espresso-deep transition-colors"
               >
-                osohaarlem@outlook.com →
+                osohaarlem@outlook.com
+                <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
           </Reveal>
