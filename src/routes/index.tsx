@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/oso-logo.png";
 import bearBrown from "@/assets/bear-brown.png.asset.json";
+import bearYellow from "@/assets/bear-yellow.svg.asset.json";
 import nyc1940Audio from "@/assets/nyc-1940.mp3.asset.json";
 
 // Real photography — imported as CDN pointers.
@@ -285,8 +286,8 @@ function Index() {
                   />
                   <span className="text-eyebrow text-espresso/70">A neighborhood bar</span>
                   <div className="mt-4 relative">
-                    <p className="font-script text-3xl md:text-4xl leading-tight text-espresso">
-                      Coffee &amp; pastries.
+                    <p className="text-3xl md:text-4xl leading-tight text-ink font-light">
+                      Coffee <span className="font-script text-espresso">&amp;</span> pastries.
                     </p>
                     <p className="mt-3 text-sm text-ink/70">Ramplaan 44, 2015 GX Haarlem</p>
                   </div>
@@ -298,20 +299,20 @@ function Index() {
       </section>
 
       {/* MARQUEE */}
-      <section aria-hidden className="border-y border-espresso/15 py-6 overflow-hidden bg-cream-deep">
+      <section aria-hidden className="py-6 overflow-hidden bg-blue text-cream">
         <div className="flex w-max animate-marquee whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex items-center gap-12 pr-12 text-3xl md:text-5xl text-espresso/80 font-light">
+            <div key={i} className="flex items-center gap-10 pr-10 text-3xl md:text-5xl text-cream font-light">
               <span>Now open</span>
-              <span className="text-blue">✦</span>
-              <span className="font-script text-espresso">coffee &amp; pastries</span>
-              <span className="text-blue">✦</span>
+              <img src={bearYellow.url} alt="" aria-hidden className="h-10 md:h-14 w-auto" />
+              <span>coffee &amp; pastries</span>
+              <span className="text-yellow">✦</span>
               <span>Haarlem</span>
-              <span className="text-blue">✦</span>
-              <span className="font-script text-espresso">we&rsquo;re hiring</span>
-              <span className="text-blue">✦</span>
+              <img src={bearYellow.url} alt="" aria-hidden className="h-10 md:h-14 w-auto" />
+              <span>we&rsquo;re hiring</span>
+              <span className="text-yellow">✦</span>
               <span>Ramplaan 44</span>
-              <span className="text-blue">✦</span>
+              <span className="text-yellow">✦</span>
             </div>
           ))}
         </div>
@@ -321,18 +322,21 @@ function Index() {
       <section id="about" className="py-24 md:py-40">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16">
           <Reveal className="md:col-span-4">
-            <span className="text-eyebrow text-blue">01, About</span>
+            <div className="flex items-center gap-3">
+              <span className="text-eyebrow text-blue">01, About</span>
+              <img src={bearBrown.url} alt="" aria-hidden className="h-8 w-auto opacity-80" />
+            </div>
             <p className="mt-6 text-2xl leading-snug text-ink font-light">
-              OSO means <em>bear</em> in Spanish. A symbol of warmth, of comfort, of the kind of slow afternoons we&rsquo;re built around.
+              OSO means <span className="text-emphasis text-espresso">bear</span> in Spanish. A symbol of warmth, of comfort, of the kind of slow afternoons we&rsquo;re built around.
             </p>
           </Reveal>
           <Reveal delay={100} className="md:col-span-8">
             <h2 className="text-display text-[clamp(2.4rem,6.5vw,5.5rem)] text-ink">
               A neighborhood
               <br />
-              bar, designed
+              bar, designed to
               <br />
-              <span className="font-script text-espresso">to feel like home.</span>
+              feel like home.
             </h2>
             <div className="mt-10 grid sm:grid-cols-2 gap-8 max-w-2xl text-ink/75">
               <p>
@@ -379,11 +383,11 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={120} className="md:col-span-6">
-            <span className="text-eyebrow text-blue">02, Coffee &amp; bites</span>
+            <span className="text-eyebrow text-espresso">02, Coffee &amp; bites</span>
             <h2 className="mt-6 text-display text-[clamp(2.2rem,5.5vw,4.5rem)] text-ink">
               Quiet menu.
               <br />
-              <span className="font-script text-espresso">Loud care.</span>
+              Loud care.
             </h2>
 
             <p className="mt-6 text-ink/75 max-w-md">
@@ -411,12 +415,13 @@ function Index() {
               ))}
             </ul>
 
-            <div className="mt-10 rounded-sm border border-espresso/20 bg-cream/70 p-6">
+            <div className="mt-10 relative rounded-sm border border-espresso/20 bg-cream/70 p-6 overflow-hidden">
+              <img src={bearYellow.url} alt="" aria-hidden className="pointer-events-none absolute -right-4 -bottom-6 h-28 w-auto opacity-70" />
               <div className="flex items-center gap-3">
-                <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-ink">
+                <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-ink font-medium">
                   Coming soon
                 </span>
-                <span className="text-eyebrow text-espresso/70">Lunch, wine &amp; tapas</span>
+                <span className="text-eyebrow text-espresso">Lunch, wine &amp; tapas</span>
               </div>
               <p className="mt-4 text-ink/75">
                 Tostadas, padrón peppers, Manchego, natural Spanish wines and small plates, joining the menu in the coming months. A slow, seasonal lunch, from the finca to Ramplaan.
@@ -435,7 +440,7 @@ function Index() {
               <h2 className="mt-6 text-display text-[clamp(2rem,5vw,4rem)] text-ink">
                 Pastries, cakes,
                 <br />
-                <span className="font-script text-espresso">quiet mornings.</span>
+                quiet mornings.
               </h2>
             </Reveal>
             <Reveal delay={100} className="md:col-span-5 md:col-start-8">
@@ -474,11 +479,11 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={120} className="md:col-span-4 md:col-start-9 order-1 md:order-2">
-            <span className="text-eyebrow text-blue">04, The bar</span>
+            <span className="text-eyebrow text-espresso">04, The bar</span>
             <h2 className="mt-6 text-display text-[clamp(2rem,4.8vw,3.6rem)] text-ink">
               La Marzocco,
               <br />
-              <span className="font-script text-espresso">pulled slowly.</span>
+              pulled slowly.
             </h2>
             <p className="mt-6 text-ink/75">
               Espresso, flat whites and filter on our custom OSO cups, blue, yellow and espresso brown. Small equipment, careful hands, honest coffee.
@@ -488,25 +493,26 @@ function Index() {
       </section>
 
       {/* VIDEO */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-espresso text-cream">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid md:grid-cols-12 gap-10 items-end mb-10 md:mb-14">
             <Reveal className="md:col-span-7">
-              <span className="text-eyebrow text-blue">05, In motion</span>
-              <h2 className="mt-6 text-display text-[clamp(2.2rem,6vw,5rem)] text-ink">
+              <span className="text-eyebrow text-yellow">05, In motion</span>
+              <h2 className="mt-6 text-display text-[clamp(2.2rem,6vw,5rem)] text-cream">
                 A quiet
                 <br />
-                <span className="font-script text-espresso">afternoon at OSO.</span>
+                afternoon at OSO.
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:col-start-9">
-              <p className="text-ink/75">
+              <p className="text-cream/80">
                 Light, plaster, terracotta and the soft rhythm of the bar. A short film from the space.
               </p>
             </Reveal>
           </div>
           <Reveal>
-            <div className="overflow-hidden rounded-sm">
+            <div className="relative overflow-hidden rounded-sm">
+              <img src={bearYellow.url} alt="" aria-hidden className="pointer-events-none absolute top-4 left-4 md:top-6 md:left-6 h-12 md:h-16 w-auto z-10 drop-shadow-lg" />
               <video
                 src="/oso-video.mp4"
                 poster={p109.url}
@@ -530,7 +536,7 @@ function Index() {
               <h2 className="mt-6 text-display text-[clamp(2.4rem,7vw,6rem)] text-ink">
                 Alcoves, arches,
                 <br />
-                <span className="font-script text-espresso">afternoon light.</span>
+                afternoon light.
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:col-start-9">
@@ -592,10 +598,10 @@ function Index() {
           </Reveal>
           <Reveal delay={120} className="md:col-span-4 md:col-start-9">
             <div className="flex items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-ink">
+              <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-ink font-medium">
                 Coming soon
               </span>
-              <span className="text-eyebrow text-blue">07, Lunch &amp; tapas</span>
+              <span className="text-eyebrow text-espresso">07, Lunch &amp; tapas</span>
             </div>
             <p className="mt-6 text-2xl leading-snug text-ink font-light">
               Sourced weekly, cooked slowly, served warm.
@@ -615,22 +621,22 @@ function Index() {
       </section>
 
       {/* SAY HELLO — brown block */}
-      <section className="relative bg-espresso text-cream py-28 md:py-40 overflow-hidden">
+      <section className="relative bg-ink text-cream py-28 md:py-40 overflow-hidden">
         <img
           src={bearBrown.url}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -left-16 -bottom-10 w-[380px] opacity-[0.08]"
+          className="pointer-events-none absolute -left-16 -bottom-10 w-[380px] opacity-[0.10]"
         />
         <img
-          src={bearBrown.url}
+          src={bearYellow.url}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -right-16 -top-10 w-[300px] opacity-[0.08] -scale-x-100"
+          className="pointer-events-none absolute -right-16 -top-10 w-[300px] opacity-[0.18] -scale-x-100"
         />
         <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 text-center">
           <Reveal>
-            <span className="text-eyebrow text-cream/70">08, Say hello</span>
+            <span className="text-eyebrow text-yellow">08, Say hello</span>
             <h2 className="mt-8 text-display text-[clamp(3rem,12vw,11rem)] text-cream">
               Come
               <br />
@@ -644,7 +650,7 @@ function Index() {
                 href="https://www.instagram.com/osocoffee.haarlem/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center rounded-full bg-cream text-espresso px-6 py-3 text-sm hover:bg-cream-deep transition-colors"
+                className="inline-flex items-center rounded-full bg-yellow text-ink px-6 py-3 text-sm hover:brightness-95 transition"
               >
                 Follow on Instagram
               </a>
@@ -668,7 +674,7 @@ function Index() {
               <h2 className="mt-6 text-display text-[clamp(2.4rem,7vw,6rem)] text-ink">
                 We&rsquo;re building
                 <br />
-                <span className="font-script text-espresso">a team.</span>
+                a team.
               </h2>
             </Reveal>
             <Reveal delay={100} className="md:col-span-4 md:col-start-9">
@@ -721,25 +727,31 @@ function Index() {
       </section>
 
       {/* STORY / QUOTE */}
-      <section className="py-28 md:py-44 bg-sand/40 relative overflow-hidden">
+      <section className="py-28 md:py-44 bg-yellow relative overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-10 -left-6 md:top-10 md:left-10 font-script text-[18rem] md:text-[26rem] leading-none text-espresso/[0.08] select-none"
+          className="pointer-events-none absolute -top-10 -left-6 md:top-10 md:left-10 font-script text-[18rem] md:text-[26rem] leading-none text-ink/[0.10] select-none"
         >
           &ldquo;
         </div>
+        <img
+          src={bearBrown.url}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute right-6 md:right-16 bottom-6 md:bottom-10 w-24 md:w-32 opacity-90"
+        />
 
         <div className="relative mx-auto max-w-[1200px] px-6 md:px-12">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-12">
             <div className="col-span-12 md:col-span-3">
               <Reveal>
-                <div className="flex items-center gap-3 text-eyebrow text-blue">
-                  <span className="inline-block h-px w-8 bg-blue/60" />
+                <div className="flex items-center gap-3 text-eyebrow text-espresso">
+                  <span className="inline-block h-px w-8 bg-espresso/60" />
                   10, In their words
                 </div>
               </Reveal>
               <Reveal delay={120}>
-                <p className="mt-6 font-script text-espresso/80 text-2xl leading-snug hidden md:block">
+                <p className="mt-6 text-ink/80 text-lg leading-snug hidden md:block font-light">
                   A neighborhood
                   <br />
                   note from a
@@ -763,7 +775,7 @@ function Index() {
                     </span>
                   </p>
 
-                  <p className="mt-10 text-[clamp(1.25rem,2.1vw,1.65rem)] font-script text-espresso/90 leading-[1.45]">
+                  <p className="mt-10 text-[clamp(1.25rem,2.1vw,1.65rem)] text-espresso leading-[1.45] font-light italic">
                     A must visit, and a perfect place to chill before or after a walk in Elswout.
                   </p>
                 </blockquote>
@@ -771,8 +783,8 @@ function Index() {
 
               <Reveal delay={200}>
                 <div className="mt-12 flex items-center gap-4">
-                  <span className="inline-block h-px w-12 bg-espresso/40" />
-                  <span className="text-eyebrow text-espresso/60">Overheard in Haarlem</span>
+                  <span className="inline-block h-px w-12 bg-ink/40" />
+                  <span className="text-eyebrow text-ink/70">Overheard in Haarlem</span>
                 </div>
               </Reveal>
             </div>
@@ -789,7 +801,7 @@ function Index() {
           <div className="mt-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <Reveal>
               <h2 className="text-[clamp(2.4rem,7vw,6rem)] leading-[0.95] text-ink font-light">
-                <span className="font-script text-espresso">@</span>&nbsp;osocoffee.haarlem
+                <span className="font-script text-blue">@</span>&nbsp;osocoffee.haarlem
               </h2>
             </Reveal>
             <Reveal delay={100}>
@@ -839,11 +851,14 @@ function Index() {
       <section id="visit" className="bg-cream-deep py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16">
           <Reveal className="md:col-span-5">
-            <span className="text-eyebrow text-blue">12, Visit</span>
+            <div className="flex items-center gap-3">
+              <span className="text-eyebrow text-blue">12, Visit</span>
+              <img src={bearYellow.url} alt="" aria-hidden className="h-8 w-auto" />
+            </div>
             <h2 className="mt-6 text-display text-[clamp(2.4rem,6vw,5rem)] text-ink">
               Ramplaan 44.
               <br />
-              <span className="font-script text-espresso">See you soon.</span>
+              See you soon.
             </h2>
             <div className="mt-10 space-y-2 text-ink/80">
               <p>Ramplaan 44</p>
@@ -854,7 +869,7 @@ function Index() {
               href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 text-espresso underline-offset-4 hover:underline"
+              className="mt-8 inline-flex items-center gap-2 text-blue underline-offset-4 hover:underline"
             >
               Open in Maps →
             </a>
