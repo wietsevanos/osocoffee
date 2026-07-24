@@ -6,9 +6,24 @@
 
 /*
  * OSO Coffee — design system (v2).
- * Warm, editorial, finca-inspired.
- * Palette: cream #F1F1E1, espresso #6F3F1F, ink #181613, blue #1A3F90, yellow #E9D94A.
- * Type: Hanken Grotesk (display + body), Horus (script accents).
+ * Warm, editorial, finca-inspired. Brandbook-aligned.
+ * Palette (official brandbook hex):
+ *   Pastry Cream #F3F1E1 — warm, calm base for backgrounds
+ *   Black Coffee #181613 — primary text color for long copy
+ *   Funky Blue   #1A3F90 — accent (marquees, eyebrows, links)
+ *   Espresso Brn #6F3F1F — accent (numerals, rules, warm surfaces)
+ *   Butter Yellow#E9DA94 — accent (small pills, highlight surfaces)
+ * Section color rhythm:
+ *   Hero / About / Space / Visit  → Pastry Cream
+ *   Marquee                       → Funky Blue on cream
+ *   In motion (video)             → Espresso Brown on cream
+ *   In their words (quote)        → Butter Yellow on Black Coffee
+ *   Say hello                     → Black Coffee on cream + blue accent
+ *   Careers                       → Pastry Cream with espresso cards
+ * Typography (brandbook Ch.4):
+ *   Hanken Grotesk — primary. Light 300 = body, Regular 400 = headers,
+ *   SemiBold 600 = emphasis.
+ *   Horus — reserved for a few large character headers and short quotes.
  */
 
 @font-face {
@@ -100,7 +115,8 @@
   --espresso-deep: #4A2812;
   --ink: #181613;
   --blue: #1A3F90;
-  --yellow: #E9D94A;
+  --yellow: #E9DA94;
+  --blue-deep: #12306E;
 
   --background: var(--cream);
   --foreground: var(--ink);
@@ -180,6 +196,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 300;
     font-feature-settings: "ss01";
     -webkit-font-smoothing: antialiased;
   }
@@ -201,6 +218,11 @@
     font-family: var(--font-script);
     font-weight: 400;
     letter-spacing: 0;
+    font-size: 0.92em;
+    line-height: 1;
+  }
+  .text-emphasis {
+    font-weight: 600;
   }
   .text-eyebrow {
     font-family: var(--font-sans);
@@ -216,6 +238,7 @@
   .bg-espresso-deep { background-color: var(--espresso-deep); }
   .bg-ink { background-color: var(--ink); }
   .bg-blue { background-color: var(--blue); }
+  .bg-blue-deep { background-color: var(--blue-deep); }
   .bg-yellow { background-color: var(--yellow); }
   .text-cream { color: var(--cream); }
   .text-espresso { color: var(--espresso); }
