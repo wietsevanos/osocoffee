@@ -196,12 +196,12 @@ function Index() {
         onClick={toggleAudio}
         aria-label={playing ? "Pause background music" : "Play background music"}
         aria-pressed={playing}
-        className="fixed bottom-5 left-5 z-[60] group inline-flex items-center gap-2 rounded-full border border-espresso/20 bg-cream/85 backdrop-blur-md pl-3 pr-4 py-2 text-[11px] uppercase tracking-[0.22em] text-ink/80 shadow-[0_10px_30px_-15px_rgba(111,63,31,0.35)] hover:bg-cream transition-all"
+        className="fixed bottom-5 left-5 z-[60] group inline-flex items-center gap-2 rounded-full border border-ink/15 bg-cream/85 backdrop-blur-md pl-3 pr-4 py-2 text-[10px] uppercase tracking-[0.28em] text-ink/80 hover:bg-cream transition-all"
       >
         <span className="relative inline-flex items-end gap-[2px] h-3 w-4" aria-hidden>
-          <span className={`w-[2px] bg-espresso ${playing ? "animate-eq1" : "h-[3px]"}`} />
-          <span className={`w-[2px] bg-espresso ${playing ? "animate-eq2" : "h-[6px]"}`} />
-          <span className={`w-[2px] bg-espresso ${playing ? "animate-eq3" : "h-[4px]"}`} />
+          <span className={`w-[2px] bg-ink ${playing ? "animate-eq1" : "h-[3px]"}`} />
+          <span className={`w-[2px] bg-ink ${playing ? "animate-eq2" : "h-[6px]"}`} />
+          <span className={`w-[2px] bg-ink ${playing ? "animate-eq3" : "h-[4px]"}`} />
         </span>
         <span className="hidden sm:inline">{playing ? "Sound on" : "Sound off"}</span>
       </button>
@@ -209,24 +209,24 @@ function Index() {
       {/* NAV */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "py-3 backdrop-blur-md bg-cream/80 border-b border-espresso/10" : "py-6"
+          scrolled ? "py-3 backdrop-blur-md bg-cream/85 border-b border-ink/10" : "py-6"
         }`}
       >
         <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between gap-6">
           <a href="#top" className="flex items-center" aria-label="OSO Coffee">
             <img src={logo} alt="OSO Coffee" className="h-10 md:h-12 w-auto" />
           </a>
-          <nav className="hidden md:flex items-center gap-9 text-sm text-ink/80">
+          <nav className="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.24em] text-ink/70">
             {NAV.map((n) => (
-              <a key={n.href} href={n.href} className="relative hover:text-espresso transition-colors group">
+              <a key={n.href} href={n.href} className="relative hover:text-ink transition-colors group">
                 {n.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-espresso transition-all duration-500 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-ink transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
           </nav>
           <a
             href="#visit"
-            className="inline-flex items-center gap-2 rounded-full border border-espresso/30 px-4 py-2 text-xs uppercase tracking-[0.22em] hover:bg-espresso hover:text-cream transition-colors"
+            className="inline-flex items-center gap-2 rounded-full border border-ink/25 px-4 py-2 text-[10px] uppercase tracking-[0.28em] hover:bg-ink hover:text-cream transition-colors"
           >
             Visit
           </a>
@@ -234,154 +234,111 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden">
+      <section id="top" className="relative pt-40 md:pt-56 pb-24 md:pb-40 overflow-hidden">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="flex items-center gap-3 text-eyebrow text-espresso/70 animate-rise">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue animate-pulse" />
-            Now open, Haarlem
+          <div className="flex items-center gap-3 text-eyebrow text-ink/60 animate-rise">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue" />
+            NOW OPEN, HAARLEM
           </div>
 
-          <div className="mt-8 grid md:grid-cols-12 gap-6 md:gap-10 items-end animate-rise">
-            <h1 className="md:col-span-9 text-display text-[clamp(3rem,10vw,10rem)] text-ink">
-              Coffee,
-              <br />
-              slow mornings.
-            </h1>
-            <div className="md:col-span-3 hidden md:flex justify-end pb-2">
+          <h1 className="mt-10 md:mt-14 text-display text-[clamp(3.5rem,13vw,13rem)] text-ink animate-rise">
+            SLOW
+            <br />
+            MORNINGS.
+          </h1>
+
+          <div className="mt-16 md:mt-20 grid md:grid-cols-12 gap-10 md:gap-16 items-end animate-rise" style={{ animationDelay: "160ms" }}>
+            <p className="md:col-span-4 text-base md:text-lg leading-relaxed text-ink/70 max-w-sm">
+              A neighborhood coffee bar in Haarlem, born from a love for Spanish fincas.
+            </p>
+            <div className="md:col-span-4 md:col-start-9 flex md:justify-end">
+              <a
+                href="#about"
+                className="group inline-flex items-center justify-between rounded-full bg-ink text-cream pl-6 pr-2 py-2 text-[11px] uppercase tracking-[0.26em] hover:bg-blue transition-colors"
+              >
+                Discover OSO
+                <span className="ml-6 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-ink transition-transform group-hover:translate-x-1">
+                  <ArrowIcon className="h-4 w-4" />
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Hero image, single, calm, full-bleed feel */}
+        <Reveal delay={200} className="mt-20 md:mt-28">
+          <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+            <div className="relative overflow-hidden rounded-sm">
+              <img
+                src={p138.url}
+                alt="Warm plaster interior of OSO Coffee with oak tables and a green banquette"
+                className="w-full h-[60vh] md:h-[86vh] object-cover"
+              />
               <img
                 src={bearBlue.url}
                 alt=""
                 aria-hidden
-                className="w-28 lg:w-36 h-auto opacity-90"
+                className="pointer-events-none absolute right-6 md:right-10 bottom-6 md:bottom-10 w-20 md:w-28 h-auto"
               />
             </div>
           </div>
-
-          <div className="mt-10 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
-            <p className="md:col-span-5 text-base md:text-lg leading-relaxed text-ink/75 max-w-md animate-rise" style={{ animationDelay: "120ms" }}>
-              A neighborhood coffee bar in Haarlem, born from a love for Spanish fincas.
-            </p>
-            <div className="md:col-span-4 md:col-start-9 flex flex-col gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
-              <a
-                href="#about"
-                className="group inline-flex items-center justify-between rounded-full bg-espresso text-cream pl-6 pr-2 py-2 text-sm tracking-wide hover:bg-espresso-deep transition-colors"
-              >
-                Discover OSO
-                <span className="ml-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-espresso transition-transform group-hover:translate-x-1">
-                  <ArrowIcon className="h-4 w-4" />
-                </span>
-              </a>
-              <a
-                href="#careers"
-                className="text-sm text-ink/70 hover:text-espresso transition-colors pl-6 inline-flex items-center gap-2"
-              >
-                We&rsquo;re hiring, join the team
-                <ArrowIcon className="h-3.5 w-3.5" />
-              </a>
-            </div>
-          </div>
-
-          {/* hero image block */}
-          <Reveal delay={200} className="mt-16 md:mt-24">
-            <div className="grid grid-cols-12 gap-4 md:gap-6">
-              <div className="col-span-12 md:col-span-8 relative overflow-hidden rounded-sm">
-                <img
-                  src={p138.url}
-                  alt="Warm plaster interior of OSO Coffee with oak tables and a green banquette"
-                  className="w-full h-[55vh] md:h-[78vh] object-cover"
-                  width={1600}
-                  height={1067}
-                />
-              </div>
-              <div className="col-span-12 md:col-span-4 flex flex-col gap-4 md:gap-6">
-                <div className="relative overflow-hidden rounded-sm flex-1 min-h-[28vh]">
-                  <img
-                    src={p79.url}
-                    alt="La Marzocco espresso machine with stacked OSO cups"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    width={1200}
-                    height={1800}
-                  />
-                </div>
-                <div className="relative bg-sand/60 rounded-sm p-6 md:p-7 flex-1 flex flex-col justify-between min-h-[28vh] overflow-hidden">
-                  <img
-                    src={bearBrown.url}
-                    alt=""
-                    aria-hidden
-                    className="pointer-events-none absolute -right-6 -bottom-6 w-40 opacity-15"
-                  />
-                  <span className="text-eyebrow text-espresso/70">A neighborhood bar</span>
-                  <div className="mt-4 relative">
-                    <p className="text-3xl md:text-4xl leading-tight text-ink font-light">
-                      Coffee <span className="font-script text-espresso">&amp;</span> pastries.
-                    </p>
-                    <p className="mt-3 text-sm text-ink/70">Ramplaan 44, 2015 GX Haarlem</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
+        </Reveal>
       </section>
 
       {/* MARQUEE */}
-      <section aria-hidden className="py-6 overflow-hidden bg-blue text-cream">
+      <section aria-hidden className="py-5 overflow-hidden bg-blue text-cream border-y border-blue-deep/40">
         <div className="flex w-max animate-marquee whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex items-center gap-10 pr-10 text-3xl md:text-5xl text-cream font-light">
+            <div key={i} className="flex items-center gap-12 pr-12 text-xl md:text-2xl text-cream font-light uppercase tracking-[0.24em]">
               <span>Now open</span>
-              <img src={bearYellow.url} alt="" aria-hidden className="h-10 md:h-14 w-auto" />
-              <span>coffee &amp; pastries</span>
               <span className="text-yellow">✦</span>
+              <span>Coffee &amp; pastries</span>
+              <img src={bearYellow.url} alt="" aria-hidden className="h-8 md:h-10 w-auto" />
               <span>Haarlem</span>
-              <img src={bearYellow.url} alt="" aria-hidden className="h-10 md:h-14 w-auto" />
-              <span>we&rsquo;re hiring</span>
+              <span className="text-yellow">✦</span>
+              <span>We&rsquo;re hiring</span>
               <span className="text-yellow">✦</span>
               <span>Ramplaan 44</span>
-              <span className="text-yellow">✦</span>
+              <img src={bearYellow.url} alt="" aria-hidden className="h-8 md:h-10 w-auto" />
             </div>
           ))}
         </div>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-24 md:py-40">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16">
-          <Reveal className="md:col-span-4">
-            <div className="flex items-center gap-3">
-              <span className="text-eyebrow text-blue">01, About</span>
-              <img src={bearBrown.url} alt="" aria-hidden className="h-8 w-auto opacity-80" />
-            </div>
-            <p className="mt-6 text-2xl leading-snug text-ink font-light">
-              OSO means <span className="text-emphasis text-espresso">bear</span> in Spanish. A symbol of warmth, of comfort, of the kind of slow afternoons we&rsquo;re built around.
-            </p>
+      <section id="about" className="py-32 md:py-56">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <Reveal>
+            <span className="text-eyebrow text-blue">01 — ABOUT</span>
           </Reveal>
-          <Reveal delay={100} className="md:col-span-8">
-            <h2 className="text-display text-[clamp(2.4rem,6.5vw,5.5rem)] text-ink">
-              A neighborhood
-              <br />
-              bar, designed to
-              <br />
-              feel like home.
-            </h2>
-            <div className="mt-10 grid sm:grid-cols-2 gap-8 max-w-2xl text-ink/75">
-              <p>
-                The space draws from Spanish fincas: warm plaster, arched alcoves, oak benches and soft
-                linen. A contemporary read of an old, familiar feeling.
+          <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+            <Reveal className="md:col-span-7">
+              <h2 className="text-display text-[clamp(2.6rem,7.5vw,6.5rem)] text-ink">
+                A ROOM
+                <br />
+                THAT FEELS
+                <br />
+                LIKE HOME.
+              </h2>
+            </Reveal>
+            <Reveal delay={120} className="md:col-span-4 md:col-start-9 md:pt-6">
+              <p className="text-ink/70 leading-relaxed">
+                OSO means bear in Spanish. Warm plaster, arched alcoves and oak benches, a contemporary read of a Spanish finca.
               </p>
-              <p>
-                We pour considered coffee, bake honest pastries and keep the door open from morning to
-                late afternoon. Stay an hour. Or three.
+              <p className="mt-6 text-ink/70 leading-relaxed">
+                Considered coffee, honest pastries, doors open from morning to late afternoon.
               </p>
-            </div>
+              <img src={bearBrown.url} alt="" aria-hidden className="mt-10 h-14 w-auto opacity-90" />
+            </Reveal>
+          </div>
 
-            <div className="mt-14 grid grid-cols-2 gap-4 md:gap-6">
+          <Reveal delay={200} className="mt-20 md:mt-28">
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
               <div className="overflow-hidden rounded-sm">
-                <img src={p95.url} alt="Beau behind the OSO Coffee bar" className="w-full h-[36vh] md:h-[46vh] object-cover" loading="lazy" />
+                <img src={p95.url} alt="Beau behind the OSO Coffee bar" className="w-full h-[46vh] md:h-[62vh] object-cover" loading="lazy" />
               </div>
               <div className="overflow-hidden rounded-sm">
-                <img src={p134.url} alt="Setting the tables at OSO Coffee" className="w-full h-[36vh] md:h-[46vh] object-cover" loading="lazy" />
+                <img src={p134.url} alt="Setting the tables at OSO Coffee" className="w-full h-[46vh] md:h-[62vh] object-cover" loading="lazy" />
               </div>
             </div>
           </Reveal>
@@ -389,39 +346,33 @@ function Index() {
       </section>
 
       {/* MENU / COFFEE & BITES */}
-      <section id="menu" className="relative bg-sand/40 py-24 md:py-32">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-          <Reveal className="md:col-span-6">
-            <div className="overflow-hidden rounded-sm">
+      <section id="menu" className="relative bg-cream-deep py-32 md:py-48">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <Reveal>
+            <span className="text-eyebrow text-espresso">02 — MENU</span>
+          </Reveal>
+          <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-12 md:gap-20 items-start">
+            <Reveal className="md:col-span-6">
+              <h2 className="text-display text-[clamp(2.6rem,7vw,6rem)] text-ink">
+                QUIET
+                <br />
+                MENU.
+              </h2>
+              <p className="mt-8 text-ink/70 max-w-md leading-relaxed">
+                Espresso from a La Marzocco, filter on the side, pastries baked daily. A short list that changes with the season.
+              </p>
+              <div className="mt-12 overflow-hidden rounded-sm">
               <img
                 src={p163.url}
                 alt="Overhead spread of tostadas, cheese, padrón peppers and drinks on terracotta plates"
-                className="w-full h-[70vh] object-cover"
+                className="w-full h-[52vh] md:h-[62vh] object-cover"
                 loading="lazy"
               />
-            </div>
-            <div className="mt-4 md:mt-6 grid grid-cols-2 gap-4 md:gap-6">
-              <div className="overflow-hidden rounded-sm">
-                <img src={p119.url} alt="Iced latte poured over ice" className="w-full h-[28vh] object-cover" loading="lazy" />
               </div>
-              <div className="overflow-hidden rounded-sm">
-                <img src={p111.url} alt="Cappuccino with latte art and a granola bowl" className="w-full h-[28vh] object-cover" loading="lazy" />
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={120} className="md:col-span-6">
-            <span className="text-eyebrow text-espresso">02, Coffee &amp; bites</span>
-            <h2 className="mt-6 text-display text-[clamp(2.2rem,5.5vw,4.5rem)] text-ink">
-              Quiet menu.
-              <br />
-              Loud care.
-            </h2>
+            </Reveal>
 
-            <p className="mt-6 text-ink/75 max-w-md">
-              Espresso from a La Marzocco, filter on the side, pastries baked daily. A short, honest list that changes with the season.
-            </p>
-
-            <ul className="mt-10 divide-y divide-espresso/15">
+            <Reveal delay={120} className="md:col-span-5 md:col-start-8">
+              <ul className="divide-y divide-ink/10">
               {[
                 ["Espresso", "Single origin, seasonal", "3.20"],
                 ["Flat white", "Whole milk, oat on request", "4.20"],
@@ -432,47 +383,47 @@ function Index() {
                 ["Almond cake", "Baked in house, daily", "4.50"],
                 ["Apple pie", "Butter crust, cinnamon", "4.80"],
               ].map(([name, desc, price]) => (
-                <li key={name} className="flex items-baseline justify-between gap-6 py-5">
+                <li key={name} className="flex items-baseline justify-between gap-6 py-6">
                   <div>
-                    <p className="text-xl text-ink font-light">{name}</p>
-                    <p className="text-sm text-ink/60 mt-1">{desc}</p>
+                    <p className="text-lg text-ink">{name}</p>
+                    <p className="text-sm text-ink/55 mt-1">{desc}</p>
                   </div>
-                  <span className="text-lg text-espresso tabular-nums">{price}</span>
+                  <span className="text-base text-ink/80 tabular-nums">{price}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-10 relative rounded-sm border border-espresso/20 bg-cream/70 p-6 overflow-hidden">
-              <img src={bearYellow.url} alt="" aria-hidden className="pointer-events-none absolute -right-4 -bottom-6 h-28 w-auto opacity-70" />
-              <div className="flex items-center gap-3">
-                <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-ink font-medium">
+              <div className="mt-12 relative rounded-sm border border-ink/15 bg-cream p-8 overflow-hidden">
+                <img src={bearYellow.url} alt="" aria-hidden className="pointer-events-none absolute -right-4 -bottom-6 h-24 w-auto opacity-80" />
+                <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-ink">
                   Coming soon
                 </span>
-                <span className="text-eyebrow text-espresso">Lunch, wine &amp; tapas</span>
+                <p className="mt-5 text-ink/70 max-w-sm leading-relaxed">
+                  Tostadas, padrón peppers, Manchego and natural Spanish wines, joining the counter soon.
+                </p>
               </div>
-              <p className="mt-4 text-ink/75">
-                Tostadas, padrón peppers, Manchego, natural Spanish wines and small plates, joining the menu in the coming months. A slow, seasonal lunch, from the finca to Ramplaan.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </section>
 
       {/* PASTRY / BITES DETAIL STRIP */}
-      <section className="py-20 md:py-28">
+      <section className="py-32 md:py-48">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-10 md:mb-14">
-            <Reveal className="md:col-span-6">
-              <span className="text-eyebrow text-blue">03, Baked in house</span>
-              <h2 className="mt-6 text-display text-[clamp(2rem,5vw,4rem)] text-ink">
-                Pastries, cakes,
+          <Reveal>
+            <span className="text-eyebrow text-blue">03 — BAKED DAILY</span>
+          </Reveal>
+          <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-16 md:mb-20">
+            <Reveal className="md:col-span-7">
+              <h2 className="text-display text-[clamp(2.4rem,6.5vw,5.5rem)] text-ink">
+                PASTRIES,
                 <br />
-                quiet mornings.
+                WARM.
               </h2>
             </Reveal>
-            <Reveal delay={100} className="md:col-span-5 md:col-start-8">
-              <p className="text-ink/75">
-                A short pastry counter, refreshed each morning. Whole almond cakes, buttery apple pie, seasonal fruit, warm from the oven when you arrive.
+            <Reveal delay={100} className="md:col-span-4 md:col-start-9">
+              <p className="text-ink/70 leading-relaxed">
+                A short pastry counter, refreshed each morning. Almond cakes, buttery apple pie, seasonal fruit.
               </p>
             </Reveal>
           </div>
@@ -493,53 +444,56 @@ function Index() {
       </section>
 
       {/* COFFEE CRAFT */}
-      <section className="py-20 md:py-28 bg-cream-deep">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+      <section className="py-32 md:py-48 bg-cream-deep">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-12 md:gap-20 items-center">
           <Reveal className="md:col-span-7 order-2 md:order-1">
             <div className="overflow-hidden rounded-sm">
               <img
                 src={p105.url}
                 alt="Beau pulling a shot on the La Marzocco espresso machine"
-                className="w-full h-[55vh] md:h-[75vh] object-cover"
+                className="w-full h-[60vh] md:h-[80vh] object-cover"
                 loading="lazy"
               />
             </div>
           </Reveal>
           <Reveal delay={120} className="md:col-span-4 md:col-start-9 order-1 md:order-2">
-            <span className="text-eyebrow text-espresso">04, The bar</span>
-            <h2 className="mt-6 text-display text-[clamp(2rem,4.8vw,3.6rem)] text-ink">
-              La Marzocco,
+            <span className="text-eyebrow text-espresso">04 — THE BAR</span>
+            <h2 className="mt-8 text-display text-[clamp(2.2rem,5.5vw,4.5rem)] text-ink">
+              PULLED
               <br />
-              pulled slowly.
+              SLOWLY.
             </h2>
-            <p className="mt-6 text-ink/75">
-              Espresso, flat whites and filter on our custom OSO cups, blue, yellow and espresso brown. Small equipment, careful hands, honest coffee.
+            <p className="mt-8 text-ink/70 leading-relaxed">
+              Espresso, flat whites and filter on custom OSO cups in blue, yellow and espresso brown. Small equipment, careful hands.
             </p>
+            <img src={bearBrown.url} alt="" aria-hidden className="mt-10 h-12 w-auto opacity-80" />
           </Reveal>
         </div>
       </section>
 
       {/* VIDEO */}
-      <section className="py-20 md:py-28 bg-espresso text-cream">
+      <section className="py-32 md:py-48 bg-espresso text-cream">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="grid md:grid-cols-12 gap-10 items-end mb-10 md:mb-14">
+          <Reveal>
+            <span className="text-eyebrow text-yellow">05 — IN MOTION</span>
+          </Reveal>
+          <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 items-end mb-14 md:mb-20">
             <Reveal className="md:col-span-7">
-              <span className="text-eyebrow text-yellow">05, In motion</span>
-              <h2 className="mt-6 text-display text-[clamp(2.2rem,6vw,5rem)] text-cream">
-                A quiet
+              <h2 className="text-display text-[clamp(2.6rem,7vw,6rem)] text-cream">
+                A QUIET
                 <br />
-                afternoon at OSO.
+                AFTERNOON.
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:col-start-9">
-              <p className="text-cream/80">
-                Light, plaster, terracotta and the soft rhythm of the bar. A short film from the space.
+              <p className="text-cream/75 leading-relaxed">
+                Light, plaster and terracotta, the soft rhythm of the bar.
               </p>
             </Reveal>
           </div>
           <Reveal>
             <div className="relative overflow-hidden rounded-sm">
-              <img src={bearYellow.url} alt="" aria-hidden className="pointer-events-none absolute top-4 left-4 md:top-6 md:left-6 h-12 md:h-16 w-auto z-10 drop-shadow-lg" />
+              <img src={bearYellow.url} alt="" aria-hidden className="pointer-events-none absolute top-4 left-4 md:top-6 md:left-6 h-10 md:h-14 w-auto z-10" />
               <video
                 src="/oso-video.mp4"
                 poster={p109.url}
@@ -555,20 +509,24 @@ function Index() {
       </section>
 
       {/* SPACE / INTERIOR */}
-      <section id="space" className="py-24 md:py-32 bg-cream-deep">
+      <section id="space" className="py-32 md:py-48">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="grid md:grid-cols-12 gap-10 items-end mb-12 md:mb-20">
+          <Reveal>
+            <span className="text-eyebrow text-blue">06 — THE SPACE</span>
+          </Reveal>
+          <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 items-end mb-16 md:mb-24">
             <Reveal className="md:col-span-7">
-              <span className="text-eyebrow text-blue">06, The space</span>
-              <h2 className="mt-6 text-display text-[clamp(2.4rem,7vw,6rem)] text-ink">
-                Alcoves, arches,
+              <h2 className="text-display text-[clamp(2.6rem,7.5vw,6.5rem)] text-ink">
+                ALCOVES,
                 <br />
-                afternoon light.
+                ARCHES,
+                <br />
+                LIGHT.
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:col-start-9">
-              <p className="text-ink/75">
-                Inspired by the rhythm of a Spanish finca, the interior layers warm textures and quiet corners, a room that invites you to linger.
+              <p className="text-ink/70 leading-relaxed">
+                A Spanish finca in rhythm, warm textures and quiet corners that invite you to linger.
               </p>
             </Reveal>
           </div>
@@ -584,7 +542,7 @@ function Index() {
             </div>
           </Reveal>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
             {[
               { src: p151.url, alt: "Green banquette and rush chairs under a shelf of natural wines" },
               { src: p140.url, alt: "Row of oak tables with plaster shelves of terracotta pottery" },
@@ -611,79 +569,66 @@ function Index() {
       </section>
 
       {/* PRODUCE / COMING SOON */}
-      <section className="py-24 md:py-32">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+      <section className="py-32 md:py-48 bg-cream-deep">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-12 md:gap-20 items-center">
           <Reveal className="md:col-span-7">
             <div className="overflow-hidden rounded-sm">
               <img
                 src={p133.url}
                 alt="Ripe tomatoes and dried peppers in terracotta bowls on an oak counter"
-                className="w-full h-[55vh] md:h-[75vh] object-cover"
+                className="w-full h-[60vh] md:h-[80vh] object-cover"
                 loading="lazy"
               />
             </div>
           </Reveal>
           <Reveal delay={120} className="md:col-span-4 md:col-start-9">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-ink font-medium">
-                Coming soon
-              </span>
-              <span className="text-eyebrow text-espresso">07, Lunch &amp; tapas</span>
-            </div>
-            <p className="mt-6 text-2xl leading-snug text-ink font-light">
-              Sourced weekly, cooked slowly, served warm.
+            <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-ink">
+              Coming soon
+            </span>
+            <span className="mt-6 block text-eyebrow text-espresso">07 — LUNCH &amp; TAPAS</span>
+            <h3 className="mt-6 text-display text-[clamp(2rem,4.5vw,3.4rem)] text-ink">
+              SLOW
+              <br />
+              LUNCH.
+            </h3>
+            <p className="mt-8 text-ink/70 leading-relaxed">
+              Tomatoes, padrón peppers, Manchego and good bread. A short tapas menu and Spanish natural wines are on the way.
             </p>
-            <p className="mt-5 text-ink/70">
-              Sweet tomatoes, padrón peppers, Manchego and good bread. A short lunch and tapas menu will join the counter soon, alongside a small list of Spanish natural wines.
-            </p>
-
-            <ul className="mt-8 space-y-3 text-ink/70">
-              <li className="flex items-center gap-3"><span className="h-1 w-1 rounded-full bg-espresso" />Tostadas, three ways</li>
-              <li className="flex items-center gap-3"><span className="h-1 w-1 rounded-full bg-espresso" />Padrón peppers, sea salt</li>
-              <li className="flex items-center gap-3"><span className="h-1 w-1 rounded-full bg-espresso" />Manchego &amp; membrillo</li>
-              <li className="flex items-center gap-3"><span className="h-1 w-1 rounded-full bg-espresso" />Spanish natural wines, by the glass</li>
-            </ul>
           </Reveal>
         </div>
       </section>
 
       {/* SAY HELLO — brown block */}
-      <section className="relative bg-ink text-cream py-28 md:py-40 overflow-hidden">
-        <img
-          src={bearBrown.url}
-          alt=""
-          aria-hidden
-          className="pointer-events-none absolute -left-16 -bottom-10 w-[380px] opacity-[0.10]"
-        />
+      <section className="relative bg-ink text-cream py-40 md:py-56 overflow-hidden">
         <img
           src={bearYellow.url}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -right-16 -top-10 w-[300px] opacity-[0.18] -scale-x-100"
+          className="pointer-events-none absolute -right-10 -bottom-10 w-[280px] opacity-30"
         />
         <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 text-center">
           <Reveal>
-            <span className="text-eyebrow text-yellow">08, Say hello</span>
-            <h2 className="mt-8 text-display text-[clamp(3rem,12vw,11rem)] text-cream">
-              Come
+            <span className="text-eyebrow text-yellow">08 — SAY HELLO</span>
+            <h2 className="mt-10 text-display text-[clamp(3.5rem,14vw,13rem)] text-cream">
+              SAY
               <br />
-              <span className="font-script text-yellow">say hello.</span>
+              HELLO.
             </h2>
-            <p className="mt-10 mx-auto max-w-xl text-cream/75">
-              The doors are open. Stop by Ramplaan 44 for a coffee, a slice of cake, or a quiet moment in the bar.
+            <p className="mt-12 mx-auto max-w-md text-cream/70 leading-relaxed">
+              The doors are open. Stop by Ramplaan 44 for a coffee, a slice of cake or a quiet moment.
             </p>
-            <div className="mt-12 flex flex-wrap justify-center gap-3">
+            <div className="mt-14 flex flex-wrap justify-center gap-3">
               <a
                 href="https://www.instagram.com/osocoffee.haarlem/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center rounded-full bg-yellow text-ink px-6 py-3 text-sm hover:brightness-95 transition"
+                className="inline-flex items-center rounded-full bg-yellow text-ink px-6 py-3 text-[11px] uppercase tracking-[0.26em] hover:brightness-95 transition"
               >
-                Follow on Instagram
+                Instagram
               </a>
               <a
                 href="#visit"
-                className="inline-flex items-center rounded-full border border-cream/40 px-6 py-3 text-sm hover:bg-cream/10 transition-colors"
+                className="inline-flex items-center rounded-full border border-cream/30 px-6 py-3 text-[11px] uppercase tracking-[0.26em] hover:bg-cream/10 transition-colors"
               >
                 Find us
               </a>
@@ -693,58 +638,60 @@ function Index() {
       </section>
 
       {/* HIRING */}
-      <section id="careers" className="py-24 md:py-40">
+      <section id="careers" className="py-32 md:py-56">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-14 md:mb-20">
+          <Reveal>
+            <span className="text-eyebrow text-blue">09 — CAREERS</span>
+          </Reveal>
+          <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-16 md:mb-24">
             <Reveal className="md:col-span-7">
-              <span className="text-eyebrow text-blue">09, Careers</span>
-              <h2 className="mt-6 text-display text-[clamp(2.4rem,7vw,6rem)] text-ink">
-                We&rsquo;re building
+              <h2 className="text-display text-[clamp(2.6rem,7.5vw,6.5rem)] text-ink">
+                JOIN
                 <br />
-                a team.
+                THE TEAM.
               </h2>
             </Reveal>
             <Reveal delay={100} className="md:col-span-4 md:col-start-9">
-              <p className="text-ink/75">
-                OSO is hiring warm, considered people who care about craft and hospitality. Open roles below, we&rsquo;d love to hear from you.
+              <p className="text-ink/70 leading-relaxed">
+                Warm, considered people who care about craft and hospitality. Open roles below.
               </p>
             </Reveal>
           </div>
 
           <div className="grid md:grid-cols-3 gap-4 md:gap-6">
             {[
-              { role: "Head Barista", type: "Full-time", note: "Lead the bar, dial in our blends, mentor the team." },
-              { role: "Barista", type: "Full / part-time", note: "Open mornings, considered pours, friendly to regulars." },
-              { role: "Pastry & Kitchen", type: "Full-time", note: "Bake daily, develop the seasonal bites menu with us." },
+              { role: "HEAD BARISTA", type: "Full-time", note: "Lead the bar, dial in our blends, mentor the team." },
+              { role: "BARISTA", type: "Full / part-time", note: "Open mornings, considered pours, friendly to regulars." },
+              { role: "PASTRY & KITCHEN", type: "Full-time", note: "Bake daily, develop the seasonal bites menu with us." },
             ].map((r, i) => (
               <Reveal key={r.role} delay={i * 100}>
                 <a
                   href="mailto:osohaarlem@outlook.com?subject=Application%20-%20OSO%20Coffee"
-                  className="group relative block h-full rounded-sm border border-espresso/15 bg-cream-deep p-7 md:p-9 transition-all duration-500 hover:border-espresso hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(111,63,31,0.35)]"
+                  className="group relative block h-full rounded-sm border border-ink/10 bg-cream-deep p-8 md:p-10 transition-all duration-500 hover:border-ink hover:-translate-y-1"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <span className="text-eyebrow text-espresso/60">{r.type}</span>
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-espresso text-cream transition-all duration-500 group-hover:bg-blue group-hover:-rotate-45">
+                    <span className="text-eyebrow text-ink/50">{r.type}</span>
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink text-cream transition-all duration-500 group-hover:bg-blue group-hover:-rotate-45">
                       <ArrowIcon className="h-4 w-4" />
                     </span>
                   </div>
-                  <h3 className="mt-10 text-3xl md:text-4xl text-ink leading-tight font-light">
+                  <h3 className="mt-14 text-2xl md:text-3xl text-ink leading-tight tracking-tight">
                     {r.role}
                   </h3>
-                  <p className="mt-4 text-sm text-ink/70 max-w-xs">{r.note}</p>
+                  <p className="mt-5 text-sm text-ink/65 max-w-xs leading-relaxed">{r.note}</p>
                 </a>
               </Reveal>
             ))}
           </div>
 
           <Reveal>
-            <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-sm bg-sand/50 p-6 md:p-8">
-              <p className="text-xl md:text-2xl text-ink font-light">
+            <div className="mt-12 flex flex-wrap items-center justify-between gap-4 rounded-sm border border-ink/10 p-8 md:p-10">
+              <p className="text-lg md:text-xl text-ink">
                 Don&rsquo;t see your role? We&rsquo;re still listening.
               </p>
               <a
                 href="mailto:osohaarlem@outlook.com"
-                className="group inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-5 py-3 text-sm hover:bg-espresso-deep transition-colors"
+                className="group inline-flex items-center gap-3 rounded-full bg-ink text-cream px-5 py-3 text-[11px] uppercase tracking-[0.24em] hover:bg-blue transition-colors"
               >
                 osohaarlem@outlook.com
                 <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -755,64 +702,38 @@ function Index() {
       </section>
 
       {/* STORY / QUOTE */}
-      <section className="py-28 md:py-44 bg-yellow relative overflow-hidden">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-10 -left-6 md:top-10 md:left-10 font-script text-[18rem] md:text-[26rem] leading-none text-ink/[0.10] select-none"
-        >
-          &ldquo;
-        </div>
+      <section className="py-40 md:py-56 bg-yellow relative overflow-hidden">
         <img
           src={bearBrown.url}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute right-6 md:right-16 bottom-6 md:bottom-10 w-24 md:w-32 opacity-90"
+          className="pointer-events-none absolute right-8 md:right-16 bottom-8 md:bottom-12 w-20 md:w-28 opacity-90"
         />
 
         <div className="relative mx-auto max-w-[1200px] px-6 md:px-12">
+          <Reveal>
+            <span className="text-eyebrow text-ink/70">10 — IN THEIR WORDS</span>
+          </Reveal>
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-12">
-            <div className="col-span-12 md:col-span-3">
-              <Reveal>
-                <div className="flex items-center gap-3 text-eyebrow text-espresso">
-                  <span className="inline-block h-px w-8 bg-espresso/60" />
-                  10, In their words
-                </div>
-              </Reveal>
-              <Reveal delay={120}>
-                <p className="mt-6 text-ink/80 text-lg leading-snug hidden md:block font-light">
-                  A neighborhood
-                  <br />
-                  note from a
-                  <br />
-                  recent visit.
-                </p>
-              </Reveal>
-            </div>
-
-            <div className="col-span-12 md:col-span-9">
+            <div className="col-span-12 md:col-span-10 md:col-start-2 mt-10 md:mt-14">
               <Reveal delay={80}>
-                <blockquote className="text-[clamp(1.5rem,2.9vw,2.35rem)] leading-[1.35] text-ink font-light">
+                <blockquote className="text-[clamp(1.5rem,2.9vw,2.35rem)] leading-[1.4] text-ink font-light">
                   <p>
                     Born from a love for Spanish fincas and coffee, OSO opened its doors earlier this year.
                   </p>
-
-                  <p className="mt-8">
-                    Beau used to live on Ibiza, and back in Haarlem she missed the people, the Spanish mentality, the vibe. She&rsquo;s bringing all of that home, with great coffee, pastries and, soon, a lunch menu.{" "}
-                    <span className="font-script text-blue">
-                      The homemade tostadas are so good.
-                    </span>
+                  <p className="mt-10">
+                    Beau used to live on Ibiza, and back in Haarlem she missed the people, the Spanish mentality, the vibe. She&rsquo;s bringing all of that home, with great coffee, pastries and, soon, a lunch menu.
                   </p>
-
-                  <p className="mt-10 text-[clamp(1.25rem,2.1vw,1.65rem)] text-espresso leading-[1.45] font-light italic">
+                  <p className="mt-10 text-[clamp(1.25rem,2.1vw,1.6rem)] text-espresso leading-[1.45] italic">
                     A must visit, and a perfect place to chill before or after a walk in Elswout.
                   </p>
                 </blockquote>
               </Reveal>
 
               <Reveal delay={200}>
-                <div className="mt-12 flex items-center gap-4">
+                <div className="mt-14 flex items-center gap-4">
                   <span className="inline-block h-px w-12 bg-ink/40" />
-                  <span className="text-eyebrow text-ink/70">Overheard in Haarlem</span>
+                  <span className="text-eyebrow text-ink/60">OVERHEARD IN HAARLEM</span>
                 </div>
               </Reveal>
             </div>
@@ -821,15 +742,15 @@ function Index() {
       </section>
 
       {/* INSTAGRAM */}
-      <section id="instagram" className="py-24 md:py-36 bg-cream">
+      <section id="instagram" className="py-32 md:py-48 bg-cream">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <Reveal>
-            <span className="text-eyebrow text-blue">11, Instagram</span>
+            <span className="text-eyebrow text-blue">11 — INSTAGRAM</span>
           </Reveal>
-          <div className="mt-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="mt-10 md:mt-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <Reveal>
-              <h2 className="text-[clamp(2.4rem,7vw,6rem)] leading-[0.95] text-ink font-light">
-                <span className="font-script text-blue">@</span>&nbsp;osocoffee.haarlem
+              <h2 className="text-display text-[clamp(2.2rem,6vw,5rem)] text-ink lowercase">
+                <span className="text-blue">@</span>&nbsp;osocoffee.haarlem
               </h2>
             </Reveal>
             <Reveal delay={100}>
@@ -837,14 +758,14 @@ function Index() {
                 href="https://www.instagram.com/osocoffee.haarlem/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-ink/80 hover:text-espresso transition-colors underline-offset-4 hover:underline"
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.26em] text-ink/70 hover:text-ink transition-colors"
               >
-                Volg ons op Instagram →
+                Follow on Instagram <ArrowIcon className="h-3.5 w-3.5" />
               </a>
             </Reveal>
           </div>
 
-          <Reveal delay={150} className="mt-14 md:mt-20">
+          <Reveal delay={150} className="mt-16 md:mt-24">
             <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-5">
               {[
                 { src: p161.url, alt: "Table set with tostadas, cheese and drinks at OSO Coffee" },
@@ -859,7 +780,7 @@ function Index() {
                   href="https://www.instagram.com/osocoffee.haarlem/"
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative block overflow-hidden rounded-md aspect-square"
+                  className="group relative block overflow-hidden rounded-sm aspect-square"
                 >
                   <img
                     src={p.src}
@@ -867,7 +788,7 @@ function Index() {
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
                   />
-                  <span className="absolute inset-0 bg-espresso/0 group-hover:bg-espresso/25 transition-colors duration-500" />
+                  <span className="absolute inset-0 bg-ink/0 group-hover:bg-ink/25 transition-colors duration-500" />
                 </a>
               ))}
             </div>
@@ -876,19 +797,16 @@ function Index() {
       </section>
 
       {/* VISIT, HOURS + LOCATION */}
-      <section id="visit" className="bg-cream-deep py-24 md:py-32">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-10 md:gap-16">
+      <section id="visit" className="bg-cream-deep py-32 md:py-48">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid md:grid-cols-12 gap-12 md:gap-20">
           <Reveal className="md:col-span-5">
-            <div className="flex items-center gap-3">
-              <span className="text-eyebrow text-blue">12, Visit</span>
-              <img src={bearYellow.url} alt="" aria-hidden className="h-8 w-auto" />
-            </div>
-            <h2 className="mt-6 text-display text-[clamp(2.4rem,6vw,5rem)] text-ink">
-              Ramplaan 44.
+            <span className="text-eyebrow text-blue">12 — VISIT</span>
+            <h2 className="mt-8 text-display text-[clamp(2.6rem,6.5vw,5.5rem)] text-ink">
+              RAMPLAAN
               <br />
-              See you soon.
+              FORTY-FOUR.
             </h2>
-            <div className="mt-10 space-y-2 text-ink/80">
+            <div className="mt-12 space-y-1 text-ink/75">
               <p>Ramplaan 44</p>
               <p>2015 GX Haarlem</p>
               <p>Netherlands</p>
@@ -897,25 +815,26 @@ function Index() {
               href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 text-blue underline-offset-4 hover:underline"
+              className="mt-10 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.26em] text-blue hover:text-blue-deep transition-colors"
             >
-              Open in Maps →
+              Open in Maps <ArrowIcon className="h-3.5 w-3.5" />
             </a>
+            <img src={bearYellow.url} alt="" aria-hidden className="mt-14 h-14 w-auto" />
           </Reveal>
 
           <Reveal delay={120} className="md:col-span-7">
-            <div className="rounded-sm bg-cream p-7 md:p-10 border border-espresso/10">
+            <div className="rounded-sm bg-cream p-8 md:p-12 border border-ink/10">
               <div className="flex items-baseline justify-between">
-                <h3 className="text-2xl text-ink font-light">Hours</h3>
-                <span className="text-eyebrow text-espresso/60">CET</span>
+                <h3 className="text-eyebrow text-ink">HOURS</h3>
+                <span className="text-eyebrow text-ink/50">CET</span>
               </div>
-              <ul className="mt-6 divide-y divide-espresso/15">
+              <ul className="mt-8 divide-y divide-ink/10">
                 {HOURS.map(([day, time]) => {
                   const closed = time === "Closed";
                   return (
-                    <li key={day} className="flex items-baseline justify-between py-4">
-                      <span className="text-lg text-ink font-light">{day}</span>
-                      <span className={`tabular-nums text-sm ${closed ? "text-ink/40" : "text-espresso"}`}>
+                    <li key={day} className="flex items-baseline justify-between py-5">
+                      <span className="text-base text-ink">{day}</span>
+                      <span className={`tabular-nums text-sm ${closed ? "text-ink/35" : "text-ink/80"}`}>
                         {time}
                       </span>
                     </li>
@@ -928,43 +847,37 @@ function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-ink text-cream pt-20 md:pt-28 pb-10 relative overflow-hidden">
-        <img
-          src={bearBrown.url}
-          alt=""
-          aria-hidden
-          className="pointer-events-none absolute -right-10 -bottom-16 w-[420px] opacity-[0.09]"
-        />
+      <footer className="bg-ink text-cream pt-24 md:pt-32 pb-10 relative overflow-hidden">
         <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="flex">
-            <img
-              src={logo}
-              alt="OSO Coffee"
-              className="h-16 md:h-24 w-auto brightness-0 invert opacity-90"
-            />
-          </div>
-          <div className="mt-16 grid md:grid-cols-3 gap-10 border-t border-cream/15 pt-10">
+          <div className="grid md:grid-cols-3 gap-10 border-b border-cream/15 pb-16">
             <div>
-              <span className="text-eyebrow text-cream/60">Find us</span>
-              <p className="mt-4 text-xl font-light">Ramplaan 44</p>
-              <p className="text-cream/70">2015 GX Haarlem</p>
+              <span className="text-eyebrow text-cream/50">FIND US</span>
+              <p className="mt-5 text-lg">Ramplaan 44</p>
+              <p className="text-cream/65">2015 GX Haarlem</p>
             </div>
             <div>
-              <span className="text-eyebrow text-cream/60">Contact</span>
-              <p className="mt-4 text-xl font-light">osohaarlem@outlook.com</p>
-              <p className="text-cream/70">Press &amp; partnerships welcome</p>
+              <span className="text-eyebrow text-cream/50">CONTACT</span>
+              <p className="mt-5 text-lg">osohaarlem@outlook.com</p>
+              <p className="text-cream/65">Press &amp; partnerships welcome</p>
             </div>
             <div>
-              <span className="text-eyebrow text-cream/60">Follow</span>
-              <div className="mt-4 flex flex-col gap-1">
-                <a href="https://www.instagram.com/osocoffee.haarlem/" className="hover:text-yellow transition-colors">Instagram →</a>
-                <a href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem" className="hover:text-yellow transition-colors">Google Maps →</a>
+              <span className="text-eyebrow text-cream/50">FOLLOW</span>
+              <div className="mt-5 flex flex-col gap-2">
+                <a href="https://www.instagram.com/osocoffee.haarlem/" className="hover:text-yellow transition-colors">Instagram</a>
+                <a href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem" className="hover:text-yellow transition-colors">Google Maps</a>
               </div>
             </div>
           </div>
-          <div className="mt-16 flex flex-wrap items-center justify-between gap-4 text-xs text-cream/50">
-            <p>© {new Date().getFullYear()} OSO Coffee. All rights reserved.</p>
-            <p>Ramplaan 44 · Haarlem</p>
+          <div className="mt-16 flex flex-wrap items-end justify-between gap-8">
+            <img
+              src={logo}
+              alt="OSO Coffee"
+              className="h-16 md:h-24 w-auto brightness-0 invert opacity-95"
+            />
+            <div className="flex flex-col items-end gap-1 text-[11px] uppercase tracking-[0.24em] text-cream/50">
+              <p>© {new Date().getFullYear()} OSO Coffee</p>
+              <p>Ramplaan 44 · Haarlem</p>
+            </div>
           </div>
         </div>
       </footer>
