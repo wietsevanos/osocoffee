@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/oso-logo.png";
 import bearBrown from "@/assets/bear-brown.png.asset.json";
 import bearYellow from "@/assets/bear-yellow.svg.asset.json";
+import bearBlue from "@/assets/bear-blue-outlined.png.asset.json";
 import nyc1940Audio from "@/assets/nyc-1940.mp3.asset.json";
 
 // Real photography — imported as CDN pointers.
@@ -222,18 +223,25 @@ function Index() {
             Now open, Haarlem
           </div>
 
-          <h1 className="text-display mt-8 text-[clamp(3.2rem,11vw,11rem)] text-ink animate-rise">
-            A cozy
-            <br />
-            corner for
-            <br />
-            <span className="font-script text-espresso italic-safe">slow mornings.</span>
-          </h1>
+          <div className="mt-8 grid md:grid-cols-12 gap-6 md:gap-10 items-end animate-rise">
+            <h1 className="md:col-span-9 text-display text-[clamp(3rem,10vw,10rem)] text-ink">
+              Coffee,
+              <br />
+              slow mornings.
+            </h1>
+            <div className="md:col-span-3 hidden md:flex justify-end pb-2">
+              <img
+                src={bearBlue.url}
+                alt=""
+                aria-hidden
+                className="w-28 lg:w-36 h-auto opacity-90"
+              />
+            </div>
+          </div>
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
             <p className="md:col-span-5 text-base md:text-lg leading-relaxed text-ink/75 max-w-md animate-rise" style={{ animationDelay: "120ms" }}>
-              OSO, Spanish for <em>bear</em>, is a neighborhood coffee bar at Ramplaan 44.
-              Born from a love for Spanish fincas, we serve considered coffee and honest pastries in a warm, quiet space.
+              A neighborhood coffee bar in Haarlem, born from a love for Spanish fincas.
             </p>
             <div className="md:col-span-4 md:col-start-9 flex flex-col gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
               <a
@@ -242,14 +250,15 @@ function Index() {
               >
                 Discover OSO
                 <span className="ml-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-espresso transition-transform group-hover:translate-x-1">
-                  →
+                  <ArrowIcon className="h-4 w-4" />
                 </span>
               </a>
               <a
                 href="#careers"
-                className="text-sm text-ink/70 hover:text-espresso transition-colors pl-6"
+                className="text-sm text-ink/70 hover:text-espresso transition-colors pl-6 inline-flex items-center gap-2"
               >
-                We&rsquo;re hiring, join the team →
+                We&rsquo;re hiring, join the team
+                <ArrowIcon className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>
