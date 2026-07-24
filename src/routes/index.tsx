@@ -724,8 +724,8 @@ function Index() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <span className="text-eyebrow text-espresso/60">{r.type}</span>
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-espresso/30 text-espresso transition-all group-hover:bg-espresso group-hover:text-cream group-hover:rotate-[-45deg]">
-                      →
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-espresso text-cream transition-all duration-500 group-hover:bg-blue group-hover:-rotate-45">
+                      <ArrowIcon className="h-4 w-4" />
                     </span>
                   </div>
                   <h3 className="mt-10 text-3xl md:text-4xl text-ink leading-tight font-light">
@@ -744,9 +744,10 @@ function Index() {
               </p>
               <a
                 href="mailto:osohaarlem@outlook.com"
-                className="inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-5 py-3 text-sm hover:bg-espresso-deep transition-colors"
+                className="group inline-flex items-center gap-3 rounded-full bg-espresso text-cream px-5 py-3 text-sm hover:bg-espresso-deep transition-colors"
               >
-                osohaarlem@outlook.com →
+                osohaarlem@outlook.com
+                <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
           </Reveal>
