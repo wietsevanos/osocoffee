@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/oso-logo.png";
 import bearBrown from "@/assets/bear-brown.png.asset.json";
+import bearYellow from "@/assets/bear-yellow.svg.asset.json";
 import nyc1940Audio from "@/assets/nyc-1940.mp3.asset.json";
 
 // Real photography — imported as CDN pointers.
