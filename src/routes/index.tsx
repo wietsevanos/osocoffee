@@ -272,7 +272,7 @@ function Index() {
               <img
                 src={p138.url}
                 alt="Warm plaster interior of OSO Coffee with oak tables and a green banquette"
-                className="w-full h-[60vh] md:h-[86vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[86vh] object-cover"
               />
               <img
                 src={bearBlue.url}
@@ -335,10 +335,10 @@ function Index() {
           <Reveal delay={200} className="mt-20 md:mt-28">
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               <div className="overflow-hidden rounded-sm">
-                <img src={p95.url} alt="Beau behind the OSO Coffee bar" className="w-full h-[46vh] md:h-[62vh] object-cover" loading="lazy" />
+                <img src={p95.url} alt="Beau behind the OSO Coffee bar" className="w-full aspect-[3/4] md:aspect-auto md:h-[62vh] object-cover" loading="lazy" />
               </div>
               <div className="overflow-hidden rounded-sm">
-                <img src={p134.url} alt="Setting the tables at OSO Coffee" className="w-full h-[46vh] md:h-[62vh] object-cover" loading="lazy" />
+                <img src={p134.url} alt="Setting the tables at OSO Coffee" className="w-full aspect-[3/4] md:aspect-auto md:h-[62vh] object-cover" loading="lazy" />
               </div>
             </div>
           </Reveal>
@@ -365,7 +365,7 @@ function Index() {
               <img
                 src={p163.url}
                 alt="Overhead spread of tostadas, cheese, padrón peppers and drinks on terracotta plates"
-                className="w-full h-[52vh] md:h-[62vh] object-cover"
+                className="w-full aspect-[4/3] md:aspect-auto md:h-[62vh] object-cover"
                 loading="lazy"
               />
               </div>
@@ -451,7 +451,7 @@ function Index() {
               <img
                 src={p105.url}
                 alt="Beau pulling a shot on the La Marzocco espresso machine"
-                className="w-full h-[60vh] md:h-[80vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[80vh] object-cover"
                 loading="lazy"
               />
             </div>
@@ -501,7 +501,7 @@ function Index() {
                 muted
                 loop
                 playsInline
-                className="w-full h-[60vh] md:h-[85vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[85vh] object-cover"
               />
             </div>
           </Reveal>
@@ -536,7 +536,7 @@ function Index() {
               <img
                 src={p158.url}
                 alt="Long perspective of the OSO Coffee dining room with rush chairs and a soft banquette"
-                className="w-full h-[60vh] md:h-[85vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[85vh] object-cover"
                 loading="lazy"
               />
             </div>
@@ -576,7 +576,7 @@ function Index() {
               <img
                 src={p133.url}
                 alt="Ripe tomatoes and dried peppers in terracotta bowls on an oak counter"
-                className="w-full h-[60vh] md:h-[80vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[80vh] object-cover"
                 loading="lazy"
               />
             </div>
@@ -685,13 +685,13 @@ function Index() {
           </div>
 
           <Reveal>
-            <div className="mt-12 flex flex-wrap items-center justify-between gap-4 rounded-sm border border-ink/10 p-8 md:p-10">
+            <div className="mt-12 flex flex-col items-center text-center gap-6 rounded-sm border border-ink/10 p-8 md:p-10 md:flex-row md:items-center md:justify-between md:text-left md:gap-4">
               <p className="text-lg md:text-xl text-ink">
                 Don&rsquo;t see your role? We&rsquo;re still listening.
               </p>
               <a
                 href="mailto:osohaarlem@outlook.com"
-                className="group inline-flex items-center gap-3 rounded-full bg-ink text-cream px-5 py-3 text-[11px] uppercase tracking-[0.24em] hover:bg-blue transition-colors"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-ink text-cream px-5 py-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.24em] hover:bg-blue transition-colors"
               >
                 osohaarlem@outlook.com
                 <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -847,37 +847,44 @@ function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-ink text-cream pt-24 md:pt-32 pb-10 relative overflow-hidden">
-        <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="grid md:grid-cols-3 gap-10 border-b border-cream/15 pb-16">
-            <div>
-              <span className="text-eyebrow text-cream/50">FIND US</span>
-              <p className="mt-5 text-lg">Ramplaan 44</p>
-              <p className="text-cream/65">2015 GX Haarlem</p>
+      <footer className="bg-ink text-cream pt-20 md:pt-28 pb-10">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+          <div className="grid gap-12 md:grid-cols-12 md:gap-10 pb-14 md:pb-20">
+            <div className="md:col-span-4">
+              <img
+                src={logo}
+                alt="OSO Coffee"
+                className="h-12 md:h-16 w-auto brightness-0 invert opacity-95"
+              />
+              <p className="mt-6 max-w-xs text-sm leading-relaxed text-cream/60">
+                A neighborhood coffee bar in Haarlem, born from a love for Spanish fincas.
+              </p>
             </div>
-            <div>
-              <span className="text-eyebrow text-cream/50">CONTACT</span>
-              <p className="mt-5 text-lg">osohaarlem@outlook.com</p>
-              <p className="text-cream/65">Press &amp; partnerships welcome</p>
+
+            <div className="md:col-span-3 md:col-start-6">
+              <span className="text-eyebrow text-cream/40">FIND US</span>
+              <p className="mt-5 text-cream/85">Ramplaan 44</p>
+              <p className="text-cream/60">2015 GX Haarlem</p>
             </div>
-            <div>
-              <span className="text-eyebrow text-cream/50">FOLLOW</span>
-              <div className="mt-5 flex flex-col gap-2">
-                <a href="https://www.instagram.com/osocoffee.haarlem/" className="hover:text-yellow transition-colors">Instagram</a>
-                <a href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem" className="hover:text-yellow transition-colors">Google Maps</a>
+
+            <div className="md:col-span-3">
+              <span className="text-eyebrow text-cream/40">CONTACT</span>
+              <a
+                href="mailto:osohaarlem@outlook.com"
+                className="mt-5 block text-cream/85 hover:text-yellow transition-colors break-all"
+              >
+                osohaarlem@outlook.com
+              </a>
+              <div className="mt-4 flex flex-col gap-2 text-cream/60">
+                <a href="https://www.instagram.com/osocoffee.haarlem/" target="_blank" rel="noreferrer" className="hover:text-yellow transition-colors">Instagram</a>
+                <a href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem" target="_blank" rel="noreferrer" className="hover:text-yellow transition-colors">Google Maps</a>
               </div>
             </div>
           </div>
-          <div className="mt-16 flex flex-wrap items-end justify-between gap-8">
-            <img
-              src={logo}
-              alt="OSO Coffee"
-              className="h-16 md:h-24 w-auto brightness-0 invert opacity-95"
-            />
-            <div className="flex flex-col items-end gap-1 text-[11px] uppercase tracking-[0.24em] text-cream/50">
-              <p>© {new Date().getFullYear()} OSO Coffee</p>
-              <p>Ramplaan 44 · Haarlem</p>
-            </div>
+
+          <div className="flex flex-col items-center gap-3 border-t border-cream/10 pt-8 text-[10px] uppercase tracking-[0.24em] text-cream/40 sm:flex-row sm:justify-between">
+            <p>© {new Date().getFullYear()} OSO Coffee</p>
+            <p>Haarlem, NL</p>
           </div>
         </div>
       </footer>
