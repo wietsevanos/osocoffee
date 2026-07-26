@@ -685,13 +685,13 @@ function Index() {
           </div>
 
           <Reveal>
-            <div className="mt-12 flex flex-wrap items-center justify-between gap-4 rounded-sm border border-ink/10 p-8 md:p-10">
+            <div className="mt-12 flex flex-col items-center text-center gap-6 rounded-sm border border-ink/10 p-8 md:p-10 md:flex-row md:items-center md:justify-between md:text-left md:gap-4">
               <p className="text-lg md:text-xl text-ink">
                 Don&rsquo;t see your role? We&rsquo;re still listening.
               </p>
               <a
                 href="mailto:osohaarlem@outlook.com"
-                className="group inline-flex items-center gap-3 rounded-full bg-ink text-cream px-5 py-3 text-[11px] uppercase tracking-[0.24em] hover:bg-blue transition-colors"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-ink text-cream px-5 py-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.24em] hover:bg-blue transition-colors"
               >
                 osohaarlem@outlook.com
                 <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
