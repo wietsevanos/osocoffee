@@ -196,14 +196,20 @@ function Index() {
         onClick={toggleAudio}
         aria-label={playing ? "Pause background music" : "Play background music"}
         aria-pressed={playing}
-        className="fixed bottom-5 left-5 z-[60] group inline-flex items-center gap-2 rounded-full border border-ink/15 bg-cream/85 backdrop-blur-md pl-3 pr-4 py-2 text-[10px] uppercase tracking-[0.28em] text-ink/80 hover:bg-cream transition-all"
+        className="fixed bottom-6 left-6 z-[60] inline-flex h-12 w-12 items-center justify-center rounded-full bg-ink text-cream shadow-lg shadow-ink/20 hover:bg-espresso transition-colors"
       >
-        <span className="relative inline-flex items-end gap-[2px] h-3 w-4" aria-hidden>
-          <span className={`w-[2px] bg-ink ${playing ? "animate-eq1" : "h-[3px]"}`} />
-          <span className={`w-[2px] bg-ink ${playing ? "animate-eq2" : "h-[6px]"}`} />
-          <span className={`w-[2px] bg-ink ${playing ? "animate-eq3" : "h-[4px]"}`} />
-        </span>
-        <span className="hidden sm:inline">{playing ? "Sound on" : "Sound off"}</span>
+        {playing ? (
+          <span className="inline-flex items-end gap-[3px] h-4 w-4 justify-center" aria-hidden>
+            <span className="w-[2px] bg-cream animate-eq1" />
+            <span className="w-[2px] bg-cream animate-eq2" />
+            <span className="w-[2px] bg-cream animate-eq3" />
+          </span>
+        ) : (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden>
+            <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+            <path d="m17 9 4 6M21 9l-4 6" />
+          </svg>
+        )}
       </button>
 
       {/* NAV */}
@@ -251,15 +257,22 @@ function Index() {
             <p className="md:col-span-4 text-base md:text-lg leading-relaxed text-ink/70 max-w-sm">
               A neighborhood coffee bar in Haarlem, born from a love for Spanish fincas.
             </p>
-            <div className="md:col-span-4 md:col-start-9 flex md:justify-end">
+            <div className="md:col-span-4 md:col-start-9 flex flex-col gap-5 md:items-end">
               <a
                 href="#about"
-                className="group inline-flex items-center justify-between rounded-full bg-ink text-cream pl-6 pr-2 py-2 text-[11px] uppercase tracking-[0.26em] hover:bg-blue transition-colors"
+                className="group inline-flex w-full max-w-xs md:w-auto items-center justify-between rounded-full bg-espresso text-cream pl-7 pr-2 py-2 text-[11px] uppercase tracking-[0.24em] hover:bg-ink transition-colors"
               >
                 Discover OSO
-                <span className="ml-6 inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-ink transition-transform group-hover:translate-x-1">
+                <span className="ml-8 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cream text-espresso transition-transform group-hover:translate-x-1">
                   <ArrowIcon className="h-4 w-4" />
                 </span>
+              </a>
+              <a
+                href="#careers"
+                className="group inline-flex items-center gap-3 pl-1 text-sm text-ink/70 hover:text-ink transition-colors"
+              >
+                We&rsquo;re hiring, join the team
+                <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
           </div>
