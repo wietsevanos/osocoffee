@@ -4,6 +4,7 @@ import logo from "@/assets/oso-logo.png";
 import bearBrown from "@/assets/bear-brown.png.asset.json";
 import bearYellow from "@/assets/bear-yellow.svg.asset.json";
 import bearBlue from "@/assets/bear-blue-outlined.png.asset.json";
+import bearBlueSolid from "@/assets/bear-blue-solid.png.asset.json";
 import nyc1940Audio from "@/assets/nyc-1940.mp3.asset.json";
 
 // Real photography — imported as CDN pointers.
@@ -196,7 +197,9 @@ function Index() {
         onClick={toggleAudio}
         aria-label={playing ? "Pause background music" : "Play background music"}
         aria-pressed={playing}
-        className="fixed bottom-6 left-6 z-[60] inline-flex h-12 w-12 items-center justify-center rounded-full bg-ink text-cream shadow-lg shadow-ink/20 hover:bg-espresso transition-colors"
+        className={`fixed bottom-6 left-6 z-[60] inline-flex h-12 w-12 items-center justify-center rounded-full text-cream shadow-lg shadow-ink/20 transition-colors ${
+          playing ? "bg-blue hover:bg-blue-deep" : "bg-espresso hover:bg-ink"
+        }`}
       >
         {playing ? (
           <span className="inline-flex items-end gap-[3px] h-4 w-4 justify-center" aria-hidden>
@@ -269,10 +272,9 @@ function Index() {
               </a>
               <a
                 href="#careers"
-                className="group inline-flex items-center gap-3 pl-1 text-sm text-ink/70 hover:text-ink transition-colors"
+                className="inline-flex items-center pl-1 text-sm text-ink/70 hover:text-ink transition-colors"
               >
                 We&rsquo;re hiring, join the team
-                <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
           </div>
@@ -832,7 +834,7 @@ function Index() {
             >
               Open in Maps <ArrowIcon className="h-3.5 w-3.5" />
             </a>
-            <img src={bearYellow.url} alt="" aria-hidden className="mt-14 h-14 w-auto" />
+            <img src={bearBlueSolid.url} alt="" aria-hidden className="mt-14 h-14 w-auto" />
           </Reveal>
 
           <Reveal delay={120} className="md:col-span-7">
