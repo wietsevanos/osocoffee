@@ -272,7 +272,7 @@ function Index() {
               <img
                 src={p138.url}
                 alt="Warm plaster interior of OSO Coffee with oak tables and a green banquette"
-                className="w-full h-[60vh] md:h-[86vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[86vh] object-cover"
               />
               <img
                 src={bearBlue.url}
@@ -335,10 +335,10 @@ function Index() {
           <Reveal delay={200} className="mt-20 md:mt-28">
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               <div className="overflow-hidden rounded-sm">
-                <img src={p95.url} alt="Beau behind the OSO Coffee bar" className="w-full h-[46vh] md:h-[62vh] object-cover" loading="lazy" />
+                <img src={p95.url} alt="Beau behind the OSO Coffee bar" className="w-full aspect-[3/4] md:aspect-auto md:h-[62vh] object-cover" loading="lazy" />
               </div>
               <div className="overflow-hidden rounded-sm">
-                <img src={p134.url} alt="Setting the tables at OSO Coffee" className="w-full h-[46vh] md:h-[62vh] object-cover" loading="lazy" />
+                <img src={p134.url} alt="Setting the tables at OSO Coffee" className="w-full aspect-[3/4] md:aspect-auto md:h-[62vh] object-cover" loading="lazy" />
               </div>
             </div>
           </Reveal>
@@ -365,7 +365,7 @@ function Index() {
               <img
                 src={p163.url}
                 alt="Overhead spread of tostadas, cheese, padrón peppers and drinks on terracotta plates"
-                className="w-full h-[52vh] md:h-[62vh] object-cover"
+                className="w-full aspect-[4/3] md:aspect-auto md:h-[62vh] object-cover"
                 loading="lazy"
               />
               </div>
@@ -451,7 +451,7 @@ function Index() {
               <img
                 src={p105.url}
                 alt="Beau pulling a shot on the La Marzocco espresso machine"
-                className="w-full h-[60vh] md:h-[80vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[80vh] object-cover"
                 loading="lazy"
               />
             </div>
@@ -501,7 +501,7 @@ function Index() {
                 muted
                 loop
                 playsInline
-                className="w-full h-[60vh] md:h-[85vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[85vh] object-cover"
               />
             </div>
           </Reveal>
@@ -536,7 +536,7 @@ function Index() {
               <img
                 src={p158.url}
                 alt="Long perspective of the OSO Coffee dining room with rush chairs and a soft banquette"
-                className="w-full h-[60vh] md:h-[85vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[85vh] object-cover"
                 loading="lazy"
               />
             </div>
@@ -576,7 +576,7 @@ function Index() {
               <img
                 src={p133.url}
                 alt="Ripe tomatoes and dried peppers in terracotta bowls on an oak counter"
-                className="w-full h-[60vh] md:h-[80vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[80vh] object-cover"
                 loading="lazy"
               />
             </div>
