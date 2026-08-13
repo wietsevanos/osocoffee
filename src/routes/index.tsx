@@ -15,7 +15,6 @@ import p37 from "@/assets/oso-37.jpg.asset.json";
 import p42 from "@/assets/oso-42.jpg.asset.json";
 import p63 from "@/assets/oso-63.jpg.asset.json";
 import p64 from "@/assets/oso-64.jpg.asset.json";
-import p70 from "@/assets/oso-70.jpg.asset.json";
 import p71 from "@/assets/oso-71.jpg.asset.json";
 import p79 from "@/assets/oso-79.jpg.asset.json";
 import p95 from "@/assets/oso-95.jpg.asset.json";
@@ -35,12 +34,8 @@ import p143 from "@/assets/oso-143.jpg.asset.json";
 import p146 from "@/assets/oso-146.jpg.asset.json";
 import p150 from "@/assets/oso-150.jpg.asset.json";
 import p151 from "@/assets/oso-151.jpg.asset.json";
-import p153 from "@/assets/oso-153.jpg.asset.json";
-import p157 from "@/assets/oso-157.jpg.asset.json";
 import p158 from "@/assets/oso-158.jpg.asset.json";
-import p161 from "@/assets/oso-161.jpg.asset.json";
 import p163 from "@/assets/oso-163.jpg.asset.json";
-import p164 from "@/assets/oso-164.jpg.asset.json";
 import ig1 from "@/assets/ig-727518768.jpg.asset.json";
 import igCardboard from "@/assets/ig-cardboard-art.jpg.asset.json";
 import ig3 from "@/assets/ig-new-cups.jpg.asset.json";
@@ -571,13 +566,21 @@ function Index() {
           </div>
 
           <Reveal>
-            <div className="overflow-hidden rounded-sm">
+            <div className="relative overflow-hidden rounded-sm group">
               <img
                 src={p158.url}
                 alt="Long perspective of the OSO Coffee dining room with rush chairs and a soft banquette"
-                className="w-full aspect-[4/5] md:aspect-auto md:h-[85vh] object-cover"
+                className="w-full aspect-[4/5] md:aspect-auto md:h-[85vh] object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
                 loading="lazy"
               />
+              <a
+                href="https://www.instagram.com/osocoffee.haarlem/"
+                target="_blank"
+                rel="noreferrer"
+                className="absolute bottom-5 left-5 md:bottom-8 md:left-8 inline-flex items-center gap-2 rounded-full bg-cream/90 backdrop-blur-sm text-ink px-4 py-2.5 text-[10px] uppercase tracking-[0.26em] hover:bg-cream transition-colors shadow-sm"
+              >
+                Bekijk alle foto's <ArrowIcon className="h-3.5 w-3.5" />
+              </a>
             </div>
           </Reveal>
 
@@ -605,27 +608,6 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-3 md:mt-6 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
-            {[
-              { src: p161.url, alt: "Table set with tostadas, cheese and drinks at OSO Coffee" },
-              { src: p164.url, alt: "Overhead tapas spread at OSO Coffee" },
-              { src: p153.url, alt: "Iced matcha with a striped ceramic jug" },
-              { src: p70.url, alt: "Wine, water and toasts on a small oak table" },
-              { src: p157.url, alt: "Empty candlelit oak tables in the OSO dining room" },
-              { src: p109.url, alt: "Cappuccino and granola bowl in soft window light" },
-            ].map((im, i) => (
-              <Reveal key={i} delay={i * 60}>
-                <div className="overflow-hidden rounded-sm aspect-[4/3] group">
-                  <img
-                    src={im.src}
-                    alt={im.alt}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-                  />
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
