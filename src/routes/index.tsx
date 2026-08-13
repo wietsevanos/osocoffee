@@ -256,7 +256,7 @@ function Index() {
             NOW OPEN, HAARLEM
           </div>
 
-          <h1 className="mt-10 md:mt-14 text-display text-[clamp(3.5rem,13vw,13rem)] text-ink animate-rise">
+          <h1 className="mt-10 md:mt-14 text-display text-[clamp(3rem,8.6vw,9rem)] text-ink animate-rise whitespace-nowrap md:whitespace-normal">
             How can we be
             <br />
             of service?
