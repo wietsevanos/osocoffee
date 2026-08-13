@@ -446,9 +446,9 @@ function Index() {
           <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-16 md:mb-20">
             <Reveal className="md:col-span-7">
               <h2 className="text-display text-[clamp(2.4rem,6.5vw,5.5rem)] text-ink">
-                HOMEMADE
+                Homemade
                 <br />
-                SEASONAL CAKES.
+                seasonal cakes.
               </h2>
             </Reveal>
             <Reveal delay={100} className="md:col-span-4 md:col-start-9">
@@ -489,9 +489,9 @@ function Index() {
           <Reveal delay={120} className="md:col-span-4 md:col-start-9 order-1 md:order-2">
             <span className="text-eyebrow text-espresso">04 — THE BAR</span>
             <h2 className="mt-8 text-display text-[clamp(2.2rem,5.5vw,4.5rem)] text-ink">
-              SPECIALTY
+              Specialty
               <br />
-              COFFEE.
+              coffee.
             </h2>
             <p className="mt-8 text-ink/70 leading-relaxed">
               We proudly serve local coffee from Moring Glory, with beans carefully roasted in Haarlem.

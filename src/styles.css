@@ -213,6 +213,7 @@
     font-weight: 300;
     line-height: 0.9;
     letter-spacing: -0.045em;
+    text-transform: uppercase;
   }
   .font-script {
     font-family: var(--font-script);
