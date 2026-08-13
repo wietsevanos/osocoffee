@@ -41,6 +41,12 @@ import p158 from "@/assets/oso-158.jpg.asset.json";
 import p161 from "@/assets/oso-161.jpg.asset.json";
 import p163 from "@/assets/oso-163.jpg.asset.json";
 import p164 from "@/assets/oso-164.jpg.asset.json";
+import ig1 from "@/assets/ig-727518768.jpg.asset.json";
+import ig2 from "@/assets/ig-758469050.jpg.asset.json";
+import ig3 from "@/assets/ig-759010330.jpg.asset.json";
+import ig4 from "@/assets/ig-762623737.jpg.asset.json";
+import ig5 from "@/assets/ig-743876804.jpg.asset.json";
+import ig6 from "@/assets/ig-771969037.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -250,7 +256,7 @@ function Index() {
             NOW OPEN, HAARLEM
           </div>
 
-          <h1 className="mt-10 md:mt-14 text-display text-[clamp(3.5rem,13vw,13rem)] text-ink animate-rise">
+          <h1 className="mt-10 md:mt-14 text-display text-[clamp(3rem,8.6vw,9rem)] text-ink animate-rise whitespace-nowrap md:whitespace-normal">
             How can we be
             <br />
             of service?
@@ -598,6 +604,28 @@ function Index() {
               </Reveal>
             ))}
           </div>
+
+          <div className="mt-3 md:mt-6 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+            {[
+              { src: p161.url, alt: "Table set with tostadas, cheese and drinks at OSO Coffee" },
+              { src: p164.url, alt: "Overhead tapas spread at OSO Coffee" },
+              { src: p153.url, alt: "Iced matcha with a striped ceramic jug" },
+              { src: p70.url, alt: "Wine, water and toasts on a small oak table" },
+              { src: p157.url, alt: "Empty candlelit oak tables in the OSO dining room" },
+              { src: p109.url, alt: "Cappuccino and granola bowl in soft window light" },
+            ].map((im, i) => (
+              <Reveal key={i} delay={i * 60}>
+                <div className="overflow-hidden rounded-sm aspect-[4/3] group">
+                  <img
+                    src={im.src}
+                    alt={im.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -808,12 +836,12 @@ function Index() {
           <Reveal delay={150} className="mt-16 md:mt-24">
             <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-5">
               {[
-                { src: p161.url, alt: "Table set with tostadas, cheese and drinks at OSO Coffee" },
-                { src: p164.url, alt: "Overhead tapas spread at OSO Coffee" },
-                { src: p109.url, alt: "Cappuccino and granola bowl in soft window light" },
-                { src: p153.url, alt: "Iced matcha with a striped ceramic jug" },
-                { src: p70.url, alt: "Wine, water and toasts on a small oak table" },
-                { src: p157.url, alt: "Empty candlelit oak tables in the OSO dining room" },
+                { src: ig1.url, alt: "Iced matcha with a red rimmed ceramic jug" },
+                { src: ig2.url, alt: "Tray of espresso cups and OSO mugs on an oak table" },
+                { src: ig3.url, alt: "Buenos dias, we are looking for kitchen staff" },
+                { src: ig4.url, alt: "Picoteo, taperia en OSO announcement" },
+                { src: ig5.url, alt: "Goodoo plant based ice creams on a glass plate" },
+                { src: ig6.url, alt: "Run 11, Sunday run x OSO Coffee" },
               ].map((p, i) => (
                 <a
                   key={i}
