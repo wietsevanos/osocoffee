@@ -46,9 +46,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "OSO Coffee, Bar, coffee, bites & pastries · Haarlem" },
-      { name: "description", content: "OSO Coffee is a neighborhood coffee bar in Haarlem, born from a love for Spanish fincas. Coffee and pastries at Ramplaan 44." },
+      { name: "description", content: "OSO Coffee is a neighborhood coffee bar in Haarlem, born out of love for Mediterranean culture and food. Coffee and pastries at Ramplaan 44." },
       { property: "og:title", content: "OSO Coffee, Haarlem" },
-      { property: "og:description", content: "A neighborhood coffee bar, born from a love for Spanish fincas. Coffee & pastries in Haarlem." },
+      { property: "og:description", content: "A neighborhood coffee bar, born out of love for Mediterranean culture and food. Coffee & pastries in Haarlem." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
@@ -251,14 +251,14 @@ function Index() {
           </div>
 
           <h1 className="mt-10 md:mt-14 text-display text-[clamp(3.5rem,13vw,13rem)] text-ink animate-rise">
-            SLOW
+            How can we be
             <br />
-            MORNINGS.
+            of service?
           </h1>
 
           <div className="mt-16 md:mt-20 grid md:grid-cols-12 gap-10 md:gap-16 items-end animate-rise" style={{ animationDelay: "160ms" }}>
             <p className="md:col-span-4 text-base md:text-lg leading-relaxed text-ink/70 max-w-sm">
-              A neighborhood coffee bar in Haarlem, born from a love for Spanish fincas.
+              Espresso, homemade pastries, or perhaps a glass of wine? Whatever you choose we're here to make your day a little brighter.
             </p>
             <div className="md:col-span-4 md:col-start-9 flex flex-col gap-5 md:items-end">
               <a
@@ -329,19 +329,22 @@ function Index() {
           <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 md:gap-16 items-start">
             <Reveal className="md:col-span-7">
               <h2 className="text-display text-[clamp(2.6rem,7.5vw,6.5rem)] text-ink">
-                A ROOM
+                A space
                 <br />
-                THAT FEELS
+                that feels
                 <br />
-                LIKE HOME.
+                like home.
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:col-start-9 md:pt-6">
               <p className="text-ink/70 leading-relaxed">
-                OSO means bear in Spanish. Warm plaster, arched alcoves and oak benches, a contemporary read of a Spanish finca.
+                Oso means bear in Spanish, which refers to the owner, Beau de Beer.
               </p>
               <p className="mt-6 text-ink/70 leading-relaxed">
-                Considered coffee, honest pastries, doors open from morning to late afternoon.
+                Oso was born out of a love for Spanish culture, the warmth of the people, and the delicious food.
+              </p>
+              <p className="mt-6 text-ink/70 leading-relaxed">
+                This is reflected in the interior, the homemade Mediterranean food and drinks.
               </p>
               <img src={bearBrown.url} alt="" aria-hidden className="mt-10 h-14 w-auto opacity-90" />
             </Reveal>
@@ -369,12 +372,12 @@ function Index() {
           <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-12 md:gap-20 items-start">
             <Reveal className="md:col-span-6">
               <h2 className="text-display text-[clamp(2.6rem,7vw,6rem)] text-ink">
-                QUIET
+                Comida
                 <br />
-                MENU.
+                y Bebida.
               </h2>
               <p className="mt-8 text-ink/70 max-w-md leading-relaxed">
-                Espresso from a La Marzocco, filter on the side, pastries baked daily. A short list that changes with the season.
+                Specialty coffees and homemade pastries. Soon we will serve breakfast, lunch, tapas and Spanish beverages.
               </p>
               <div className="mt-12 overflow-hidden rounded-sm">
               <img
@@ -387,6 +390,18 @@ function Index() {
             </Reveal>
 
             <Reveal delay={120} className="md:col-span-5 md:col-start-8">
+              <div className="grid grid-cols-3 gap-3 mb-10">
+                <div className="overflow-hidden rounded-sm aspect-square">
+                  <img src={p42.url} alt="Espresso being pulled on the La Marzocco" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div className="overflow-hidden rounded-sm aspect-square">
+                  <img src={p79.url} alt="Cappuccino and granola bowl on a wooden table" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div className="overflow-hidden rounded-sm aspect-square">
+                  <img src={p31.url} alt="Slicing a piece of cake from the counter" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+
               <ul className="divide-y divide-ink/10">
               {[
                 ["Espresso", "Single origin, seasonal", "3.20"],
@@ -414,7 +429,7 @@ function Index() {
                   Coming soon
                 </span>
                 <p className="mt-5 text-ink/70 max-w-sm leading-relaxed">
-                  Tostadas, padrón peppers, Manchego and natural Spanish wines, joining the counter soon.
+                  Breakfast, lunch and tapas all Mediterranean inspired of course.
                 </p>
               </div>
             </Reveal>
@@ -431,14 +446,14 @@ function Index() {
           <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 md:gap-16 items-end mb-16 md:mb-20">
             <Reveal className="md:col-span-7">
               <h2 className="text-display text-[clamp(2.4rem,6.5vw,5.5rem)] text-ink">
-                PASTRIES,
+                Homemade
                 <br />
-                WARM.
+                seasonal cakes.
               </h2>
             </Reveal>
             <Reveal delay={100} className="md:col-span-4 md:col-start-9">
               <p className="text-ink/70 leading-relaxed">
-                A short pastry counter, refreshed each morning. Almond cakes, buttery apple pie, seasonal fruit.
+                Every day, our display is filled with delicious homemade cakes and freshly baked croissants for our guests to enjoy.
               </p>
             </Reveal>
           </div>
@@ -474,12 +489,15 @@ function Index() {
           <Reveal delay={120} className="md:col-span-4 md:col-start-9 order-1 md:order-2">
             <span className="text-eyebrow text-espresso">04 — THE BAR</span>
             <h2 className="mt-8 text-display text-[clamp(2.2rem,5.5vw,4.5rem)] text-ink">
-              PULLED
+              Specialty
               <br />
-              SLOWLY.
+              coffee.
             </h2>
             <p className="mt-8 text-ink/70 leading-relaxed">
-              Espresso, flat whites and filter on custom OSO cups in blue, yellow and espresso brown. Small equipment, careful hands.
+              We proudly serve local coffee from Moring Glory, with beans carefully roasted in Haarlem.
+            </p>
+            <p className="mt-6 text-ink/70 leading-relaxed">
+              Coming soon: our thoughtfully curated selection of Spanish wines.
             </p>
             <img src={bearBrown.url} alt="" aria-hidden className="mt-10 h-12 w-auto opacity-80" />
           </Reveal>
@@ -532,16 +550,16 @@ function Index() {
           <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 items-end mb-16 md:mb-24">
             <Reveal className="md:col-span-7">
               <h2 className="text-display text-[clamp(2.6rem,7.5vw,6.5rem)] text-ink">
-                ALCOVES,
+                Organic shapes,
                 <br />
-                ARCHES,
+                natural materials,
                 <br />
-                LIGHT.
+                warm colors.
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:col-start-9">
               <p className="text-ink/70 leading-relaxed">
-                A Spanish finca in rhythm, warm textures and quiet corners that invite you to linger.
+                A warm, soulful space inspired by the beauty of a Spanish finca, where soft textures, natural forms, and earthy tones create a sense of calm. A place to escape, unwind, and feel completely at home.
               </p>
             </Reveal>
           </div>
@@ -602,12 +620,19 @@ function Index() {
             </span>
             <span className="mt-6 block text-eyebrow text-espresso">07 — LUNCH &amp; TAPAS</span>
             <h3 className="mt-6 text-display text-[clamp(2rem,4.5vw,3.4rem)] text-ink">
-              SLOW
-              <br />
-              LUNCH.
+              Breakfast, leisurely lunches, and tapas ready to share
             </h3>
             <p className="mt-8 text-ink/70 leading-relaxed">
-              Tomatoes, padrón peppers, Manchego and good bread. A short tapas menu and Spanish natural wines are on the way.
+              We’ve been working behind the scenes on something special: a Spanish-inspired menu filled with tasty breakfast, delicious lunches, and tapas.
+            </p>
+            <p className="mt-6 text-ink/70 leading-relaxed">
+              Right now, our kitchen is busy testing, tasting, and perfecting every dish. Because for us, it’s all about getting the details right and serving you food we truly believe in.
+            </p>
+            <p className="mt-6 text-ink/70 leading-relaxed">
+              From September onwards, you’re warmly invited to come and discover our new menu, paired with a carefully curated selection of Spanish wines.
+            </p>
+            <p className="mt-6 text-ink/70 leading-relaxed">
+              We’re putting a lot of love into it, and we honestly can’t wait to welcome you, let you taste it, and share a little piece of Spain with you.
             </p>
           </Reveal>
         </div>
@@ -872,7 +897,7 @@ function Index() {
                 className="h-12 md:h-16 w-auto brightness-0 invert opacity-95"
               />
               <p className="mt-6 max-w-xs text-sm leading-relaxed text-cream/60">
-                A neighborhood coffee bar in Haarlem, born from a love for Spanish fincas.
+                A neighborhood coffee bar in Haarlem, born out of love for Mediterranean culture and food.
               </p>
             </div>
 
