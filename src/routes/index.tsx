@@ -15,7 +15,6 @@ import p37 from "@/assets/oso-37.jpg.asset.json";
 import p42 from "@/assets/oso-42.jpg.asset.json";
 import p63 from "@/assets/oso-63.jpg.asset.json";
 import p64 from "@/assets/oso-64.jpg.asset.json";
-import p70 from "@/assets/oso-70.jpg.asset.json";
 import p71 from "@/assets/oso-71.jpg.asset.json";
 import p79 from "@/assets/oso-79.jpg.asset.json";
 import p95 from "@/assets/oso-95.jpg.asset.json";
