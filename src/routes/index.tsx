@@ -598,6 +598,28 @@ function Index() {
               </Reveal>
             ))}
           </div>
+
+          <div className="mt-3 md:mt-6 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+            {[
+              { src: p161.url, alt: "Table set with tostadas, cheese and drinks at OSO Coffee" },
+              { src: p164.url, alt: "Overhead tapas spread at OSO Coffee" },
+              { src: p153.url, alt: "Iced matcha with a striped ceramic jug" },
+              { src: p70.url, alt: "Wine, water and toasts on a small oak table" },
+              { src: p157.url, alt: "Empty candlelit oak tables in the OSO dining room" },
+              { src: p109.url, alt: "Cappuccino and granola bowl in soft window light" },
+            ].map((im, i) => (
+              <Reveal key={i} delay={i * 60}>
+                <div className="overflow-hidden rounded-sm aspect-[4/3] group">
+                  <img
+                    src={im.src}
+                    alt={im.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
