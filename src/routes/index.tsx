@@ -251,9 +251,9 @@ function Index() {
           </div>
 
           <h1 className="mt-10 md:mt-14 text-display text-[clamp(3.5rem,13vw,13rem)] text-ink animate-rise">
-            HOW CAN WE BE
+            How can we be
             <br />
-            OF SERVICE?
+            of service?
           </h1>
 
           <div className="mt-16 md:mt-20 grid md:grid-cols-12 gap-10 md:gap-16 items-end animate-rise" style={{ animationDelay: "160ms" }}>
@@ -329,11 +329,11 @@ function Index() {
           <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 md:gap-16 items-start">
             <Reveal className="md:col-span-7">
               <h2 className="text-display text-[clamp(2.6rem,7.5vw,6.5rem)] text-ink">
-                A SPACE
+                A space
                 <br />
-                THAT FEELS
+                that feels
                 <br />
-                LIKE HOME.
+                like home.
               </h2>
             </Reveal>
             <Reveal delay={120} className="md:col-span-4 md:col-start-9 md:pt-6">
@@ -372,9 +372,9 @@ function Index() {
           <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-12 md:gap-20 items-start">
             <Reveal className="md:col-span-6">
               <h2 className="text-display text-[clamp(2.6rem,7vw,6rem)] text-ink">
-                COMIDA
+                Comida
                 <br />
-                Y BEBIDA.
+                y Bebida.
               </h2>
               <p className="mt-8 text-ink/70 max-w-md leading-relaxed">
                 Specialty coffees and homemade pastries. Soon we will serve breakfast, lunch, tapas and Spanish beverages.
