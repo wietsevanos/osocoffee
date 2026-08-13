@@ -324,11 +324,11 @@ function Index() {
       {/* ABOUT */}
       <section id="about" className="py-32 md:py-56">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <div className="border-t border-espresso/20 pt-10 md:pt-14">
+          <Reveal>
+            <span className="text-eyebrow text-blue">01 — ABOUT</span>
+          </Reveal>
+          <div className="mt-8 md:mt-12 border-t border-espresso/20 pt-10 md:pt-14">
             <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
-              <Reveal className="md:col-span-1">
-                <span className="text-eyebrow text-blue block">01 /</span>
-              </Reveal>
               <Reveal className="md:col-span-7">
                 <h2 className="text-display text-[clamp(2.6rem,7.5vw,6.5rem)] text-ink">
                   A space
@@ -338,8 +338,8 @@ function Index() {
                   like home.
                 </h2>
               </Reveal>
-              <Reveal delay={120} className="md:col-span-4 md:pb-2">
-                <p className="text-ink/70 leading-relaxed">
+              <Reveal delay={120} className="md:col-span-4 md:col-start-9 md:pb-2">
+                <p className="text-espresso text-lg md:text-xl leading-relaxed">
                   Oso means bear in Spanish, which refers to the owner, Beau de Beer.
                 </p>
                 <p className="mt-6 text-ink/70 leading-relaxed">
