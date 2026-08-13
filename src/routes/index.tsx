@@ -42,7 +42,7 @@ import p161 from "@/assets/oso-161.jpg.asset.json";
 import p163 from "@/assets/oso-163.jpg.asset.json";
 import p164 from "@/assets/oso-164.jpg.asset.json";
 import ig1 from "@/assets/ig-727518768.jpg.asset.json";
-import ig2 from "@/assets/ig-758469050.jpg.asset.json";
+import igCardboard from "@/assets/ig-cardboard-art.jpg.asset.json";
 import ig3 from "@/assets/ig-new-cups.jpg.asset.json";
 import ig4 from "@/assets/ig-new-cheesecake.jpg.asset.json";
 import ig5 from "@/assets/ig-743876804.jpg.asset.json";
@@ -837,7 +837,7 @@ function Index() {
             <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-5">
               {[
                 { src: ig1.url, alt: "Iced matcha with a red rimmed ceramic jug" },
-                { src: ig2.url, alt: "Tray of espresso cups and OSO mugs on an oak table" },
+                { src: igCardboard.url, alt: "Cardboard art installation in yellow and blue packaging" },
                 { src: ig3.url, alt: "Tray with espresso cups, OSO mug and stacked saucers" },
                 { src: ig4.url, alt: "Freshly baked Basque style cheesecake in a tin" },
                 { src: ig5.url, alt: "Goodoo plant based ice creams on a glass plate" },
