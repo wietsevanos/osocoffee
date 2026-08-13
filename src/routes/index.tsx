@@ -398,7 +398,7 @@ function Index() {
                   <img src={p79.url} alt="Cappuccino and granola bowl on a wooden table" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="overflow-hidden rounded-sm aspect-square">
-                  <img src={p111.url} alt="Iced latte with espresso poured over ice" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={p31.url} alt="Slicing a piece of cake from the counter" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
 
