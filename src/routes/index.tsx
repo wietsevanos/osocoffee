@@ -550,7 +550,6 @@ function Index() {
           </div>
           <Reveal>
             <div className="relative overflow-hidden rounded-sm">
-              <img src={bearYellow.url} alt="" aria-hidden className="pointer-events-none absolute top-4 left-4 md:top-6 md:left-6 h-10 md:h-14 w-auto z-10" />
               <video
                 src="/oso-video.mp4"
                 poster={p109.url}
