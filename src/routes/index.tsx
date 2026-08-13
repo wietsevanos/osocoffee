@@ -324,40 +324,63 @@ function Index() {
       {/* ABOUT */}
       <section id="about" className="py-32 md:py-56">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <Reveal>
-            <span className="text-eyebrow text-blue">01 — ABOUT</span>
-          </Reveal>
-          <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-            <Reveal className="md:col-span-7">
-              <h2 className="text-display text-[clamp(2.6rem,7.5vw,6.5rem)] text-ink">
-                A space
-                <br />
-                that feels
-                <br />
-                like home.
-              </h2>
-            </Reveal>
-            <Reveal delay={120} className="md:col-span-4 md:col-start-9 md:pt-6">
-              <p className="text-ink/70 leading-relaxed">
-                Oso means bear in Spanish, which refers to the owner, Beau de Beer.
-              </p>
-              <p className="mt-6 text-ink/70 leading-relaxed">
-                Oso was born out of a love for Spanish culture, the warmth of the people, and the delicious food.
-              </p>
-              <p className="mt-6 text-ink/70 leading-relaxed">
-                This is reflected in the interior, the homemade Mediterranean food and drinks.
-              </p>
-              <img src={bearBrown.url} alt="" aria-hidden className="mt-10 h-14 w-auto opacity-90" />
-            </Reveal>
+          <div className="border-t border-espresso/20 pt-10 md:pt-14">
+            <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-end">
+              <Reveal className="md:col-span-1">
+                <span className="text-eyebrow text-blue block">01 /</span>
+              </Reveal>
+              <Reveal className="md:col-span-7">
+                <h2 className="text-display text-[clamp(2.6rem,7.5vw,6.5rem)] text-ink">
+                  A space
+                  <br />
+                  that feels
+                  <br />
+                  like home.
+                </h2>
+              </Reveal>
+              <Reveal delay={120} className="md:col-span-4 md:pb-2">
+                <p className="text-ink/70 leading-relaxed">
+                  Oso means bear in Spanish, which refers to the owner, Beau de Beer.
+                </p>
+                <p className="mt-6 text-ink/70 leading-relaxed">
+                  Oso was born out of a love for Spanish culture, the warmth of the people, and the delicious food.
+                </p>
+                <p className="mt-6 text-ink/70 leading-relaxed">
+                  This is reflected in the interior, the homemade Mediterranean food and drinks.
+                </p>
+              </Reveal>
+            </div>
           </div>
 
-          <Reveal delay={200} className="mt-20 md:mt-28">
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
-              <div className="overflow-hidden rounded-sm">
-                <img src={p95.url} alt="Beau behind the OSO Coffee bar" className="w-full aspect-[3/4] md:aspect-auto md:h-[62vh] object-cover" loading="lazy" />
+          <Reveal delay={200} className="mt-20 md:mt-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+              <div className="relative">
+                <div className="overflow-hidden rounded-sm">
+                  <img
+                    src={p95.url}
+                    alt="Beau behind the OSO Coffee bar"
+                    className="w-full aspect-[3/4] md:aspect-auto md:h-[62vh] object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="mt-5 flex items-center gap-4">
+                  <div className="w-8 h-px bg-yellow" />
+                  <span className="text-espresso text-xs uppercase tracking-widest font-medium">Behind the bar</span>
+                </div>
               </div>
-              <div className="overflow-hidden rounded-sm">
-                <img src={p134.url} alt="Setting the tables at OSO Coffee" className="w-full aspect-[3/4] md:aspect-auto md:h-[62vh] object-cover" loading="lazy" />
+              <div className="relative md:mt-24">
+                <div className="overflow-hidden rounded-sm">
+                  <img
+                    src={p134.url}
+                    alt="Setting the tables at OSO Coffee"
+                    className="w-full aspect-[3/4] md:aspect-auto md:h-[62vh] object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="mt-5 flex items-center gap-4">
+                  <div className="w-8 h-px bg-yellow" />
+                  <span className="text-espresso text-xs uppercase tracking-widest font-medium">Set for the day</span>
+                </div>
               </div>
             </div>
           </Reveal>
