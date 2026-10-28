@@ -680,13 +680,13 @@ function Index() {
             </Reveal>
           </div>
 
-          <div className="grid md:grid-cols-12 gap-4 md:gap-6 items-start">
-            <div className="md:col-span-4">
+          <div className="grid md:grid-cols-12 gap-4 md:gap-6">
+            <div className="md:col-span-4 md:self-stretch">
               {vacancies.map((r, i) => (
-                <Reveal key={r.role} delay={i * 100}>
+                <Reveal key={r.role} delay={i * 100} className="h-full">
                   <a
                     href="mailto:osohaarlem@outlook.com?subject=Application%20-%20OSO%20Coffee"
-                    className="group relative block h-full rounded-sm border border-ink/10 bg-cream-deep p-8 md:p-10 transition-all duration-500 hover:border-ink hover:-translate-y-1"
+                    className="group relative flex h-full flex-col rounded-sm border border-ink/10 bg-cream-deep p-8 md:p-10 transition-all duration-500 hover:border-ink hover:-translate-y-1"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <span className="text-eyebrow text-ink/50">{r.type}</span>
@@ -694,7 +694,7 @@ function Index() {
                         <ArrowIcon className="h-4 w-4" />
                       </span>
                     </div>
-                    <h3 className="mt-14 text-2xl md:text-3xl text-ink leading-tight tracking-tight">
+                    <h3 className="mt-14 md:mt-auto text-2xl md:text-3xl text-ink leading-tight tracking-tight">
                       {r.role}
                     </h3>
                     <p className="mt-5 text-sm text-ink/65 max-w-xs leading-relaxed">{r.note}</p>
