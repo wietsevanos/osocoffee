@@ -739,7 +739,7 @@ function Index() {
           </div>
 
           <Reveal>
-            <div className="mt-12 flex flex-col items-center text-center gap-6 rounded-sm border border-ink/10 p-8 md:p-10 md:flex-row md:items-center md:justify-between md:text-left md:gap-4">
+            <div className="mt-16 md:mt-24 flex flex-col items-center text-center gap-6 rounded-sm border border-ink/10 p-8 md:p-10 md:flex-row md:items-center md:justify-between md:text-left md:gap-4">
               <p className="text-lg md:text-xl text-ink">
                 Don&rsquo;t see your role? We&rsquo;re still listening.
               </p>
