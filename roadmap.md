@@ -5,3 +5,4 @@
 - [x] Alleen Head Barista en Barista verwijderen; Pastry & Kitchen behouden.
 - [x] Openingstijden aanpassen en regels testen.
 - [x] Desktop, tablet, mobiel en volledige navigatie controleren.
+- [x] Witruimte in de careers-sectie vullen met twee portretfoto's en een hogere vacaturekaart.
