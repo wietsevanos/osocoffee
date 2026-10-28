@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/oso-logo.png";
+import { Button } from "@/components/ui/button";
+import { HOURS, vacancies } from "@/lib/business-data";
 import bearBrown from "@/assets/bear-brown.png.asset.json";
 import bearYellow from "@/assets/bear-yellow.svg.asset.json";
 import bearBlue from "@/assets/bear-blue-outlined.png.asset.json";
@@ -118,20 +120,10 @@ function ArrowIcon({ className = "" }: { className?: string }) {
 
 const NAV = [
   { label: "About", href: "#about" },
-  { label: "Menu", href: "#menu" },
+  { label: "Menu", href: "/menu" },
   { label: "Space", href: "#space" },
   { label: "Careers", href: "#careers" },
   { label: "Visit", href: "#visit" },
-];
-
-const HOURS: Array<[string, string]> = [
-  ["Monday", "Closed"],
-  ["Tuesday", "Closed"],
-  ["Wednesday", "08:00 – 16:00"],
-  ["Thursday", "08:00 – 16:00"],
-  ["Friday", "08:00 – 17:00"],
-  ["Saturday", "09:00 – 17:00"],
-  ["Sunday", "09:00 – 17:00"],
 ];
 
 function Index() {
@@ -234,12 +226,10 @@ function Index() {
               </a>
             ))}
           </nav>
-          <a
-            href="#visit"
-            className="inline-flex items-center gap-2 rounded-full border border-ink/25 px-4 py-2 text-[10px] uppercase tracking-[0.28em] hover:bg-ink hover:text-cream transition-colors"
-          >
-            Visit
-          </a>
+          <div className="flex items-center gap-3">
+            <Button asChild variant="link" className="md:hidden px-0 text-xs uppercase text-ink"><a href="/menu">Menu</a></Button>
+            <a href="#visit" className="inline-flex items-center gap-2 rounded-full border border-ink/25 px-4 py-2 text-[10px] uppercase tracking-[0.28em] hover:bg-ink hover:text-cream transition-colors">Visit</a>
+          </div>
         </div>
       </header>
 
@@ -401,7 +391,7 @@ function Index() {
                 y Bebida.
               </h2>
               <p className="mt-8 text-ink/70 max-w-md leading-relaxed">
-                Specialty coffees and homemade pastries. Soon we will serve breakfast, lunch, tapas and Spanish beverages.
+                Specialty coffee, homemade pastries, Spanish tostadas and fresh lunch dishes. A little taste of Spain, throughout your day.
               </p>
               <div className="mt-12 overflow-hidden rounded-sm">
               <img
@@ -426,36 +416,10 @@ function Index() {
                 </div>
               </div>
 
-              <ul className="divide-y divide-ink/10">
-              {[
-                ["Espresso", "Single origin, seasonal", "3.20"],
-                ["Flat white", "Whole milk, oat on request", "4.20"],
-                ["Cappuccino", "House blend, silky milk", "4.20"],
-                ["Iced latte", "Double shot over ice", "4.50"],
-                ["Iced matcha", "Ceremonial grade, oat milk", "4.80"],
-                ["Granola bowl", "Yogurt, seasonal fruit, honey", "8.50"],
-                ["Almond cake", "Baked in house, daily", "4.50"],
-                ["Apple pie", "Butter crust, cinnamon", "4.80"],
-              ].map(([name, desc, price]) => (
-                <li key={name} className="flex items-baseline justify-between gap-6 py-6">
-                  <div>
-                    <p className="text-lg text-ink">{name}</p>
-                    <p className="text-sm text-ink/55 mt-1">{desc}</p>
-                  </div>
-                  <span className="text-base text-ink/80 tabular-nums">{price}</span>
-                </li>
-              ))}
-            </ul>
-
-              <div className="mt-12 relative rounded-sm border border-ink/15 bg-cream p-8 overflow-hidden">
-                <img src={bearYellow.url} alt="" aria-hidden className="pointer-events-none absolute -right-4 -bottom-6 h-24 w-auto opacity-80" />
-                <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-ink">
-                  Coming soon
-                </span>
-                <p className="mt-5 text-ink/70 max-w-sm leading-relaxed">
-                  Breakfast, lunch and tapas all Mediterranean inspired of course.
-                </p>
-              </div>
+              <span className="text-eyebrow text-blue">Breakfast, lunch &amp; coffee</span>
+              <h3 className="mt-6 text-3xl md:text-4xl uppercase font-light leading-tight">Discover our menu</h3>
+              <p className="mt-6 text-ink/70 max-w-sm leading-relaxed">From a good cup of coffee and a relaxed breakfast to Spanish tostadas, fresh lunches and something sweet on the side. Discover what’s on our menu.</p>
+              <Button asChild className="mt-8 h-auto rounded-full bg-espresso text-cream px-7 py-4 text-xs uppercase shadow-none hover:bg-ink"><a href="/menu">View our menu <ArrowIcon className="ml-3 h-4 w-4" /></a></Button>
             </Reveal>
           </div>
         </div>
@@ -647,25 +611,11 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={120} className="md:col-span-4 md:col-start-9">
-            <span className="inline-flex items-center rounded-full bg-yellow px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-ink">
-              Coming soon
-            </span>
-            <span className="mt-6 block text-eyebrow text-espresso">07 — LUNCH &amp; TAPAS</span>
-            <h3 className="mt-6 text-display text-[clamp(2rem,4.5vw,3.4rem)] text-ink">
-              Breakfast, leisurely lunches, and tapas ready to share
-            </h3>
-            <p className="mt-8 text-ink/70 leading-relaxed">
-              We’ve been working behind the scenes on something special: a Spanish-inspired menu filled with tasty breakfast, delicious lunches, and tapas.
-            </p>
-            <p className="mt-6 text-ink/70 leading-relaxed">
-              Right now, our kitchen is busy testing, tasting, and perfecting every dish. Because for us, it’s all about getting the details right and serving you food we truly believe in.
-            </p>
-            <p className="mt-6 text-ink/70 leading-relaxed">
-              From September onwards, you’re warmly invited to come and discover our new menu, paired with a carefully curated selection of Spanish wines.
-            </p>
-            <p className="mt-6 text-ink/70 leading-relaxed">
-              We’re putting a lot of love into it, and we honestly can’t wait to welcome you, let you taste it, and share a little piece of Spain with you.
-            </p>
+            <span className="block text-eyebrow text-espresso">07 — BREAKFAST &amp; LUNCH</span>
+            <h3 className="mt-6 text-display text-[clamp(2rem,4.5vw,3.4rem)] text-ink">Discover<br />our menu.</h3>
+            <p className="mt-8 text-ink/70 leading-relaxed">Slow mornings, Spanish tostadas and fresh lunch dishes. Made with care, inspired by the Mediterranean.</p>
+            <p className="mt-6 text-ink/70 leading-relaxed">Explore our breakfast, lunch, homemade cakes and drinks, and find your new favorite.</p>
+            <Button asChild className="mt-8 h-auto rounded-full bg-espresso text-cream px-7 py-4 text-xs uppercase shadow-none hover:bg-ink"><a href="/menu">View our menu <ArrowIcon className="ml-3 h-4 w-4" /></a></Button>
           </Reveal>
         </div>
       </section>
@@ -731,11 +681,7 @@ function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            {[
-              { role: "HEAD BARISTA", type: "Full-time", note: "Lead the bar, dial in our blends, mentor the team." },
-              { role: "BARISTA", type: "Full / part-time", note: "Open mornings, considered pours, friendly to regulars." },
-              { role: "PASTRY & KITCHEN", type: "Full-time", note: "Bake daily, develop the seasonal bites menu with us." },
-            ].map((r, i) => (
+            {vacancies.map((r, i) => (
               <Reveal key={r.role} delay={i * 100}>
                 <a
                   href="mailto:osohaarlem@outlook.com?subject=Application%20-%20OSO%20Coffee"
@@ -794,7 +740,7 @@ function Index() {
                     Born from a love for Spanish fincas and coffee, OSO opened its doors earlier this year.
                   </p>
                   <p className="mt-10">
-                    Beau used to live on Ibiza, and back in Haarlem she missed the people, the Spanish mentality, the vibe. She&rsquo;s bringing all of that home, with great coffee, pastries and, soon, a lunch menu.
+                    Beau used to live on Ibiza, and back in Haarlem she missed the people, the Spanish mentality, the vibe. She&rsquo;s bringing all of that home, with great coffee, pastries and a lunch menu.
                   </p>
                   <p className="mt-10 text-[clamp(1.25rem,2.1vw,1.6rem)] text-espresso leading-[1.45] italic">
                     A must visit, and a perfect place to chill before or after a walk in Elswout.
@@ -950,6 +896,7 @@ function Index() {
               <div className="mt-4 flex flex-col gap-2 text-cream/60">
                 <a href="https://www.instagram.com/osocoffee.haarlem/" target="_blank" rel="noreferrer" className="hover:text-yellow transition-colors">Instagram</a>
                 <a href="https://maps.google.com/?q=Ramplaan+44,+2015+GX+Haarlem" target="_blank" rel="noreferrer" className="hover:text-yellow transition-colors">Google Maps</a>
+                <a href="/menu" className="hover:text-yellow transition-colors">Menu</a>
               </div>
             </div>
           </div>
