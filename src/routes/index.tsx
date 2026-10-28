@@ -680,8 +680,8 @@ function Index() {
             </Reveal>
           </div>
 
-          <div className="grid md:grid-cols-12 gap-4 md:gap-6">
-            <div className="md:col-span-4 md:self-stretch">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6 items-stretch">
+            <div>
               {vacancies.map((r, i) => (
                 <Reveal key={r.role} delay={i * 100} className="h-full">
                   <a
@@ -703,7 +703,7 @@ function Index() {
               ))}
             </div>
 
-            <Reveal delay={120} className="md:col-span-3 md:col-start-6 md:mt-16">
+            <Reveal delay={120} className="h-full">
               <figure>
                 <div className="overflow-hidden rounded-sm">
                   <img
@@ -720,7 +720,7 @@ function Index() {
               </figure>
             </Reveal>
 
-            <Reveal delay={220} className="md:col-span-3 md:col-start-10">
+            <Reveal delay={220} className="h-full">
               <figure>
                 <div className="overflow-hidden rounded-sm">
                   <img
