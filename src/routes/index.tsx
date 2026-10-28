@@ -680,26 +680,62 @@ function Index() {
             </Reveal>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            {vacancies.map((r, i) => (
-              <Reveal key={r.role} delay={i * 100}>
-                <a
-                  href="mailto:osohaarlem@outlook.com?subject=Application%20-%20OSO%20Coffee"
-                  className="group relative block h-full rounded-sm border border-ink/10 bg-cream-deep p-8 md:p-10 transition-all duration-500 hover:border-ink hover:-translate-y-1"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="text-eyebrow text-ink/50">{r.type}</span>
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink text-cream transition-all duration-500 group-hover:bg-blue group-hover:-rotate-45">
-                      <ArrowIcon className="h-4 w-4" />
-                    </span>
-                  </div>
-                  <h3 className="mt-14 text-2xl md:text-3xl text-ink leading-tight tracking-tight">
-                    {r.role}
-                  </h3>
-                  <p className="mt-5 text-sm text-ink/65 max-w-xs leading-relaxed">{r.note}</p>
-                </a>
-              </Reveal>
-            ))}
+          <div className="grid md:grid-cols-12 gap-4 md:gap-6 items-start">
+            <div className="md:col-span-4">
+              {vacancies.map((r, i) => (
+                <Reveal key={r.role} delay={i * 100}>
+                  <a
+                    href="mailto:osohaarlem@outlook.com?subject=Application%20-%20OSO%20Coffee"
+                    className="group relative block h-full rounded-sm border border-ink/10 bg-cream-deep p-8 md:p-10 transition-all duration-500 hover:border-ink hover:-translate-y-1"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <span className="text-eyebrow text-ink/50">{r.type}</span>
+                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink text-cream transition-all duration-500 group-hover:bg-blue group-hover:-rotate-45">
+                        <ArrowIcon className="h-4 w-4" />
+                      </span>
+                    </div>
+                    <h3 className="mt-14 text-2xl md:text-3xl text-ink leading-tight tracking-tight">
+                      {r.role}
+                    </h3>
+                    <p className="mt-5 text-sm text-ink/65 max-w-xs leading-relaxed">{r.note}</p>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal delay={120} className="md:col-span-3 md:col-start-6 md:mt-16">
+              <figure>
+                <div className="overflow-hidden rounded-sm">
+                  <img
+                    src={p136.url}
+                    alt="A moment inside OSO Coffee in Haarlem"
+                    className="w-full aspect-[3/4] object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption className="mt-5 flex items-center gap-4">
+                  <div className="w-8 h-px bg-yellow" />
+                  <span className="text-espresso text-xs uppercase tracking-widest font-medium">The people</span>
+                </figcaption>
+              </figure>
+            </Reveal>
+
+            <Reveal delay={220} className="md:col-span-3 md:col-start-10">
+              <figure>
+                <div className="overflow-hidden rounded-sm">
+                  <img
+                    src={p119.url}
+                    alt="A barista pouring espresso into an iced latte at OSO Coffee"
+                    className="w-full aspect-[3/4] object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption className="mt-5 flex items-center gap-4">
+                  <div className="w-8 h-px bg-yellow" />
+                  <span className="text-espresso text-xs uppercase tracking-widest font-medium">Daily craft</span>
+                </figcaption>
+              </figure>
+            </Reveal>
           </div>
 
           <Reveal>
