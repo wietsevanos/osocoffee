@@ -482,7 +482,7 @@ function Index() {
               coffee.
             </h2>
             <p className="mt-8 text-ink/70 leading-relaxed">
-              We proudly serve local coffee from Moring Glory, with beans carefully roasted in Haarlem.
+              We proudly serve local coffee from Morning Glory, with beans carefully roasted in Haarlem.
             </p>
             <p className="mt-6 text-ink/70 leading-relaxed">
               Coming soon: our thoughtfully curated selection of Spanish wines.
