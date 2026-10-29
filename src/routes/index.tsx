@@ -485,7 +485,7 @@ function Index() {
               We proudly serve local coffee from Morning Glory, with beans carefully roasted in Haarlem.
             </p>
             <p className="mt-6 text-ink/70 leading-relaxed">
-              Coming soon: our thoughtfully curated selection of Spanish wines.
+              Now pouring: our thoughtfully curated selection of Spanish wines.
             </p>
             <img src={bearBrown.url} alt="" aria-hidden className="mt-10 h-12 w-auto opacity-80" />
           </Reveal>
